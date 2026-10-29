@@ -4,8 +4,7 @@
 
 backend:
   name: github
-  # ⚠️ Cambia TU_USUARIO por tu usuario de GitHub cuando crees el repositorio
-  repo: TU_USUARIO/chamba-en-ica
+  repo: SeniorProgram/chamba-en-ica
   branch: main
   commit_messages:
     create: "Nueva {{collection}}: {{slug}}"
