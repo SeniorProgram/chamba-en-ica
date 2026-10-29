@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { getOfertas } from "@/lib/content";
 import ListaOfertas from "@/components/ListaOfertas";
 
 export const metadata: Metadata = {
@@ -11,8 +10,7 @@ export default function Empleos() {
   return (
     <ListaOfertas
       titulo="Ofertas de empleo en Ica"
-      descripcion="Todas las ofertas verificadas de la región, de la más reciente a la más antigua."
-      ofertas={getOfertas()}
+      descripcion="Busca por puesto y filtra por provincia, jornada, sueldo, experiencia y más."
     />
   );
 }

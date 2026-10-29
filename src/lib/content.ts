@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import type { CategoriaSlug, ProvinciaSlug } from "@/site.config";
+import type { CategoriaSlug, EducacionSlug, ExperienciaSlug, JornadaSlug, ModalidadSlug, ProvinciaSlug } from "@/site.config";
 
 const CONTENT = path.join(process.cwd(), "content");
 
@@ -68,10 +68,34 @@ export type Oferta = {
   fuente: string;
   resumen: string;
   html: string;
+  // Opcionales (para los filtros); vacíos si la oferta no los indica
+  sueldoMin: number | null;
+  jornada: JornadaSlug | "";
+  modalidad: ModalidadSlug | "";
+  experiencia: ExperienciaSlug | "";
+  educacion: EducacionSlug | "";
+  vacantes: number | null;
+  distrito: string;
 };
+
+/** Sueldo en número para filtrar y ordenar: "S/ 1,500 a 2,000" → 1500. "A tratar" → null. */
+function sueldoNumero(data: Record<string, unknown>): number | null {
+  if (data.sueldo_min != null && data.sueldo_min !== "") return Number(data.sueldo_min) || null;
+  const m = String(data.sueldo ?? "").replace(/,(?=\d{3})/g, "").match(/\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : null;
+}
+
+const texto = (v: unknown) => (v == null ? "" : String(v).trim());
 
 function toOferta({ slug, data, body }: { slug: string; data: Record<string, unknown>; body: string }): Oferta {
   return {
+    sueldoMin: sueldoNumero(data),
+    jornada: texto(data.jornada) as Oferta["jornada"],
+    modalidad: (texto(data.modalidad) || "presencial") as Oferta["modalidad"],
+    experiencia: texto(data.experiencia) as Oferta["experiencia"],
+    educacion: texto(data.educacion) as Oferta["educacion"],
+    vacantes: data.vacantes != null && data.vacantes !== "" ? Number(data.vacantes) || null : null,
+    distrito: texto(data.distrito),
     slug,
     title: String(data.title),
     empresa: String(data.empresa ?? ""),

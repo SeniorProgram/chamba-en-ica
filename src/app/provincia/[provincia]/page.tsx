@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { provincias } from "@/site.config";
-import { getOfertas } from "@/lib/content";
 import ListaOfertas from "@/components/ListaOfertas";
 
 type Props = { params: Promise<{ provincia: string }> };
@@ -27,8 +26,7 @@ export default async function Provincia({ params }: Props) {
     <ListaOfertas
       titulo={`Trabajo en ${p.nombre}`}
       descripcion={`Ofertas de empleo, convocatorias y prácticas en la provincia de ${p.nombre}.`}
-      ofertas={getOfertas().filter((o) => o.provincia === slug)}
-      activo={slug}
+      fijo={{ prov: slug }}
     />
   );
 }

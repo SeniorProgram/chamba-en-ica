@@ -57,3 +57,48 @@ export const categorias = [
 
 export type CategoriaSlug = (typeof categorias)[number]["slug"];
 export type ProvinciaSlug = (typeof provincias)[number]["slug"];
+
+/* ---------- Datos opcionales de cada oferta (sirven para los filtros de búsqueda) ---------- */
+
+export const jornadas = [
+  { slug: "tiempo-completo", nombre: "Tiempo completo" },
+  { slug: "medio-tiempo", nombre: "Medio tiempo" },
+  { slug: "por-horas", nombre: "Por horas" },
+  { slug: "temporal", nombre: "Temporal / campaña" },
+] as const;
+
+export const modalidades = [
+  { slug: "presencial", nombre: "Presencial" },
+  { slug: "remoto", nombre: "Remoto" },
+  { slug: "hibrido", nombre: "Híbrido" },
+] as const;
+
+export const experiencias = [
+  { slug: "sin-experiencia", nombre: "Sin experiencia" },
+  { slug: "menos-1", nombre: "Menos de 1 año" },
+  { slug: "1-2", nombre: "1 a 2 años" },
+  { slug: "3-mas", nombre: "3 años a más" },
+] as const;
+
+export const educaciones = [
+  { slug: "sin-requisito", nombre: "Sin requisito" },
+  { slug: "secundaria", nombre: "Secundaria completa" },
+  { slug: "tecnico", nombre: "Técnico" },
+  { slug: "universitario", nombre: "Universitario" },
+] as const;
+
+// Filtro "Sueldo desde" (en soles)
+export const rangosSueldo = [1130, 1500, 2000, 3000, 5000] as const;
+
+// Filtro "Publicado" (días hacia atrás)
+export const fechasPublicacion = [
+  { dias: 1, nombre: "Últimas 24 horas" },
+  { dias: 3, nombre: "Últimos 3 días" },
+  { dias: 7, nombre: "Última semana" },
+  { dias: 30, nombre: "Último mes" },
+] as const;
+
+export type JornadaSlug = (typeof jornadas)[number]["slug"];
+export type ModalidadSlug = (typeof modalidades)[number]["slug"];
+export type ExperienciaSlug = (typeof experiencias)[number]["slug"];
+export type EducacionSlug = (typeof educaciones)[number]["slug"];

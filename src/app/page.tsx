@@ -14,8 +14,12 @@ export default function Inicio() {
         <p className="entrada entrada-2">
           Convocatorias, empleos y prácticas en las cinco provincias, verificados y explicados.
         </p>
-        <form action="/buscar/" className="buscador entrada entrada-3" role="search">
+        <form action="/buscar/" className="buscador buscador-hero entrada entrada-3" role="search">
           <input name="q" type="search" placeholder="Puesto, empresa o palabra clave" aria-label="Buscar empleos" />
+          <select name="prov" aria-label="Provincia" defaultValue="">
+            <option value="">Toda la región</option>
+            {provincias.map((p) => <option key={p.slug} value={p.slug}>{p.nombre}</option>)}
+          </select>
           <button className="btn btn-naranja" type="submit">Buscar</button>
         </form>
         <p className="provincias-label entrada entrada-4">Busca por provincia</p>

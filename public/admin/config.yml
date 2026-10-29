@@ -1,0 +1,154 @@
+# Panel de administración de Chamba en Ica (https://tu-dominio/admin/)
+# Cada "colección" es una sección del panel; cada campo es una casilla del formulario.
+# Al publicar, el panel guarda el archivo .md en GitHub y Vercel actualiza el sitio solo.
+
+backend:
+  name: github
+  # ⚠️ Cambia TU_USUARIO por tu usuario de GitHub cuando crees el repositorio
+  repo: TU_USUARIO/chamba-en-ica
+  branch: main
+  commit_messages:
+    create: "Nueva {{collection}}: {{slug}}"
+    update: "Actualiza {{collection}}: {{slug}}"
+    delete: "Elimina {{collection}}: {{slug}}"
+
+site_url: https://chambaenica.vercel.app
+display_url: https://chambaenica.vercel.app
+
+# Imágenes que subas desde el panel
+media_folder: public/img/subidas
+public_folder: /img/subidas
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ---------------- Ofertas de empleo ----------------
+  - name: ofertas
+    label: Ofertas de empleo
+    label_singular: oferta
+    description: "Cada oferta es una página /ofertas/nombre-del-archivo/. La etiqueta Vigente/Vencida se calcula sola con la fecha de vencimiento."
+    folder: content/ofertas
+    create: true
+    # Dirección de la oferta: puesto + empresa (ej. cajero-tottus)
+    slug: "{{title}}-{{empresa}}"
+    summary: "{{title}} · {{empresa}} · vence {{vence}}"
+    sortable_fields: [date, vence, title, empresa]
+    view_filters:
+      - { label: "Convocatorias del Estado", field: categoria, pattern: convocatorias-del-estado }
+      - { label: "Empresas", field: categoria, pattern: empleos-en-empresas }
+      - { label: "Agroexportación", field: categoria, pattern: agroexportacion }
+      - { label: "Prácticas", field: categoria, pattern: practicas }
+      - { label: "Part time", field: categoria, pattern: part-time-y-temporada }
+    view_groups:
+      - { label: Provincia, field: provincia }
+    fields:
+      - { name: title, label: "Puesto", widget: string, hint: "Ej.: Cajero de tienda, Asistente administrativo CAS" }
+      - { name: empresa, label: "Empresa o entidad", widget: string }
+      - name: categoria
+        label: Categoría
+        widget: select
+        options:
+          - { label: "Convocatorias del Estado", value: convocatorias-del-estado }
+          - { label: "Empleos en empresas", value: empleos-en-empresas }
+          - { label: "Agroexportación", value: agroexportacion }
+          - { label: "Prácticas", value: practicas }
+          - { label: "Part time y temporada", value: part-time-y-temporada }
+      - name: provincia
+        label: Provincia
+        widget: select
+        options:
+          - { label: Ica, value: ica }
+          - { label: Chincha, value: chincha }
+          - { label: Pisco, value: pisco }
+          - { label: Nasca, value: nasca }
+          - { label: Palpa, value: palpa }
+      - { name: distrito, label: "Distrito o zona", widget: string, required: false }
+      - { name: date, label: "Fecha de publicación", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, default: "{{now}}" }
+      - { name: vence, label: "Último día para postular", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Déjalo vacío si no tiene fecha límite" }
+      - { name: sueldo, label: "Sueldo (como lo dice el aviso)", widget: string, default: "A tratar", hint: "Ej.: S/ 1,500 · S/ 1,130 a 1,500 · A tratar" }
+      - { name: sueldo_min, label: "Sueldo mínimo en número (opcional)", widget: number, value_type: int, required: false, hint: "Solo si el sueldo dice 'A tratar' pero sabes un monto. Sirve para el filtro de sueldo." }
+      - { name: fuente, label: "Enlace a la convocatoria oficial", widget: string, hint: "Página de la entidad, aviso en LinkedIn/Computrabajo, etc." }
+      - { name: resumen, label: "Resumen (1 o 2 líneas)", widget: text, hint: "Sale en Google y en las tarjetas del buscador" }
+      - name: jornada
+        label: Jornada
+        widget: select
+        required: false
+        options:
+          - { label: "Tiempo completo", value: tiempo-completo }
+          - { label: "Medio tiempo", value: medio-tiempo }
+          - { label: "Por horas", value: por-horas }
+          - { label: "Temporal / campaña", value: temporal }
+      - name: modalidad
+        label: Modalidad
+        widget: select
+        default: presencial
+        options:
+          - { label: Presencial, value: presencial }
+          - { label: Remoto, value: remoto }
+          - { label: Híbrido, value: hibrido }
+      - name: experiencia
+        label: Experiencia requerida
+        widget: select
+        required: false
+        options:
+          - { label: "Sin experiencia", value: sin-experiencia }
+          - { label: "Menos de 1 año", value: menos-1 }
+          - { label: "1 a 2 años", value: 1-2 }
+          - { label: "3 años a más", value: 3-mas }
+      - name: educacion
+        label: Estudios
+        widget: select
+        required: false
+        options:
+          - { label: "Sin requisito", value: sin-requisito }
+          - { label: "Secundaria completa", value: secundaria }
+          - { label: "Técnico", value: tecnico }
+          - { label: "Universitario", value: universitario }
+      - { name: vacantes, label: Vacantes, widget: number, value_type: int, min: 1, required: false }
+      - name: body
+        label: "Detalle de la oferta"
+        widget: markdown
+        default: |
+          ## Requisitos
+
+          -
+
+          ## Funciones
+
+          -
+
+          ## Cómo postular
+
+          Explica el medio y los pasos según las bases oficiales.
+
+  # ---------------- Guías ----------------
+  - name: guias
+    label: Guías
+    label_singular: guía
+    folder: content/guias
+    create: true
+    slug: "{{title}}"
+    sortable_fields: [date, updated, title]
+    fields:
+      - { name: title, label: Título, widget: string }
+      - { name: description, label: "Descripción (sale en Google)", widget: text }
+      - { name: date, label: "Fecha de publicación", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, default: "{{now}}" }
+      - { name: updated, label: "Última actualización", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, default: "{{now}}" }
+      - name: grupo
+        label: Grupo
+        widget: select
+        options:
+          - { label: "Beneficios y derechos", value: beneficios }
+          - { label: "Cómo postular", value: postula }
+          - { label: "Cuídate de estafas", value: cuidate }
+      - { name: body, label: Contenido, widget: markdown }
+
+  # ---------------- Páginas fijas ----------------
+  - name: paginas
+    label: Páginas
+    files:
+      - { name: sobre-nosotros, label: "Sobre nosotros", file: content/paginas/sobre-nosotros.md, fields: [{ name: title, label: Título, widget: string }, { name: description, label: Descripción, widget: text, required: false }, { name: body, label: Contenido, widget: markdown }] }
+      - { name: contacto, label: Contacto, file: content/paginas/contacto.md, fields: [{ name: title, label: Título, widget: string }, { name: description, label: Descripción, widget: text, required: false }, { name: body, label: Contenido, widget: markdown }] }
+      - { name: privacidad, label: "Política de privacidad", file: content/paginas/politica-de-privacidad.md, fields: [{ name: title, label: Título, widget: string }, { name: description, label: Descripción, widget: text, required: false }, { name: body, label: Contenido, widget: markdown }] }

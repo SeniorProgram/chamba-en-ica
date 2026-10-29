@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categorias, provincias } from "@/site.config";
+import { categorias, educaciones, experiencias, jornadas, modalidades, provincias } from "@/site.config";
 import { formatFecha, getOferta, getOfertaEjemplo, getOfertas } from "@/lib/content";
 import EstadoOferta from "@/components/EstadoOferta";
 import Anuncio from "@/components/Anuncio";
@@ -35,6 +35,10 @@ export default async function OfertaPage({ params }: Props) {
   const esEjemplo = slug === "ejemplo";
   const cat = categorias.find((c) => c.slug === o.categoria);
   const prov = provincias.find((p) => p.slug === o.provincia);
+  const nombre = (lista: readonly { slug: string; nombre: string }[], v: string) => lista.find((x) => x.slug === v)?.nombre;
+  // Tipo de empleo en el formato que entiende Google
+  const tipoEmpleo = { "tiempo-completo": "FULL_TIME", "medio-tiempo": "PART_TIME", "por-horas": "PART_TIME", temporal: "TEMPORARY" }[o.jornada as string]
+    ?? (o.categoria === "practicas" ? "INTERN" : undefined);
 
   // Datos estructurados para que Google muestre la oferta en su buscador de empleos
   const jobPosting = {
@@ -44,6 +48,12 @@ export default async function OfertaPage({ params }: Props) {
     description: o.html,
     datePosted: o.date,
     validThrough: o.vence || undefined,
+    employmentType: tipoEmpleo,
+    totalJobOpenings: o.vacantes ?? undefined,
+    jobLocationType: o.modalidad === "remoto" ? "TELECOMMUTE" : undefined,
+    baseSalary: o.sueldoMin
+      ? { "@type": "MonetaryAmount", currency: "PEN", value: { "@type": "QuantitativeValue", value: o.sueldoMin, unitText: "MONTH" } }
+      : undefined,
     hiringOrganization: { "@type": "Organization", name: o.empresa },
     jobLocation: {
       "@type": "Place",
@@ -71,10 +81,15 @@ export default async function OfertaPage({ params }: Props) {
       </header>
       <div className="ficha entrada entrada-3">
         <div><b>Estado</b><EstadoOferta vence={o.vence} /></div>
-        <div><b>Provincia</b>📍 {prov?.nombre}</div>
+        <div><b>Lugar</b>📍 {prov?.nombre}{o.distrito && o.distrito !== prov?.nombre ? `, ${o.distrito}` : ""}</div>
         <div><b>Sueldo</b>💰 {o.sueldo}</div>
         <div><b>Publicado</b>{formatFecha(o.date)}</div>
         <div><b>Postula hasta</b>{o.vence ? formatFecha(o.vence) : "Sin fecha límite"}</div>
+        {o.jornada && <div><b>Jornada</b>{nombre(jornadas, o.jornada)}</div>}
+        {o.modalidad && <div><b>Modalidad</b>{nombre(modalidades, o.modalidad)}</div>}
+        {o.experiencia && <div><b>Experiencia</b>{nombre(experiencias, o.experiencia)}</div>}
+        {o.educacion && <div><b>Estudios</b>{nombre(educaciones, o.educacion)}</div>}
+        {o.vacantes ? <div><b>Vacantes</b>{o.vacantes}</div> : null}
       </div>
       <Anuncio />
       <div className="prosa">

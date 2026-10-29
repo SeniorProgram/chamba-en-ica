@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { categorias } from "@/site.config";
-import { getOfertas } from "@/lib/content";
 import ListaOfertas from "@/components/ListaOfertas";
 
 type Props = { params: Promise<{ categoria: string }> };
@@ -24,8 +23,7 @@ export default async function Categoria({ params }: Props) {
     <ListaOfertas
       titulo={`${cat.icono} ${cat.nombre}`}
       descripcion={cat.descripcion}
-      ofertas={getOfertas().filter((o) => o.categoria === slug)}
-      activo={slug}
+      fijo={{ cat: slug }}
     />
   );
 }

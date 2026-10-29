@@ -47,6 +47,11 @@ src/
 4. Guarda, haz `git add . && git commit -m "Nueva oferta" && git push`. Vercel lo publica solo en 1 minuto.
 
 La etiqueta "Vigente / Vencida" se calcula sola con la fecha `vence`.
+
+Los campos opcionales `jornada`, `modalidad`, `experiencia`, `educacion`, `vacantes` y `distrito` alimentan los
+filtros del buscador (`/empleos/` y `/buscar/`). Si una oferta no los tiene, igual aparece, pero no saldrá al
+filtrar por ese dato. Para el filtro de sueldo se toma el primer número de `sueldo` ("S/ 1,500 a 2,000" → 1500);
+si el aviso dice "A tratar", puedes poner `sueldo_min: 1500` aparte.
 Puedes ver cómo queda una oferta en `/ofertas/ejemplo/` (no sale en Google ni en los listados).
 
 ## Publicar una guía nueva
