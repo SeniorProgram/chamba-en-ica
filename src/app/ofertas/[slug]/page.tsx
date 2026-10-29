@@ -182,7 +182,7 @@ export default async function OfertaPage({ params }: Props) {
             <p className="nota-seguridad">
               <Icono nombre="escudo" /> <span>
                 Los requisitos y el proceso los define {o.empresa}. <strong>Nunca envíes dinero ni hagas pagos</strong> para
-                postular: ningún reclutador serio te lo pedirá. <Link href="/guias/como-detectar-ofertas-de-trabajo-falsas/">Cómo detectar una oferta falsa</Link>
+                postular: ningún reclutador serio te lo pedirá. ¿Te llegó otro aviso por WhatsApp? <Link href="/verificar/">Verifícalo aquí</Link>
               </span>
             </p>
 

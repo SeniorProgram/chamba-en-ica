@@ -209,6 +209,18 @@ body > main {
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
+  white-space: nowrap;
+}
+.logo {
+  white-space: nowrap;
+}
+@media (max-width: 1180px) {
+  .nav {
+    gap: 18px;
+  }
+  .nav a {
+    font-size: 14px;
+  }
 }
 .nav a:hover,
 .nav a[aria-current="page"] {
@@ -230,7 +242,7 @@ body > main {
   font-size: 18px;
   cursor: pointer;
 }
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   .menu-btn {
     display: block;
   }
@@ -2468,6 +2480,193 @@ main:has(> .pagina) {
   .migas [aria-current="page"] {
     max-width: 24ch;
   }
+}
+
+/* ---------- Aviso de seguridad en el lateral ---------- */
+.panel-alerta {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--texto);
+  text-decoration: none;
+  border-color: color-mix(in srgb, var(--naranja) 40%, var(--borde));
+  background: color-mix(in srgb, var(--naranja) 7%, var(--superficie));
+}
+.panel-alerta .icono {
+  color: var(--naranja-hover);
+}
+.panel-alerta:hover {
+  color: var(--texto);
+  border-color: var(--naranja);
+}
+
+/* ---------- Verificador de avisos ---------- */
+.verificador {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 48px;
+}
+.verificador-etiqueta {
+  display: block;
+  font-weight: 700;
+  color: var(--titulo);
+  margin-bottom: 10px;
+}
+.verificador-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1.5px solid var(--borde);
+  border-radius: 14px;
+  padding: 14px;
+  resize: vertical;
+  min-height: 200px;
+}
+.verificador-form textarea:focus {
+  outline: none;
+  border-color: var(--titulo);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--titulo) 18%, transparent);
+}
+.verificador-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 8px 0 14px;
+}
+.verificador-boton {
+  width: 100%;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 0.85em 1em;
+}
+.verificador-boton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.verificador-privacidad {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  color: var(--texto-suave);
+  text-align: center;
+}
+.verificador-resultado {
+  scroll-margin-top: 90px;
+}
+.resultado {
+  border-top-width: 5px;
+}
+.riesgo-alto {
+  border-top-color: var(--rojo);
+}
+.riesgo-medio {
+  border-top-color: var(--naranja);
+}
+.riesgo-bajo {
+  border-top-color: var(--verde);
+}
+.resultado-cab {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.nivel-badge {
+  font-weight: 800;
+  font-size: 15px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  color: #fff;
+}
+.riesgo-alto .nivel-badge {
+  background: var(--rojo);
+}
+.riesgo-medio .nivel-badge {
+  background: var(--naranja-hover);
+}
+.riesgo-bajo .nivel-badge {
+  background: var(--verde);
+}
+.nivel-badge.nivel-neutro {
+  background: var(--texto-suave);
+}
+.resultado-resumen {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 14px 0 6px;
+  line-height: 1.45;
+}
+.resultado-titulo {
+  font-size: 1.05rem;
+  margin: 22px 0 10px;
+}
+.lista-senales {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.senal {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.senal div {
+  display: grid;
+  gap: 2px;
+}
+.senal span {
+  color: var(--texto-suave);
+}
+.senal-alta {
+  background: color-mix(in srgb, var(--rojo) 9%, var(--superficie));
+}
+.senal-alta .icono {
+  color: var(--rojo);
+}
+.senal-media {
+  background: color-mix(in srgb, var(--naranja) 10%, var(--superficie));
+}
+.senal-media .icono {
+  color: var(--naranja-hover);
+}
+.senal-baja {
+  background: var(--fondo-suave);
+}
+.senal-baja .icono {
+  color: var(--texto-suave);
+}
+.lista-pasos-simple {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+}
+.resultado-nota {
+  font-size: 13px;
+  color: var(--texto-suave);
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--borde);
+}
+.resultado-nota + .resultado-nota {
+  margin-top: 8px;
+  padding-top: 0;
+  border-top: 0;
 }
 
 /* ---------- Formulario "Publica tu oferta" ---------- */

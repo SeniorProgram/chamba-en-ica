@@ -1,7 +1,7 @@
 # Chamba en Ica
 
 Portal de empleos y convocatorias de la región Ica, hecho con **Next.js** y contenido en **Markdown**.
-Genera un sitio 100 % estático: rápido, bueno para Google y gratis de alojar.
+Las páginas se generan al compilar (rápidas y buenas para Google) y el verificador de avisos con IA usa una pequeña función en el servidor de Vercel.
 
 ## Requisitos
 
@@ -17,11 +17,11 @@ npm run dev      # abre http://localhost:3000
 
 Cada vez que guardas un archivo, la página se actualiza sola.
 
-Para generar la versión final (carpeta `out/`):
+Para probar la versión final:
 
 ```bash
 npm run build
-npm start        # sirve la carpeta out/ para revisarla
+npm start        # sirve la versión compilada en http://localhost:3000
 ```
 
 ## Dónde está cada cosa
@@ -133,3 +133,16 @@ En Claude Code, dentro de esta carpeta, pega el texto o el enlace de un aviso (F
 empresa o el correo del formulario) y escribe `/nueva-oferta` (o "crea esta oferta"). La skill
 `.claude/skills/nueva-oferta/` llena todos los campos, revisa señales de estafa, te muestra un resumen y la
 publica cuando confirmas.
+
+## Verificador de avisos con IA (`/verificar/`)
+
+La persona pega un aviso que le llegó por WhatsApp o Facebook y la página le dice si tiene señales de estafa.
+
+- **Sin configurar nada** ya funciona la *revisión básica*: busca en el navegador las señales de la guía de ofertas falsas
+  (`src/lib/verificar.ts`). No cuesta nada.
+- **Con IA (Claude):** crea una clave en [console.anthropic.com](https://console.anthropic.com) y en Vercel ve a
+  **Settings → Environment Variables** y agrega `ANTHROPIC_API_KEY`. Vuelve a desplegar. El endpoint está en
+  `src/app/api/verificar/route.ts`.
+- **Costo:** por defecto usa `claude-opus-5-5` con esfuerzo bajo. Para gastar mucho menos, agrega en Vercel
+  `CLAUDE_MODEL` = `claude-haiku-5-5`. Pon además un **límite de gasto mensual** en la consola de Anthropic.
+- Cada persona puede hacer 8 consultas por hora. El texto pegado no se guarda (está explicado en la política de privacidad).

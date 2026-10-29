@@ -43,13 +43,14 @@ try {
   const r = spawnSync(process.execPath, [path.join(COPIA, "scripts", "importar-servir.mjs")], { cwd: COPIA, stdio: "inherit" });
   if (r.status !== 0) throw new Error("El importador falló (mira el mensaje de arriba).");
 
-  const cambios = git(["status", "--porcelain", "--", "content/ofertas", "data/servir-vistos.json"], COPIA);
+  // Se agrega y se mira lo que de verdad cambió (git status puede marcar archivos solo por los saltos de línea de Windows)
+  git(["add", "content/ofertas", "data/servir-vistos.json"], COPIA);
+  const cambios = git(["diff", "--cached", "--name-only"], COPIA);
   if (!cambios) {
     console.log("\n✔ No hay convocatorias nuevas. Nada que revisar hoy.");
   } else {
     const resumen = fs.readFileSync(path.join(COPIA, "data", "ultimo-importe.md"), "utf8");
     paso("Subiendo las ofertas nuevas a la rama " + RAMA);
-    git(["add", "content/ofertas", "data/servir-vistos.json"], COPIA);
     git(["commit", "--quiet", "-m", "Importa convocatorias nuevas de Talento Perú (SERVIR)"], COPIA);
     git(["push", "--quiet", "--force", "origin", RAMA], COPIA);
 

@@ -10,6 +10,8 @@ imagen_alt: "Celular con un aviso de trabajo sospechoso"
 
 Cuando necesitas trabajo urgente, es fácil caer en una oferta que parece buena. Las estafas con falsos empleos circulan mucho en grupos de Facebook, WhatsApp y TikTok. Estas son las señales para reconocerlas.
 
+> **¿Te llegó un aviso sospechoso?** Pégalo en nuestro [verificador de avisos](/verificar/) y te decimos qué señales de estafa tiene.
+
 ![Las 8 señales de alerta de una oferta de trabajo falsa](/img/guias/ofertas-falsas-senales.svg)
 
 ## 1. Te piden dinero

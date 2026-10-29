@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Genera un sitio 100 % estático en la carpeta /out (gratis en Vercel, Netlify o Cloudflare Pages)
-  output: "export",
+  // Las páginas se generan al compilar (ofertas, guías, categorías); además hay un endpoint
+  // con servidor para el verificador con IA (src/app/api/verificar). Se publica en Vercel.
   trailingSlash: true,
   images: { unoptimized: true },
 };

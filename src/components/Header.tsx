@@ -8,6 +8,7 @@ const enlaces = [
   { href: "/", label: "Inicio" },
   { href: "/empleos/", label: "Empleos" },
   { href: "/guias/", label: "Información" },
+  { href: "/verificar/", label: "Verificar aviso" },
   { href: "/sobre-nosotros/", label: "Sobre nosotros" },
   { href: "/contacto/", label: "Contacto" },
 ];
