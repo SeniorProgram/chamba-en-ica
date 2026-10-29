@@ -93,7 +93,7 @@ grupo: beneficios   # beneficios | postula | cuidate
 
 ## Pendientes antes de lanzar
 
-- [ ] Cambiar `contactEmail` en `src/site.config.ts` por tu correo real.
+- [x] Cambiar `contactEmail` en `src/site.config.ts` por tu correo real.
 - [ ] Cambiar `url` en `src/site.config.ts` por tu dominio final.
 - [ ] Publicar las primeras ofertas reales.
 

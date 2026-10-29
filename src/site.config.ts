@@ -5,7 +5,7 @@ export const site = {
   // Cambia esta URL cuando compres tu dominio (por ejemplo, https://chambaenica.pe)
   url: "https://chamba-en-ica.vercel.app",
   // ⚠️ Pon aquí el correo donde quieres recibir mensajes del formulario de contacto
-  contactEmail: "contacto@ejemplo.com",
+  contactEmail: "victorquichica@gmail.com",
   locale: "es_PE",
 };
 
