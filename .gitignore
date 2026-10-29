@@ -6,8 +6,9 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 
-# Configuración local del asistente
-.claude/
+# Configuración local del asistente (las skills del proyecto sí se guardan)
+.claude/*
+!.claude/skills/
 
 # Resumen temporal del importador de SERVIR (va en el Pull Request, no en el repositorio)
 data/ultimo-importe.md

@@ -110,3 +110,21 @@ requisitos, sueldo, fechas y el enlace oficial de la entidad.
 - Los avisos ya importados (o descartados) se anotan en `data/servir-vistos.json` y no vuelven a aparecer.
 - Si el portal cambia y el importador falla, GitHub te avisa por correo.
 - Para correrlo en tu PC: `npm run importar` (o `node scripts/importar-servir.mjs --salida carpeta-de-prueba`).
+
+## Formulario "Publica tu oferta" (para empresas)
+
+La página `/publica/` tiene un formulario para que las empresas te envíen sus ofertas. Te llegan por correo
+como una ficha ordenada; tú decides si la publicas (con el panel `/admin/` o con la skill de abajo).
+
+- **Sin configurar nada:** el formulario abre el correo de quien publica con la oferta ya escrita, dirigida a
+  `contactEmail` de `src/site.config.ts` (¡cámbialo por tu correo real!).
+- **Recomendado:** crea una clave gratis en [web3forms.com](https://web3forms.com) con tu correo y guárdala en Vercel
+  (**Settings → Environment Variables**) como `NEXT_PUBLIC_WEB3FORMS_KEY`. Luego vuelve a desplegar. Así las
+  ofertas se envían directo desde la página, sin abrir el correo de nadie.
+
+## Crear una oferta pegando un aviso (skill de Claude Code)
+
+En Claude Code, dentro de esta carpeta, pega el texto o el enlace de un aviso (Facebook, WhatsApp, la web de la
+empresa o el correo del formulario) y escribe `/nueva-oferta` (o "crea esta oferta"). La skill
+`.claude/skills/nueva-oferta/` llena todos los campos, revisa señales de estafa, te muestra un resumen y la
+publica cuando confirmas.

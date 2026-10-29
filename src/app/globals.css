@@ -1045,3 +1045,107 @@ body > main {
     padding: 16px;
   }
 }
+
+/* ---------- Formulario "Publica tu oferta" ---------- */
+.form-oferta {
+  padding-bottom: 72px;
+}
+.form-oferta fieldset {
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+  padding: 20px;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+.form-oferta legend {
+  font-weight: 700;
+  color: var(--titulo);
+  padding: 0 8px;
+}
+.campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+.campos label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto);
+}
+.campos .ancho {
+  grid-column: 1 / -1;
+}
+.campos input,
+.campos select,
+.campos textarea {
+  font: inherit;
+  font-size: 16px; /* 16px evita que el celular haga zoom al escribir */
+  font-weight: 400;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 100%;
+}
+.campos textarea {
+  resize: vertical;
+}
+.campos input:focus,
+.campos select:focus,
+.campos textarea:focus {
+  outline: none;
+  border-color: var(--titulo);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--titulo) 18%, transparent);
+}
+.nota-form {
+  font-size: 14px;
+  color: var(--texto-suave);
+  margin: 0 0 12px;
+}
+.declaro {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  margin: 4px 0 20px;
+  cursor: pointer;
+}
+.declaro input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--naranja);
+  flex-shrink: 0;
+}
+.enviar-oferta {
+  width: 100%;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0.9em 1.6em;
+}
+.enviar-oferta:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.error-form {
+  color: var(--rojo);
+  font-weight: 600;
+}
+.trampa {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .campos {
+    grid-template-columns: 1fr;
+  }
+  .form-oferta fieldset {
+    padding: 16px 14px;
+  }
+}

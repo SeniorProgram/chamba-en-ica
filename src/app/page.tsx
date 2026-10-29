@@ -99,7 +99,7 @@ export default function Inicio() {
       <section className="seccion centro">
         <div className="contenedor angosto revelar">
           <p>¿Tu empresa está contratando en Ica? Difunde tu oferta gratis.</p>
-          <Link href="/contacto/" className="btn btn-contorno">¿Quieres publicar?</Link>
+          <Link href="/publica/" className="btn btn-contorno">Publica tu oferta gratis</Link>
         </div>
       </section>
     </>

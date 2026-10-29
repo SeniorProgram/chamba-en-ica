@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getPagina } from "@/lib/content";
 import { site } from "@/site.config";
 
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 const motivos = [
-  { asunto: "Quiero publicar una oferta", icono: "📢" },
   { asunto: "Reportar un error o una oferta vencida", icono: "⚠️" },
   { asunto: "Sugerencia", icono: "💡" },
 ];
@@ -22,11 +22,16 @@ export default function Contacto() {
       </header>
       {p && <div className="prosa entrada entrada-2" style={{ paddingBottom: 0 }} dangerouslySetInnerHTML={{ __html: p.html }} />}
       <div className="grilla" style={{ marginBottom: 72 }}>
+        <Link href="/publica/" className="tarjeta revelar">
+          <div className="icono">📢</div>
+          <h3>Quiero publicar una oferta</h3>
+          <p>Llena el formulario: es gratis</p>
+        </Link>
         {motivos.map((m, i) => (
           <a
             key={m.asunto}
             className="tarjeta revelar"
-            style={{ "--retraso": `${i * 80}ms` } as React.CSSProperties}
+            style={{ "--retraso": `${(i + 1) * 80}ms` } as React.CSSProperties}
             href={`mailto:${site.contactEmail}?subject=${encodeURIComponent(`${m.asunto} – Chamba en Ica`)}`}
           >
             <div className="icono">{m.icono}</div>

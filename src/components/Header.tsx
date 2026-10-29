@@ -40,7 +40,7 @@ export default function Header() {
               {e.label}
             </Link>
           ))}
-          <Link href="/contacto/" className="btn btn-contorno">
+          <Link href="/publica/" className="btn btn-contorno">
             Publica tu oferta
           </Link>
         </nav>
