@@ -329,6 +329,11 @@ async function main() {
 }
 
 main().catch((e) => {
-  console.error("Error al importar de Talento Perú:", e.message);
+  // La causa real de un error de red viene en e.cause (ej. ECONNRESET, ETIMEDOUT, certificado)
+  const causa = e.cause ? ` (${e.cause.code ?? ""} ${e.cause.message ?? ""})`.replace(/\s+\)/, ")") : "";
+  const texto = `${e.message}${causa}`;
+  console.error("Error al importar de Talento Perú:", texto);
+  // En GitHub Actions, esta línea aparece en el recuadro "Annotations" del resumen
+  if (process.env.GITHUB_ACTIONS) console.log(`::error title=Importador de SERVIR::${texto.replace(/\r?\n/g, " ")}`);
   process.exit(1);
 });

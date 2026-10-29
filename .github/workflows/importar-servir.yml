@@ -17,20 +17,20 @@ concurrency:
 
 jobs:
   importar:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Buscar convocatorias nuevas en Talento Perú
         run: node scripts/importar-servir.mjs
 
       - name: Abrir Pull Request para revisar
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: importar/servir
           delete-branch: true
