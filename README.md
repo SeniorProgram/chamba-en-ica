@@ -97,19 +97,24 @@ grupo: beneficios   # beneficios | postula | cuidate
 - [ ] Cambiar `url` en `src/site.config.ts` por tu dominio final.
 - [ ] Publicar las primeras ofertas reales.
 
-## Importación automática de convocatorias del Estado (Talento Perú)
+## Importación de convocatorias del Estado (Talento Perú)
 
-Cada mañana (6:00 a. m.) GitHub Actions corre `scripts/importar-servir.mjs`, que busca en el portal
-**Talento Perú de SERVIR** las convocatorias de la región Ica y crea una oferta por cada una, con sus
-requisitos, sueldo, fechas y el enlace oficial de la entidad.
+`scripts/importar-servir.mjs` busca en el portal **Talento Perú de SERVIR** las convocatorias de la región Ica y
+crea una oferta por cada una, con sus requisitos, sueldo, fechas y el enlace oficial de la entidad.
 
-- **Nada se publica solo.** Las ofertas nuevas llegan como un **Pull Request** llamado
-  "Convocatorias nuevas de Ica (Talento Perú)". Revísalo en GitHub (pestaña *Pull requests*):
-  para descartar una oferta, borra su archivo en el Pull Request; para publicarlas, pulsa **Merge**.
-- Vercel crea una vista previa del Pull Request para que veas cómo quedan antes de aprobar.
+**Se corre desde esta PC** (SERVIR rechaza las conexiones de los servidores de GitHub): doble clic en
+`importar-convocatorias.bat` (o `npm run importar:proponer`). En 1 o 2 minutos:
+
+1. Busca las convocatorias nuevas en una copia aparte del proyecto (tus archivos no se tocan).
+2. Las sube a la rama `importar/servir` y abre un **Pull Request** "Convocatorias nuevas de Ica (Talento Perú)".
+3. Revísalo en GitHub (pestaña *Pull requests*). Vercel crea una vista previa. Para descartar una oferta, borra su
+   archivo en el Pull Request; para publicarlas, pulsa **Merge**. Aprueba o cierra el Pull Request antes del siguiente importe.
+
 - Los avisos ya importados (o descartados) se anotan en `data/servir-vistos.json` y no vuelven a aparecer.
-- Si el portal cambia y el importador falla, GitHub te avisa por correo.
-- Para correrlo en tu PC: `npm run importar` (o `node scripts/importar-servir.mjs --salida carpeta-de-prueba`).
+- La primera vez inicia sesión en GitHub CLI: `gh auth login`.
+- **Para que corra solo cada mañana:** abre el *Programador de tareas* de Windows → *Crear tarea básica* →
+  "Importar convocatorias" → *Diariamente* a las 7:00 → *Iniciar un programa* → elige `importar-convocatorias.bat`
+  y en *Agregar argumentos* escribe `auto` (así no espera a que pulses una tecla). La PC debe estar encendida.
 
 ## Formulario "Publica tu oferta" (para empresas)
 

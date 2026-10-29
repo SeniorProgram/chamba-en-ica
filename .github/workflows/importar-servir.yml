@@ -1,11 +1,10 @@
-# Cada mañana busca convocatorias nuevas de la región Ica en Talento Perú (SERVIR)
-# y abre (o actualiza) un Pull Request con ellas. Nada se publica hasta que lo apruebes (Merge).
+# Importador de Talento Perú (SERVIR) en GitHub. OJO: SERVIR rechaza (403) las conexiones de GitHub,
+# así que el importe diario se hace desde la PC con importar-convocatorias.bat (ver README).
+# Se deja solo con el botón "Run workflow" por si SERVIR lo permite en el futuro.
 name: Importar convocatorias de SERVIR
 
 on:
-  schedule:
-    - cron: "0 11 * * *" # 6:00 a. m. hora de Lima
-  workflow_dispatch: # botón "Run workflow" para correrlo cuando quieras
+  workflow_dispatch: # solo a mano (botón "Run workflow")
 
 permissions:
   contents: write
