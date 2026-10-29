@@ -68,7 +68,7 @@ export default async function OfertaPage({ params }: Props) {
       )}
       {esEjemplo && (
         <p className="vacio" style={{ marginTop: 24 }}>
-          👀 Vista de ejemplo: así se verá una oferta. Se genera desde <code>content/ofertas/_plantilla.md</code> y no
+          👀 Vista de ejemplo: así se verá una oferta. Se genera desde <code>content/_plantilla-oferta.md</code> y no
           aparece en los listados ni en Google.
         </p>
       )}

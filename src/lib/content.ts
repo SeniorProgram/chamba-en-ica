@@ -110,9 +110,9 @@ function toOferta({ slug, data, body }: { slug: string; data: Record<string, unk
   };
 }
 
-/** Página de muestra hecha con content/ofertas/_plantilla.md (no aparece en listados ni en Google). */
+/** Página de muestra hecha con content/_plantilla-oferta.md (no aparece en listados, en Google ni en el panel). */
 export function getOfertaEjemplo(): Oferta {
-  const raw = fs.readFileSync(path.join(CONTENT, "ofertas", "_plantilla.md"), "utf8");
+  const raw = fs.readFileSync(path.join(CONTENT, "_plantilla-oferta.md"), "utf8");
   const { data, content } = matter(raw);
   return toOferta({ slug: "ejemplo", data, body: content });
 }

@@ -29,7 +29,8 @@ npm start        # sirve la carpeta out/ para revisarla
 ```
 content/
   guias/       → artículos del Centro de información (un .md por guía)
-  ofertas/     → ofertas de empleo (un .md por oferta) + _plantilla.md
+  ofertas/     → ofertas de empleo (un .md por oferta)
+  _plantilla-oferta.md → modelo de oferta (vista en /ofertas/ejemplo/)
   paginas/     → Sobre nosotros, Contacto, Política de privacidad
 src/
   site.config.ts   → nombre, URL, correo, categorías y provincias
@@ -40,7 +41,10 @@ src/
 
 ## Publicar una oferta nueva
 
-1. Copia `content/ofertas/_plantilla.md` y renómbrala, por ejemplo `cajero-tottus-ica.md`
+Lo más fácil es usar el panel: entra a `/admin/`, elige **Ofertas de empleo → Nuevo** y llena el formulario.
+También puedes hacerlo a mano:
+
+1. Copia `content/_plantilla-oferta.md` dentro de `content/ofertas/` y renómbrala, por ejemplo `cajero-tottus-ica.md`
    (el nombre del archivo será la dirección: `/ofertas/cajero-tottus-ica/`).
 2. Llena los datos de arriba: título, empresa, categoría, provincia, fechas, sueldo y **enlace a la fuente oficial**.
 3. Escribe requisitos, funciones y cómo postular.
