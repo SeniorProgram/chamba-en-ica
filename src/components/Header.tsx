@@ -23,8 +23,10 @@ export default function Header() {
   return (
     <header className="header">
       <div className="contenedor header-in">
-        <Link href="/" className="logo">
-          Chamba<span> en </span>Ica
+        <Link href="/" className="logo" aria-label="Chamba en Ica, inicio">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-icono.svg" alt="" width={36} height={36} className="logo-icono" />
+          <span className="logo-texto">Chamba<span> en </span>Ica</span>
         </Link>
         <button
           className="menu-btn"
@@ -40,7 +42,7 @@ export default function Header() {
               {e.label}
             </Link>
           ))}
-          <Link href="/publica/" className="btn btn-contorno">
+          <Link href="/publica/" className="btn btn-contorno" aria-current={activo("/publica/") ? "page" : undefined}>
             Publica tu oferta
           </Link>
         </nav>

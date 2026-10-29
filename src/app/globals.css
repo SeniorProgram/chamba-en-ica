@@ -175,8 +175,29 @@ body > main {
   color: var(--titulo);
   text-decoration: none;
 }
-.logo span {
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-icono {
+  display: block;
+  border-radius: 9px;
+  transition: transform 0.2s ease;
+}
+.logo:hover .logo-icono {
+  transform: rotate(-6deg);
+}
+.logo-texto span {
   color: var(--naranja);
+}
+.pie-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pie-marca img {
+  border-radius: 8px;
 }
 .nav {
   display: flex;
@@ -192,6 +213,12 @@ body > main {
 .nav a:hover,
 .nav a[aria-current="page"] {
   color: var(--titulo);
+}
+/* El botón "Publica tu oferta" se rellena al pasar el cursor: su texto debe quedar claro */
+.nav a.btn-contorno:hover,
+.nav a.btn-contorno[aria-current="page"] {
+  background: var(--titulo);
+  color: var(--fondo);
 }
 .menu-btn {
   display: none;

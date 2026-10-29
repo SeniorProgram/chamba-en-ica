@@ -7,7 +7,11 @@ export default function Footer() {
       <div className="contenedor">
         <div className="pie-grid">
           <div>
-            <h3>{site.name}</h3>
+            <h3 className="pie-marca">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo-icono.svg" alt="" width={32} height={32} />
+              {site.name}
+            </h3>
             <p>Convocatorias y ofertas de trabajo en Ica, Chincha, Pisco, Nasca y Palpa, verificadas y explicadas paso a paso.</p>
             <p className="pie-aviso">
               <strong>Nunca cobramos por postular.</strong> Si te piden dinero por un puesto, es estafa.
