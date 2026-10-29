@@ -10,6 +10,9 @@ sueldo: "S/ 1,130"
 fuente: "https://www.gob.pe/35478-postular-a-las-oportunidades-laborales-de-provias"
 resumen: "Convocatoria de Proyecto Especial de Infraestructura de Transporte Nacional - Provias Nacional en Nazca: 1 vacante, sueldo de S/ 1,130. Postula hasta el 30/10/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: secundaria
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

@@ -10,6 +10,9 @@ sueldo: "S/ 2,404.19"
 fuente: "https://www.inpe.gob.pe/convocatorias.html"
 resumen: "Convocatoria de Oficina Regional Lima - INPE en Ica: 1 vacante, sueldo de S/ 2,404.19. Postula hasta el 05/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: menos-1
+educacion: tecnico
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

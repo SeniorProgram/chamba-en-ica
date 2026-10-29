@@ -10,6 +10,9 @@ sueldo: "S/ 4,000"
 fuente: "https://portal.unatech.edu.pe/"
 resumen: "Convocatoria de Universidad Nacional Tecnológica de Chincha en Chincha Alta: 1 vacante, sueldo de S/ 4,000. Postula hasta el 09/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: universitario
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

@@ -10,6 +10,9 @@ sueldo: "S/ 1,414.19"
 fuente: "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml"
 resumen: "Convocatoria de Unidad Ejecutora 304 Educacion Palpa en Palpa: 1 vacante, sueldo de S/ 1,414.19. Postula hasta el 10/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: tecnico
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

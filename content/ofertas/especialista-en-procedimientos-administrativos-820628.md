@@ -10,6 +10,9 @@ sueldo: "S/ 4,864.19"
 fuente: "https://www.facebook.com/p/Unidad-de-Gesti%C3%B3n-Educativa-Local-Chincha-61592740835634/"
 resumen: "Convocatoria de Unidad Ejecutora 301 Educa Chncha Pisco en Chincha Alta: 1 vacante, sueldo de S/ 4,864.19. Postula hasta el 03/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: universitario
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

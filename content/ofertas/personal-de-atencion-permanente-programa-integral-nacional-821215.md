@@ -10,6 +10,9 @@ sueldo: "S/ 2,000"
 fuente: "https://www.inabif.gob.pe/portalweb/convocatoria_v3.php"
 resumen: "Convocatoria de Programa Integral Nacional para el Bienestar Familiar - INABIF en Alto Laran: 1 vacante, sueldo de S/ 2,000. Postula hasta el 04/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: tecnico
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

@@ -10,6 +10,9 @@ sueldo: "S/ 3,000"
 fuente: "https://www.migraciones.gob.pe/oportunidades_laborales_2026/"
 resumen: "Convocatoria de Superintendencia Nacional de Migraciones - Migraciones en Ica: 1 vacante, sueldo de S/ 3,000. Postula hasta el 30/10/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 3-mas
+educacion: tecnico
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

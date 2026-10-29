@@ -10,6 +10,9 @@ sueldo: "S/ 3,064.19"
 fuente: "http://www.ugelnasca.gob.pe/2015/cl/cas"
 resumen: "Convocatoria de Unidad de Gestion Educativa Local Nazca en Nazca: 1 vacante, sueldo de S/ 3,064.19. Postula hasta el 11/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: menos-1
+educacion: universitario
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

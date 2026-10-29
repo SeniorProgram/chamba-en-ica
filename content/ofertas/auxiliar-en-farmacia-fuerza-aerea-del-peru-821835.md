@@ -10,6 +10,9 @@ sueldo: "S/ 2,739.40"
 fuente: "https://www.gob.pe/institucion/fap/informes-publicaciones/tipos/107-concurso"
 resumen: "Convocatoria de Fuerza Aerea del Peru en San Andres: 1 vacante, sueldo de S/ 2,739.40. Postula hasta el 06/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: secundaria
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

@@ -10,6 +10,7 @@ sueldo: "A tratar"
 fuente: "https://www.senasa.gob.pe/senasa/proceso-cas/"
 resumen: "Convocatoria de Servicio Nacional de Sanidad Agraria en Santiago: 1 vacante, sueldo a tratar. Postula hasta el 02/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

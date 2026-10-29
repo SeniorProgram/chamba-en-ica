@@ -10,6 +10,9 @@ sueldo: "S/ 5,364.19"
 fuente: "https://convocatoria.minjus.gob.pe/convocatoria/public/index.xhtml"
 resumen: "Convocatoria de Ministerio de Justicia y Derechos Humanos en Ica: 1 vacante, sueldo de S/ 5,364.19. Postula hasta el 09/11/2026."
 modalidad: presencial
+jornada: tiempo-completo
+experiencia: 1-2
+educacion: universitario
 vacantes: 1
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"

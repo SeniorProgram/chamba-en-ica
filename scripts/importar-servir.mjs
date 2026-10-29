@@ -12,6 +12,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { inferirEducacion, inferirExperiencia, inferirJornada } from "./inferir-campos.mjs";
 
 const RAIZ = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
 const args = process.argv.slice(2);
@@ -206,6 +207,13 @@ const yaml = (s) => `"${String(s ?? "").replace(/\\/g, "\\\\").replace(/"/g, '\\
 const viñeta = (x) => x.replace(/^[¿•·\-–*]\s*/, "").replace(/\s*[¿•]\s*/g, "\n- ").trim();
 
 function aMarkdown(o, d, provincia, lugar) {
+  // Experiencia, estudios y jornada vienen escritos en los requisitos: se deducen del texto
+  const textoDe = (clave) => (d.secciones[clave] ?? []).join(" ");
+  const experiencia = inferirExperiencia(textoDe("EXPERIENCIA"));
+  const educacion = inferirEducacion(textoDe("FORMACIÓN ACADÉMICA"));
+  const jornada = inferirJornada(`${o.convocatoria ?? ""} ${Object.values(d.secciones).flat().join(" ")}`, true);
+  const opcionales = [jornada && `jornada: ${jornada}`, experiencia && `experiencia: ${experiencia}`, educacion && `educacion: ${educacion}`]
+    .filter(Boolean).map((x) => x + "\n").join("");
   const fuente = d.enlace ?? PORTAL;
   const titulo = tipoOracion(o.puesto);
   const entidad = tipoNombre(o.entidad);
@@ -237,7 +245,7 @@ sueldo: ${yaml(sueldo)}
 fuente: ${yaml(fuente)}
 resumen: ${yaml(resumen)}
 modalidad: presencial
-vacantes: ${o.vacantes ?? ""}
+${opcionales}vacantes: ${o.vacantes ?? ""}
 # Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
 origen: "Talento Perú (SERVIR)"
 servir_aviso: ${yaml(d.aviso ?? "")}
