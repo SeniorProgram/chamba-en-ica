@@ -1,0 +1,615 @@
+@import "@fontsource-variable/inter";
+
+/* ---------- Colores y medidas (los mismos del diseño en WordPress) ---------- */
+:root {
+  --azul: #0b3d91;
+  --azul-2: #1d5bbf;
+  --naranja: #f97316;
+  --naranja-hover: #ea580c;
+  --verde: #16a34a;
+  --rojo: #dc2626;
+
+  --fondo: #ffffff;
+  --fondo-suave: #eef3fb;
+  --superficie: #ffffff;
+  --texto: #0f1b2d;
+  --texto-suave: #5b6b82;
+  --borde: #e5e9f0;
+  --titulo: var(--azul);
+  --pie: #0f1b2d;
+
+  --radio: 16px;
+  --sombra: 0 10px 30px -12px rgba(11, 61, 145, 0.25);
+  --ancho: 1100px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0b1220;
+    --fondo-suave: #111a2e;
+    --superficie: #131d33;
+    --texto: #e6ecf5;
+    --texto-suave: #9aa8bd;
+    --borde: #22304a;
+    --titulo: #8db4ff;
+    --pie: #070c16;
+    --sombra: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: var(--titulo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--naranja);
+}
+h1,
+h2,
+h3 {
+  color: var(--titulo);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+img {
+  max-width: 100%;
+}
+.contenedor {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.angosto {
+  max-width: 760px;
+}
+.muted {
+  color: var(--texto-suave);
+}
+.centro {
+  text-align: center;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0.7em 1.6em;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-naranja {
+  background: var(--naranja);
+  color: #fff;
+}
+.btn-naranja:hover {
+  background: var(--naranja-hover);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px var(--naranja);
+}
+.btn-contorno {
+  border-color: var(--titulo);
+  color: var(--titulo);
+  background: transparent;
+}
+.btn-contorno:hover {
+  background: var(--titulo);
+  color: var(--fondo);
+}
+.chip {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.35em 1.1em;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+.chip:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Encabezado ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--fondo) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+.header-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 64px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--titulo);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--naranja);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--titulo);
+}
+.menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 6px 10px;
+  color: var(--texto);
+  font-size: 18px;
+  cursor: pointer;
+}
+@media (max-width: 860px) {
+  .menu-btn {
+    display: block;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--borde);
+    padding: 8px 16px 16px;
+  }
+  .nav.abierto {
+    display: flex;
+    animation: bajar 0.25s ease;
+  }
+  .nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borde);
+  }
+  .nav .btn {
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+@keyframes bajar {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* ---------- Portada ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--azul) 0%, var(--azul-2) 100%);
+  color: #fff;
+  border-radius: 0 0 56px 56px;
+  padding: 88px 16px 80px;
+  text-align: center;
+}
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 auto 12px;
+  max-width: 760px;
+}
+.hero p {
+  color: #dce6f7;
+  margin: 0 auto;
+  max-width: 600px;
+}
+/* Círculos decorativos que flotan lentamente */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  animation: flotar 14s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -160px;
+  left: -120px;
+}
+.hero::after {
+  width: 300px;
+  height: 300px;
+  bottom: -140px;
+  right: -60px;
+  background: rgba(249, 115, 22, 0.15);
+  animation-delay: -7s;
+}
+.hero > * {
+  position: relative;
+}
+@keyframes flotar {
+  50% {
+    transform: translate(30px, 20px) scale(1.08);
+  }
+}
+.buscador {
+  display: flex;
+  max-width: 620px;
+  margin: 32px auto 0;
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+.buscador input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 0 18px;
+  font: inherit;
+  font-size: 16px;
+  background: transparent;
+  color: #0f1b2d;
+}
+.provincias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.provincias-label {
+  font-size: 14px;
+  margin-top: 28px !important;
+}
+
+/* ---------- Secciones y tarjetas ---------- */
+.seccion {
+  padding: 72px 0;
+}
+.seccion-suave {
+  background: var(--fondo-suave);
+}
+.seccion h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin: 0 0 8px;
+}
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.tarjeta {
+  display: block;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 24px;
+  text-decoration: none;
+  color: var(--texto);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+  border-color: color-mix(in srgb, var(--titulo) 35%, var(--borde));
+  color: var(--texto);
+}
+.tarjeta h3 {
+  font-size: 18px;
+  margin: 8px 0 6px;
+}
+.tarjeta p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--texto-suave);
+}
+.tarjeta .icono {
+  font-size: 28px;
+}
+.tarjeta .meta {
+  font-size: 13px;
+  color: var(--texto-suave);
+  margin-top: 12px;
+}
+.ventajas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+.ventajas strong {
+  display: block;
+  color: var(--titulo);
+}
+.ventajas span {
+  font-size: 15px;
+  color: var(--texto-suave);
+}
+.vacio {
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* ---------- Etiquetas de estado ---------- */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 10px;
+  background: var(--fondo-suave);
+  color: var(--titulo);
+}
+.badge-verde {
+  background: color-mix(in srgb, var(--verde) 15%, transparent);
+  color: var(--verde);
+}
+.badge-rojo {
+  background: color-mix(in srgb, var(--rojo) 15%, transparent);
+  color: var(--rojo);
+}
+
+/* ---------- Artículos ---------- */
+.cabecera-pagina {
+  padding: 56px 0 16px;
+}
+.cabecera-pagina h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 8px 0 12px;
+}
+.migas {
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+.migas a {
+  color: var(--texto-suave);
+}
+.prosa {
+  padding-bottom: 64px;
+}
+.prosa h2 {
+  font-size: 1.45rem;
+  margin: 2em 0 0.6em;
+}
+.prosa h3 {
+  font-size: 1.15rem;
+  margin: 1.6em 0 0.5em;
+}
+.prosa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+.prosa th,
+.prosa td {
+  border: 1px solid var(--borde);
+  padding: 10px 14px;
+  text-align: left;
+}
+.prosa th {
+  background: var(--fondo-suave);
+}
+.prosa blockquote {
+  margin: 1.2em 0;
+  padding: 12px 20px;
+  border-left: 4px solid var(--naranja);
+  background: var(--fondo-suave);
+  border-radius: 0 12px 12px 0;
+}
+.prosa li {
+  margin: 0.3em 0;
+}
+.aviso {
+  font-size: 14px;
+  color: var(--texto-suave);
+  border-top: 1px solid var(--borde);
+  padding-top: 16px;
+  margin-top: 40px;
+}
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  background: var(--fondo-suave);
+  border-radius: var(--radio);
+  padding: 20px;
+  margin: 8px 0 32px;
+  font-size: 15px;
+}
+.ficha b {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--texto-suave);
+}
+
+/* ---------- Publicidad ---------- */
+.anuncio {
+  margin: 32px 0;
+  min-height: 100px;
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: var(--pie);
+  color: #cbd5e1;
+  padding: 56px 0 32px;
+  font-size: 15px;
+}
+.pie a {
+  color: #fff;
+  text-decoration: none;
+}
+.pie a:hover {
+  color: var(--naranja);
+}
+.pie h3 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.pie ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.pie-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 760px) {
+  .pie-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.pie-aviso {
+  color: #fdba74;
+  font-size: 14px;
+}
+.pie-copy {
+  border-top: 1px solid #334155;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ---------- Animaciones al hacer scroll ---------- */
+/* Solo se ocultan si hay JavaScript; sin JS el contenido se ve normal */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--retraso, 0ms);
+}
+.js .revelar.visible {
+  opacity: 1;
+  transform: none;
+}
+.entrada {
+  animation: entrar 0.8s ease both;
+}
+.entrada-2 {
+  animation-delay: 0.12s;
+}
+.entrada-3 {
+  animation-delay: 0.24s;
+}
+.entrada-4 {
+  animation-delay: 0.36s;
+}
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Respeta a quienes desactivan las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .js .revelar {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Filtros de ofertas ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+.filtro {
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.35em 1em;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--texto);
+  background: var(--superficie);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.filtro:hover {
+  transform: translateY(-2px);
+  border-color: var(--titulo);
+  color: var(--titulo);
+}
+.filtro.activo {
+  background: var(--titulo);
+  border-color: var(--titulo);
+  color: var(--fondo);
+}
