@@ -1993,72 +1993,242 @@ main:has(> .pagina) {
 }
 
 /* ---------- Ficha de oferta ---------- */
-.oferta-cab {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 14px;
-}
-.oferta-cab .articulo-titulo {
-  margin: 0 0 2px;
-}
-.oferta-cab .oc-empresa {
-  white-space: normal;
-}
 .oc-logo-grande {
-  width: 68px;
-  height: 68px;
-  font-size: 22px;
+  width: 72px;
+  height: 72px;
+  font-size: 23px;
   border-radius: 16px;
 }
-.oferta-etiquetas {
+/* Cabecera de ancho completo: logo, puesto y acciones */
+.oferta-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.oferta-encabezado-texto {
+  flex: 1;
+  min-width: 0;
+}
+.oferta-encabezado h1 {
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  margin: 0 0 4px;
+}
+.oferta-encabezado p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin: 16px 0 4px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--borde);
-}
-.datos-oferta {
+  gap: 4px 10px;
   margin: 0;
-  display: grid;
-}
-.datos-oferta > div {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2px 12px;
-  padding: 9px 0;
-  border-bottom: 1px dashed var(--borde);
   font-size: 14px;
 }
-.datos-oferta > div:last-child {
-  border-bottom: 0;
+.oferta-encabezado .oc-empresa {
+  margin: 0;
+  white-space: normal;
 }
-.datos-oferta dt {
+.oferta-encabezado p a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.separador {
+  color: var(--borde);
+}
+.acciones-redondas {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.accion-redonda {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--texto);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.15s ease-out;
+}
+.accion-redonda:hover {
+  background: var(--fondo-suave);
+  color: var(--titulo);
+}
+.accion-redonda:active {
+  transform: scale(0.92);
+}
+.accion-guardar[aria-pressed="true"] {
+  color: var(--naranja);
+}
+.accion-guardar[aria-pressed="true"] .icono {
+  fill: currentColor;
+}
+/* Mensaje corto ("Enlace copiado") */
+.toast {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  white-space: nowrap;
+  background: var(--texto);
+  color: var(--fondo);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.toast.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Pestañas */
+.pestanas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.pestanas button {
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  padding: 14px 10px;
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 transparent;
+  transition: color 0.2s, box-shadow 0.2s;
+}
+.pestanas button:hover {
+  color: var(--titulo);
+}
+.pestanas button[aria-selected="true"] {
+  color: var(--titulo);
+  box-shadow: inset 0 -3px 0 var(--naranja);
+}
+.pestanas button:focus-visible {
+  outline: 2px solid var(--titulo);
+  outline-offset: -4px;
+}
+
+/* Detalle */
+.detalle-oferta .oc-top {
+  padding-right: 0;
+}
+.detalle-lugar {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 12px 0 0;
+  font-size: 15px;
   color: var(--texto-suave);
 }
-.datos-oferta dd {
-  margin: 0;
-  text-align: right;
+.esenciales {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+.esenciales > div {
+  background: var(--fondo-suave);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.esenciales dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-suave);
 }
-.dato-sueldo dd {
-  color: var(--verde);
-  font-size: 16px;
+.esenciales dt .icono {
+  width: 15px;
+  height: 15px;
+  color: var(--titulo);
+}
+.esenciales dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+.detalle-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  margin: 26px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--borde);
+}
+.detalle-oferta .prosa h2,
+.detalle-oferta .prosa > h2:first-child {
+  font-size: 1.15rem;
+  margin-top: 1.4em;
+}
+
+/* Tarjeta para postular */
+.panel-postular {
+  padding: 20px;
+}
+.postular-etiqueta {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+.postular-sueldo {
+  margin: 0 0 12px;
+  font-size: 1.7rem;
   font-weight: 800;
+  line-height: 1.2;
+  color: var(--verde);
 }
-.acciones-oferta {
+.postular-datos {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--borde);
   display: grid;
   gap: 8px;
-  margin-top: 14px;
+  font-size: 14px;
 }
-.acciones-oferta .btn {
+.postular-datos li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.postular-datos .icono {
+  color: var(--texto-suave);
+}
+.panel-postular .btn-postular {
+  display: flex;
   justify-content: center;
+  width: 100%;
   border-radius: 12px;
+  padding: 0.85em 1em;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.panel-postular .btn-guardar {
+  width: 100%;
+}
+.postular-nota {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--texto-suave);
 }
 .btn-guardar {
   display: flex;
@@ -2090,23 +2260,100 @@ main:has(> .pagina) {
 .btn-guardar[aria-pressed="true"] .icono {
   fill: currentColor;
 }
-.panel-alerta {
+.nota-seguridad {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: flex-start;
-  font-size: 14px;
-  line-height: 1.45;
-  color: var(--texto);
-  text-decoration: none;
-  border-color: color-mix(in srgb, var(--naranja) 40%, var(--borde));
-  background: color-mix(in srgb, var(--naranja) 7%, var(--superficie));
+  margin: 0;
+  padding: 0 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--texto-suave);
 }
-.panel-alerta .icono {
+.nota-seguridad .icono {
   color: var(--naranja-hover);
+  margin-top: 1px;
 }
-.panel-alerta:hover {
+.nota-seguridad strong {
   color: var(--texto);
-  border-color: var(--naranja);
+}
+.panel-entidad dl {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.panel-entidad dt {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--texto);
+}
+.panel-entidad dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+/* Barra fija para postular (solo celular) */
+.barra-postular {
+  display: none;
+}
+@media (max-width: 960px) {
+  .barra-postular {
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: var(--superficie);
+    border-top: 1px solid var(--borde);
+    box-shadow: 0 -10px 24px -16px rgba(0, 0, 0, 0.35);
+  }
+  .barra-postular small {
+    display: block;
+    font-size: 12px;
+    color: var(--texto-suave);
+  }
+  .barra-postular strong {
+    color: var(--verde);
+    font-size: 17px;
+  }
+  .barra-postular .btn {
+    border-radius: 12px;
+  }
+  .pagina-oferta .layout-der {
+    gap: 16px;
+  }
+  /* El botón "Postular" de la barra baja hasta esta tarjeta */
+  .panel-postular {
+    scroll-margin-top: 80px;
+  }
+}
+@media (max-width: 700px) {
+  .oferta-encabezado {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px 14px;
+    padding: 16px;
+  }
+  .oferta-encabezado .acciones-redondas {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    margin: -4px -6px -8px;
+    border-top: 1px solid var(--borde);
+    padding-top: 4px;
+  }
+  .oc-logo-grande {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
+  .pestanas button {
+    font-size: 14px;
+    padding: 12px 6px;
+  }
 }
 
 /* ---------- Publica, contacto y error ---------- */
@@ -2187,11 +2434,6 @@ main:has(> .pagina) {
   }
   .guia-fila .guia-img {
     height: auto;
-  }
-  .oc-logo-grande {
-    width: 52px;
-    height: 52px;
-    font-size: 17px;
   }
   .pagina-inicio {
     padding-top: 24px;

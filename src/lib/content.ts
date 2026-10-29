@@ -90,6 +90,8 @@ export type Oferta = {
   vence: string;
   sueldo: string;
   fuente: string;
+  /** De dónde se tomó el aviso (ej. Talento Perú). Vacío si lo publicó la empresa */
+  origen: string;
   resumen: string;
   html: string;
   // Opcionales (para los filtros); vacíos si la oferta no los indica
@@ -129,6 +131,7 @@ function toOferta({ slug, data, body }: { slug: string; data: Record<string, unk
     vence: toDate(data.vence),
     sueldo: String(data.sueldo ?? "A tratar"),
     fuente: String(data.fuente ?? ""),
+    origen: texto(data.origen),
     resumen: String(data.resumen ?? ""),
     html: marked.parse(body) as string,
   };

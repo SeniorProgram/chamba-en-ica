@@ -166,7 +166,8 @@ export function EstadoBadge({ vence, fecha }: { vence: string; fecha: string }) 
 /* ---------- Íconos de línea (mismo trazo en todo el sitio) ---------- */
 export type NombreIcono =
   | "lupa" | "pin" | "capas" | "edificio" | "medalla" | "birrete" | "reloj" | "calendario" | "billete"
-  | "flecha" | "cerrar" | "basura" | "ajustes" | "corazon" | "personas" | "escudo" | "libro" | "enlace" | "check" | "correo" | "derecha";
+  | "flecha" | "cerrar" | "basura" | "ajustes" | "corazon" | "personas" | "escudo" | "libro" | "enlace" | "check" | "correo" | "derecha"
+  | "alerta" | "compartir" | "documento";
 
 const TRAZOS: Record<NombreIcono, ReactNode> = {
   lupa: <><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></>,
@@ -190,6 +191,9 @@ const TRAZOS: Record<NombreIcono, ReactNode> = {
   enlace: <><path d="M14 4h6v6M20 4l-9 9" /><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></>,
   check: <path d="m5 12 5 5 9-10" />,
   correo: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>,
+  alerta: <><path d="M10.3 4.1 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.1a2 2 0 0 0-3.4 0Z" /><path d="M12 9.5v4M12 17h.01" /></>,
+  compartir: <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.6M8.2 13.2l7.6 4.6" /></>,
+  documento: <><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></>,
 };
 
 export function Icono({ nombre, tam = 18 }: { nombre: NombreIcono; tam?: number }) {

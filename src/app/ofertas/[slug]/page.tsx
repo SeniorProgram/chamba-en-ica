@@ -6,6 +6,7 @@ import { formatFecha, getOferta, getOfertaEjemplo, getOfertas } from "@/lib/cont
 import Anuncio from "@/components/Anuncio";
 import Cabecera from "@/components/Cabecera";
 import { EstadoBadge, GuardarOferta, Icono, ListaTarjetas, LogoEmpresa, type NombreIcono } from "@/components/OfertaCard";
+import { AccionesOferta, PestanasOferta } from "@/components/AccionesOferta";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -62,30 +63,76 @@ export default async function OfertaPage({ params }: Props) {
     },
   };
 
-  // Ofertas parecidas: de la misma categoría (las más recientes)
-  const parecidas = esEjemplo ? [] : getOfertas()
-    .filter((x) => x.slug !== o.slug && x.categoria === o.categoria)
-    .slice(0, 3)
-    .map(({ html: _html, ...resto }) => resto);
+  // Empleos relacionados: primero los de la misma categoría, luego los de la misma provincia
+  const otras = esEjemplo ? [] : getOfertas().filter((x) => x.slug !== o.slug);
+  const relacionadas = [
+    ...otras.filter((x) => x.categoria === o.categoria),
+    ...otras.filter((x) => x.categoria !== o.categoria && x.provincia === o.provincia),
+  ].slice(0, 6).map(({ html: _html, ...resto }) => resto);
 
-  const datos: { icono: NombreIcono; etiqueta: string; valor?: string | number | null; clase?: string }[] = [
-    { icono: "billete", etiqueta: "Sueldo", valor: o.sueldo, clase: "dato-sueldo" },
-    { icono: "pin", etiqueta: "Lugar", valor: `${o.distrito && o.distrito !== prov?.nombre ? `${o.distrito}, ` : ""}${prov?.nombre ?? ""}` },
-    { icono: "edificio", etiqueta: "Modalidad", valor: nombre(modalidades, o.modalidad) },
+  const lugar = `${o.distrito && o.distrito !== prov?.nombre ? `${o.distrito}, ` : ""}${prov?.nombre ?? ""}, Ica`;
+  const modalidad = nombre(modalidades, o.modalidad);
+  const dominio = (() => { try { return new URL(o.fuente).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+
+  // Ruta de migas: cada paso lleva a la búsqueda con ese filtro
+  const migas = [
+    { href: "/empleos/", texto: "Empleos" },
+    { href: `/empleos/${o.categoria}/`, texto: cat?.nombre ?? "" },
+    { href: `/provincia/${o.provincia}/`, texto: prov?.nombre ?? "" },
+    ...(modalidad ? [{ href: `/empleos/?mod=${o.modalidad}`, texto: modalidad }] : []),
+    { texto: o.title },
+  ];
+
+  const esenciales: { icono: NombreIcono; etiqueta: string; valor?: string | number | null }[] = [
     { icono: "reloj", etiqueta: "Jornada", valor: nombre(jornadas, o.jornada) },
+    { icono: "edificio", etiqueta: "Modalidad", valor: modalidad },
     { icono: "medalla", etiqueta: "Experiencia", valor: nombre(experiencias, o.experiencia) },
     { icono: "birrete", etiqueta: "Estudios", valor: nombre(educaciones, o.educacion) },
     { icono: "personas", etiqueta: "Vacantes", valor: o.vacantes },
     { icono: "calendario", etiqueta: "Postula hasta", valor: o.vence ? formatFecha(o.vence) : "Sin fecha límite" },
   ];
 
+  const detalle = (
+    <article className="panel panel-articulo detalle-oferta">
+      <div className="oc-top">
+        <EstadoBadge vence={o.vence} fecha={o.date} />
+        {o.vacantes && o.vacantes > 1 ? <span className="oc-chip"><Icono nombre="personas" /> Múltiples vacantes</span> : null}
+      </div>
+      <p className="detalle-lugar"><Icono nombre="pin" /> {lugar}</p>
+
+      <dl className="esenciales">
+        {esenciales.filter((d) => d.valor).map((d) => (
+          <div key={d.etiqueta}>
+            <dt><Icono nombre={d.icono} /> {d.etiqueta}</dt>
+            <dd>{d.valor}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <Anuncio />
+      <h2 className="detalle-titulo"><Icono nombre="documento" tam={22} /> Descripción del puesto</h2>
+      <div className="prosa" dangerouslySetInnerHTML={{ __html: o.html }} />
+    </article>
+  );
+
+  const listaRelacionadas = relacionadas.length ? (
+    <>
+      <ListaTarjetas ofertas={relacionadas} />
+      <p className="centro" style={{ marginTop: 20 }}>
+        <Link href={`/empleos/${o.categoria}/`} className="enlace-flecha">Ver más en {cat?.nombre} <Icono nombre="derecha" tam={16} /></Link>
+      </p>
+    </>
+  ) : (
+    <p className="vacio">Por ahora no hay otras ofertas parecidas. <Link href="/empleos/">Ver todas las ofertas</Link></p>
+  );
+
   return (
-    <div className="pagina">
+    <div className="pagina pagina-oferta">
       {!esEjemplo && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPosting) }} />
       )}
       <div className="contenedor contenedor-ancho">
-        <Cabecera migas={[{ href: "/empleos/", texto: "Empleos" }, { href: `/empleos/${o.categoria}/`, texto: cat?.nombre ?? "" }, { texto: o.title }]} />
+        <Cabecera migas={migas} />
         {esEjemplo && (
           <p className="vacio" style={{ marginBottom: 16 }}>
             👀 Vista de ejemplo: así se verá una oferta. Se genera desde <code>content/_plantilla-oferta.md</code> y no
@@ -93,63 +140,72 @@ export default async function OfertaPage({ params }: Props) {
           </p>
         )}
 
+        <header className="panel oferta-encabezado entrada">
+          <LogoEmpresa empresa={o.empresa} grande />
+          <div className="oferta-encabezado-texto">
+            <h1>{o.title}</h1>
+            <p>
+              <span className="oc-empresa">{o.empresa}</span>
+              <span className="separador" aria-hidden>|</span>
+              <Link href={`/empleos/${o.categoria}/`}>{cat?.icono} {cat?.nombre}</Link>
+            </p>
+          </div>
+          <AccionesOferta slug={o.slug} titulo={o.title} />
+        </header>
+
         <div className="layout layout-der">
-          <article className="principal panel panel-articulo">
-            <div className="oc-top"><EstadoBadge vence={o.vence} fecha={o.date} /></div>
-            <div className="oferta-cab">
-              <LogoEmpresa empresa={o.empresa} grande />
-              <div>
-                <h1 className="articulo-titulo">{o.title}</h1>
-                <p className="oc-empresa">{o.empresa}</p>
-              </div>
-            </div>
-            <p className="oferta-etiquetas">
-              <Link href={`/empleos/${o.categoria}/`} className="atajo">{cat?.icono} {cat?.nombre}</Link>
-              <Link href={`/provincia/${o.provincia}/`} className="atajo">📍 {prov?.nombre}</Link>
-              <span className="oc-fecha">Publicado el {formatFecha(o.date)}</span>
-            </p>
-            <Anuncio />
-            <div className="prosa" dangerouslySetInnerHTML={{ __html: o.html }} />
-            <p className="aviso">
-              Chamba en Ica no participa en el proceso de selección y nunca cobra por postular. Verifica siempre los datos
-              en la fuente oficial.
-            </p>
-          </article>
+          <div className="principal">
+            <PestanasOferta detalle={detalle} relacionadas={listaRelacionadas} total={relacionadas.length} />
+          </div>
 
           <aside className="lateral lateral-pegado">
-            <div className="panel">
-              <p className="panel-titulo">Resumen de la oferta</p>
-              <dl className="datos-oferta">
-                {datos.filter((d) => d.valor).map((d) => (
-                  <div key={d.etiqueta} className={d.clase}>
-                    <dt><Icono nombre={d.icono} /> {d.etiqueta}</dt>
-                    <dd>{d.valor}</dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="acciones-oferta">
-                {o.fuente && (
-                  <a href={o.fuente} className="btn btn-naranja" target="_blank" rel="noopener noreferrer">
-                    Ver convocatoria oficial <Icono nombre="enlace" tam={16} />
-                  </a>
-                )}
-                <GuardarOferta slug={o.slug} />
-              </div>
+            <div className="panel panel-postular" id="postular">
+              <p className="postular-etiqueta">Sueldo mensual</p>
+              <p className="postular-sueldo">{o.sueldo}</p>
+              <ul className="postular-datos">
+                <li><Icono nombre="calendario" /> {o.vence ? <>Postula hasta el <strong>{formatFecha(o.vence)}</strong></> : "Sin fecha límite"}</li>
+                {o.vacantes ? <li><Icono nombre="personas" /> {o.vacantes} {o.vacantes === 1 ? "vacante" : "vacantes"}</li> : null}
+              </ul>
+              {o.fuente ? (
+                <a href={o.fuente} className="btn btn-naranja btn-postular" target="_blank" rel="noopener noreferrer">
+                  Postular en la web oficial <Icono nombre="enlace" tam={16} />
+                </a>
+              ) : (
+                <a href="#panel-detalle" className="btn btn-naranja btn-postular">Ver cómo postular</a>
+              )}
+              <GuardarOferta slug={o.slug} />
+              <p className="postular-nota">
+                Te llevamos a {dominio ? <strong>{dominio}</strong> : "la fuente oficial"}. Revisa ahí las bases y el cronograma completos.
+              </p>
             </div>
-            <Link href="/guias/como-detectar-ofertas-de-trabajo-falsas/" className="panel panel-alerta">
-              <Icono nombre="escudo" tam={22} />
-              <span><strong>Nunca pagues por postular.</strong> Aprende a reconocer una oferta falsa.</span>
-            </Link>
+
+            <p className="nota-seguridad">
+              <Icono nombre="escudo" /> <span>
+                Los requisitos y el proceso los define {o.empresa}. <strong>Nunca envíes dinero ni hagas pagos</strong> para
+                postular: ningún reclutador serio te lo pedirá. <Link href="/guias/como-detectar-ofertas-de-trabajo-falsas/">Cómo detectar una oferta falsa</Link>
+              </span>
+            </p>
+
+            <div className="panel panel-entidad">
+              <dl>
+                <div><dt>Entidad</dt><dd>{o.empresa}</dd></div>
+                <div><dt>Sector</dt><dd>{o.categoria === "convocatorias-del-estado" ? "Público" : "Privado"}</dd></div>
+                <div><dt>Ubicación</dt><dd>{lugar}</dd></div>
+                <div><dt>Publicado</dt><dd>{formatFecha(o.date)}</dd></div>
+                {(o.origen || dominio) && <div><dt>Fuente</dt><dd>{o.origen || dominio}</dd></div>}
+              </dl>
+            </div>
           </aside>
         </div>
+      </div>
 
-        {parecidas.length > 0 && (
-          <section className="seguir-leyendo">
-            <h2>Ofertas parecidas</h2>
-            <ListaTarjetas ofertas={parecidas} />
-            <p><Link href={`/empleos/${o.categoria}/`} className="enlace-flecha">Ver más en {cat?.nombre} <Icono nombre="derecha" tam={16} /></Link></p>
-          </section>
-        )}
+      {/* En el celular, el sueldo y el botón de postular quedan siempre a la mano */}
+      <div className="barra-postular">
+        <div>
+          <small>Sueldo</small>
+          <strong>{o.sueldo}</strong>
+        </div>
+        <a href="#postular" className="btn btn-naranja">Postular</a>
       </div>
     </div>
   );
