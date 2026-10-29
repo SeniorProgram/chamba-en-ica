@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Línea de tiempo de una renuncia: entregas la carta, trabajas 30 días de preaviso, último día, y la liquidación se paga dentro de 48 horas</title>
+<rect width="1200" height="520" rx="28" fill="#eef3fb"/>
+<text x="600" y="72" text-anchor="middle" font-size="40" font-weight="800" fill="#0b3d91">Los plazos de una renuncia</text>
+<line x1="140" y1="250" x2="1060" y2="250" stroke="#d6e0f0" stroke-width="12" stroke-linecap="round"/>
+<line x1="140" y1="250" x2="760" y2="250" stroke="#1d5bbf" stroke-width="12" stroke-linecap="round"/>
+
+  <circle cx="140" cy="250" r="44" fill="#0b3d91" stroke="#fff" stroke-width="8"/>
+  <text x="140" y="170" text-anchor="middle" font-size="28" font-weight="800" fill="#0b3d91">Día 0</text><text x="140" y="340" text-anchor="middle" font-size="27" font-weight="800" fill="#0f1b2d">Entregas</text><text x="140" y="376" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">la carta</text>
+  <circle cx="450" cy="250" r="44" fill="#1d5bbf" stroke="#fff" stroke-width="8"/>
+  <text x="450" y="170" text-anchor="middle" font-size="28" font-weight="800" fill="#1d5bbf">30 días</text><text x="450" y="340" text-anchor="middle" font-size="27" font-weight="800" fill="#0f1b2d">Sigues</text><text x="450" y="376" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">trabajando</text>
+  <circle cx="760" cy="250" r="44" fill="#f97316" stroke="#fff" stroke-width="8"/>
+  <text x="760" y="170" text-anchor="middle" font-size="28" font-weight="800" fill="#f97316">Día 30</text><text x="760" y="340" text-anchor="middle" font-size="27" font-weight="800" fill="#0f1b2d">Último día</text><text x="760" y="376" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">de trabajo</text>
+  <circle cx="1060" cy="250" r="44" fill="#16a34a" stroke="#fff" stroke-width="8"/>
+  <text x="1060" y="170" text-anchor="middle" font-size="28" font-weight="800" fill="#16a34a">48 horas</text><text x="1060" y="340" text-anchor="middle" font-size="27" font-weight="800" fill="#0f1b2d">Te pagan la</text><text x="1060" y="376" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">liquidación</text>
+<rect x="260" y="420" width="680" height="62" rx="20" fill="#fff7ed" stroke="#fed7aa" stroke-width="3"/><text x="600" y="461" text-anchor="middle" font-size="26" font-weight="700" fill="#ea580c">Puedes pedir que te exoneren de los 30 días</text></svg>

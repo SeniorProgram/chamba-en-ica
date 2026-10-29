@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ilustración: Racimo de uvas, una caja de cosecha y el sol sobre un campo</title>
+<defs>
+  <linearGradient id="f102" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d91"/><stop offset="1" stop-color="#1d5bbf"/></linearGradient>
+  <filter id="s102" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#06214f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#f102)"/>
+<circle cx="1080" cy="80" r="190" fill="#fff" opacity=".06"/>
+<circle cx="120" cy="590" r="230" fill="#f97316" opacity=".16"/>
+<circle cx="980" cy="560" r="90" fill="#fff" opacity=".05"/>
+<g fill="#fff" opacity=".18"><circle cx="210" cy="120" r="5"/><circle cx="250" cy="150" r="3"/><circle cx="1010" cy="330" r="4"/><circle cx="160" cy="300" r="3"/><circle cx="1100" cy="250" r="3"/></g>
+<circle cx="930" cy="170" r="80" fill="#facc15" opacity=".9"/>
+<path d="M0 500 Q300 430 600 480 T1200 460 V630 H0Z" fill="#15803d" opacity=".55"/>
+<path d="M0 540 Q300 480 600 530 T1200 520 V630 H0Z" fill="#166534" opacity=".7"/>
+<g filter="url(#s102)">
+  <path d="M540 140 q20 -50 70 -50" stroke="#65a30d" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M600 100 q70 -10 90 40 q-60 20 -90 -40Z" fill="#65a30d"/>
+  <circle cx="540" cy="180" r="38" fill="#7e22ce"/><circle cx="528" cy="168" r="9" fill="#fff" opacity=".35"/><circle cx="500" cy="225" r="38" fill="#7e22ce"/><circle cx="488" cy="213" r="9" fill="#fff" opacity=".35"/><circle cx="580" cy="225" r="38" fill="#7e22ce"/><circle cx="568" cy="213" r="9" fill="#fff" opacity=".35"/><circle cx="460" cy="275" r="38" fill="#7e22ce"/><circle cx="448" cy="263" r="9" fill="#fff" opacity=".35"/><circle cx="540" cy="275" r="38" fill="#7e22ce"/><circle cx="528" cy="263" r="9" fill="#fff" opacity=".35"/><circle cx="620" cy="275" r="38" fill="#7e22ce"/><circle cx="608" cy="263" r="9" fill="#fff" opacity=".35"/><circle cx="500" cy="325" r="38" fill="#7e22ce"/><circle cx="488" cy="313" r="9" fill="#fff" opacity=".35"/><circle cx="580" cy="325" r="38" fill="#7e22ce"/><circle cx="568" cy="313" r="9" fill="#fff" opacity=".35"/><circle cx="540" cy="375" r="38" fill="#7e22ce"/><circle cx="528" cy="363" r="9" fill="#fff" opacity=".35"/><circle cx="540" cy="425" r="38" fill="#7e22ce"/><circle cx="528" cy="413" r="9" fill="#fff" opacity=".35"/>
+</g>
+<g filter="url(#s102)" transform="translate(720 360)">
+  <path d="M0 0 h250 l-20 150 h-210Z" fill="#f97316"/>
+  <rect x="30" y="30" width="26" height="90" rx="8" fill="#ea580c"/><rect x="80" y="30" width="26" height="90" rx="8" fill="#ea580c"/><rect x="130" y="30" width="26" height="90" rx="8" fill="#ea580c"/><rect x="180" y="30" width="26" height="90" rx="8" fill="#ea580c"/>
+  <rect x="-10" y="-14" width="270" height="22" rx="8" fill="#ea580c"/>
+</g></svg>

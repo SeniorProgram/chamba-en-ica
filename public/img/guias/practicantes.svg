@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ilustración: Estudiante con birrete y un maletín de trabajo</title>
+<defs>
+  <linearGradient id="f101" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d91"/><stop offset="1" stop-color="#1d5bbf"/></linearGradient>
+  <filter id="s101" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#06214f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#f101)"/>
+<circle cx="1080" cy="80" r="190" fill="#fff" opacity=".06"/>
+<circle cx="120" cy="590" r="230" fill="#f97316" opacity=".16"/>
+<circle cx="980" cy="560" r="90" fill="#fff" opacity=".05"/>
+<g fill="#fff" opacity=".18"><circle cx="210" cy="120" r="5"/><circle cx="250" cy="150" r="3"/><circle cx="1010" cy="330" r="4"/><circle cx="160" cy="300" r="3"/><circle cx="1100" cy="250" r="3"/></g>
+<g filter="url(#s101)">
+  <circle cx="560" cy="280" r="80" fill="#fcd9b6"/>
+  <path d="M480 270 q10 -90 85 -85 q70 5 75 85 q-40 -40 -160 0Z" fill="#3f2a1d"/>
+  <path d="M400 560 q0 -170 160 -170 q160 0 160 170Z" fill="#f97316"/>
+  <path d="M530 392 l30 60 l30 -60Z" fill="#fff"/>
+  <path d="M430 175 L560 120 L690 175 L560 230Z" fill="#0f1b2d"/>
+  <rect x="510" y="190" width="100" height="40" fill="#0f1b2d"/>
+  <path d="M690 175 v70" stroke="#facc15" stroke-width="8"/><circle cx="690" cy="250" r="12" fill="#facc15"/>
+</g>
+<g filter="url(#s101)" transform="translate(790 330)">
+  <rect width="230" height="170" rx="22" fill="#7c2d12"/><rect x="0" y="60" width="230" height="16" fill="#5b210d"/>
+  <rect x="80" y="-34" width="70" height="40" rx="12" fill="none" stroke="#7c2d12" stroke-width="14"/>
+  <rect x="98" y="52" width="34" height="32" rx="6" fill="#facc15"/>
+</g>
+<g filter="url(#s101)"><circle cx="300" cy="230" r="46" fill="#16a34a"/><text x="300" y="248" text-anchor="middle" font-size="42" font-weight="800" fill="#fff">S/</text></g></svg>

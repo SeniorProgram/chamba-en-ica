@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ilustración: Carta de renuncia en un sobre y una puerta de salida</title>
+<defs>
+  <linearGradient id="f103" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d91"/><stop offset="1" stop-color="#1d5bbf"/></linearGradient>
+  <filter id="s103" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#06214f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#f103)"/>
+<circle cx="1080" cy="80" r="190" fill="#fff" opacity=".06"/>
+<circle cx="120" cy="590" r="230" fill="#f97316" opacity=".16"/>
+<circle cx="980" cy="560" r="90" fill="#fff" opacity=".05"/>
+<g fill="#fff" opacity=".18"><circle cx="210" cy="120" r="5"/><circle cx="250" cy="150" r="3"/><circle cx="1010" cy="330" r="4"/><circle cx="160" cy="300" r="3"/><circle cx="1100" cy="250" r="3"/></g>
+<g filter="url(#s103)">
+  <rect x="720" y="110" width="250" height="420" rx="12" fill="#fff"/>
+  <rect x="745" y="135" width="200" height="395" rx="6" fill="#1d5bbf" opacity=".25"/>
+  <circle cx="915" cy="335" r="12" fill="#f97316"/>
+  <rect x="790" y="70" width="110" height="34" rx="8" fill="#16a34a"/><text x="845" y="95" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">SALIDA</text>
+</g>
+<g filter="url(#s103)" transform="rotate(-8 450 360)">
+  <rect x="280" y="230" width="360" height="240" rx="20" fill="#facc15"/>
+  <path d="M280 250 L460 370 L640 250" fill="none" stroke="#ca8a04" stroke-width="10" stroke-linejoin="round"/>
+  <rect x="320" y="140" width="280" height="180" rx="12" fill="#fff"/>
+  <text x="460" y="195" text-anchor="middle" font-size="30" font-weight="800" fill="#0b3d91">RENUNCIA</text>
+  <rect x="350" y="220" width="220" height="12" rx="6" fill="#d6e0f0"/><rect x="350" y="246" width="180" height="12" rx="6" fill="#d6e0f0"/>
+</g></svg>

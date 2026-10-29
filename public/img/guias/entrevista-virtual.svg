@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ilustración: Laptop con una videollamada y un celular al lado</title>
+<defs>
+  <linearGradient id="f107" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d91"/><stop offset="1" stop-color="#1d5bbf"/></linearGradient>
+  <filter id="s107" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#06214f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#f107)"/>
+<circle cx="1080" cy="80" r="190" fill="#fff" opacity=".06"/>
+<circle cx="120" cy="590" r="230" fill="#f97316" opacity=".16"/>
+<circle cx="980" cy="560" r="90" fill="#fff" opacity=".05"/>
+<g fill="#fff" opacity=".18"><circle cx="210" cy="120" r="5"/><circle cx="250" cy="150" r="3"/><circle cx="1010" cy="330" r="4"/><circle cx="160" cy="300" r="3"/><circle cx="1100" cy="250" r="3"/></g>
+<g filter="url(#s107)">
+  <rect x="330" y="130" width="520" height="330" rx="22" fill="#0f1b2d"/>
+  <rect x="352" y="152" width="476" height="286" rx="10" fill="#334155"/>
+  <circle cx="590" cy="270" r="54" fill="#fcd9b6"/><path d="M536 262 q8 -70 58 -62 q50 8 48 62 q-40 -30 -106 0Z" fill="#3f2a1d"/>
+  <path d="M500 438 q0 -100 90 -100 q90 0 90 100Z" fill="#1d5bbf"/>
+  <rect x="700" y="170" width="110" height="80" rx="10" fill="#475569"/><circle cx="755" cy="200" r="16" fill="#e0ac84"/><path d="M728 250 q0 -30 27 -30 q27 0 27 30Z" fill="#f97316"/>
+  <path d="M290 460 h600 l-40 40 h-520Z" fill="#cbd5e1"/>
+  <circle cx="530" cy="415" r="14" fill="#dc2626"/><circle cx="590" cy="415" r="14" fill="#64748b"/><circle cx="650" cy="415" r="14" fill="#64748b"/>
+</g>
+<g filter="url(#s107)" transform="translate(900 250) rotate(8)">
+  <rect width="130" height="240" rx="20" fill="#0f1b2d"/><rect x="10" y="22" width="110" height="196" rx="10" fill="#16a34a"/>
+  <path d="M45 120 a20 20 0 1 1 40 0 v20 a20 20 0 1 1 -40 0Z" fill="#fff" opacity=".9"/>
+</g></svg>
