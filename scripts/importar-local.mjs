@@ -20,7 +20,9 @@ const COPIA = path.join(os.tmpdir(), "chamba-en-ica-importar");
 const REPO_WEB = "https://github.com/SeniorProgram/chamba-en-ica";
 
 const git = (args, cwd = RAIZ) => execFileSync("git", args, { cwd, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
-const hay = (cmd) => spawnSync(cmd, ["--version"], { stdio: "ignore", shell: process.platform === "win32" }).status === 0;
+// GitHub CLI: se llama directo (sin shell) para que los textos con espacios lleguen enteros
+const GH = [process.env.GH_PATH, "gh", "C:/Program Files/GitHub CLI/gh.exe"].find((c) => c && spawnSync(c, ["--version"], { stdio: "ignore" }).status === 0);
+const gh = (args, opciones = {}) => spawnSync(GH, args, { cwd: RAIZ, encoding: "utf8", ...opciones });
 const paso = (t) => console.log(`\n▶ ${t}`);
 
 function limpiarCopia() {
@@ -55,16 +57,16 @@ try {
     const cuerpo = path.join(os.tmpdir(), "chamba-importe-resumen.md");
     fs.writeFileSync(cuerpo, resumen, "utf8");
     let enlace = `${REPO_WEB}/compare/main...${RAMA}?expand=1`;
-    if (hay("gh")) {
-      const abierto = spawnSync("gh", ["pr", "view", RAMA, "--json", "url,state", "-q", "select(.state==\"OPEN\") | .url"], { cwd: RAIZ, encoding: "utf8", shell: process.platform === "win32" });
+    if (GH) {
+      const abierto = gh(["pr", "view", RAMA, "--json", "url,state", "-q", "select(.state==\"OPEN\") | .url"]);
       if (abierto.status === 0 && abierto.stdout.trim()) {
-        spawnSync("gh", ["pr", "edit", RAMA, "--body-file", cuerpo], { cwd: RAIZ, stdio: "ignore", shell: process.platform === "win32" });
+        gh(["pr", "edit", RAMA, "--body-file", cuerpo], { stdio: "ignore" });
         enlace = abierto.stdout.trim();
         console.log("Se actualizó el Pull Request que ya estaba abierto.");
       } else {
-        const nuevo = spawnSync("gh", ["pr", "create", "--base", "main", "--head", RAMA, "--title", "Convocatorias nuevas de Ica (Talento Perú)", "--body-file", cuerpo], { cwd: RAIZ, encoding: "utf8", shell: process.platform === "win32" });
+        const nuevo = gh(["pr", "create", "--base", "main", "--head", RAMA, "--title", "Convocatorias nuevas de Ica (Talento Perú)", "--body-file", cuerpo]);
         if (nuevo.status === 0) enlace = nuevo.stdout.trim().split("\n").pop();
-        else console.log("No se pudo crear el Pull Request con gh; ábrelo desde el enlace de abajo.");
+        else console.log("No se pudo crear el Pull Request con gh (" + (nuevo.stderr || "").trim() + "); ábrelo desde el enlace de abajo.");
       }
     } else {
       console.log("GitHub CLI (gh) no está instalado: abre el Pull Request desde el enlace.");
