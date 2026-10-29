@@ -96,3 +96,17 @@ grupo: beneficios   # beneficios | postula | cuidate
 - [ ] Cambiar `contactEmail` en `src/site.config.ts` por tu correo real.
 - [ ] Cambiar `url` en `src/site.config.ts` por tu dominio final.
 - [ ] Publicar las primeras ofertas reales.
+
+## Importación automática de convocatorias del Estado (Talento Perú)
+
+Cada mañana (6:00 a. m.) GitHub Actions corre `scripts/importar-servir.mjs`, que busca en el portal
+**Talento Perú de SERVIR** las convocatorias de la región Ica y crea una oferta por cada una, con sus
+requisitos, sueldo, fechas y el enlace oficial de la entidad.
+
+- **Nada se publica solo.** Las ofertas nuevas llegan como un **Pull Request** llamado
+  "Convocatorias nuevas de Ica (Talento Perú)". Revísalo en GitHub (pestaña *Pull requests*):
+  para descartar una oferta, borra su archivo en el Pull Request; para publicarlas, pulsa **Merge**.
+- Vercel crea una vista previa del Pull Request para que veas cómo quedan antes de aprobar.
+- Los avisos ya importados (o descartados) se anotan en `data/servir-vistos.json` y no vuelven a aparecer.
+- Si el portal cambia y el importador falla, GitHub te avisa por correo.
+- Para correrlo en tu PC: `npm run importar` (o `node scripts/importar-servir.mjs --salida carpeta-de-prueba`).

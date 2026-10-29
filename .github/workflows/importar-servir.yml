@@ -1,0 +1,43 @@
+# Cada mañana busca convocatorias nuevas de la región Ica en Talento Perú (SERVIR)
+# y abre (o actualiza) un Pull Request con ellas. Nada se publica hasta que lo apruebes (Merge).
+name: Importar convocatorias de SERVIR
+
+on:
+  schedule:
+    - cron: "0 11 * * *" # 6:00 a. m. hora de Lima
+  workflow_dispatch: # botón "Run workflow" para correrlo cuando quieras
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: importar-servir
+  cancel-in-progress: false
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Buscar convocatorias nuevas en Talento Perú
+        run: node scripts/importar-servir.mjs
+
+      - name: Abrir Pull Request para revisar
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: importar/servir
+          delete-branch: true
+          title: "Convocatorias nuevas de Ica (Talento Perú)"
+          body-path: data/ultimo-importe.md
+          commit-message: "Importa convocatorias nuevas de Talento Perú (SERVIR)"
+          labels: importado
+          add-paths: |
+            content/ofertas/*.md
+            data/servir-vistos.json
