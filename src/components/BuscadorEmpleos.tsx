@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   categorias, provincias, jornadas, modalidades, experiencias, educaciones, rangosSueldo, fechasPublicacion,
 } from "@/site.config";
 import type { GuiaBusqueda, OfertaBusqueda } from "@/lib/busqueda";
+import { Icono, OfertaCard, useGuardadas, useHoy, type NombreIcono } from "./OfertaCard";
 
 /* ---------- Filtros: qué se guarda en la dirección (?q=...&cat=...) ---------- */
 
@@ -29,7 +30,6 @@ const ORDENES = [
 ];
 
 const POR_PAGINA = 12;
-const CLAVE_GUARDADAS = "chamba-guardadas";
 
 // Quita tildes y mayúsculas para que "práctica" encuentre "practica"
 const normalizar = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -63,14 +63,6 @@ function aDireccion(f: Filtros): string {
   return s ? `?${s}` : "";
 }
 
-// Ofertas guardadas con el corazón: solo en este navegador
-function leerGuardadas(): string[] {
-  try { return JSON.parse(localStorage.getItem(CLAVE_GUARDADAS) ?? "[]"); } catch { return []; }
-}
-function escribirGuardadas(lista: string[]) {
-  try { localStorage.setItem(CLAVE_GUARDADAS, JSON.stringify(lista)); } catch { /* navegador sin almacenamiento */ }
-}
-
 type Props = {
   ofertas: OfertaBusqueda[];
   guias?: GuiaBusqueda[];
@@ -84,10 +76,10 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
   const pathname = usePathname();
   const [f, setF] = useState<Filtros>(() => leerFiltros(params));
   const [texto, setTexto] = useState(f.q);
-  const [hoy, setHoy] = useState<string | null>(null);
+  const hoy = useHoy();
   const [panel, setPanel] = useState(false);
   const [mostrar, setMostrar] = useState(POR_PAGINA);
-  const [guardadas, setGuardadas] = useState<string[]>([]);
+  const [guardadas, guardar] = useGuardadas();
   // Grupos de filtros desplegados: los que tienen algo marcado (o el primero, para que se note que se abren)
   const [abiertos, setAbiertos] = useState<string[]>(() => {
     const conAlgo = GRUPOS.filter((g) => f[g.clave].length).map((g) => g.clave as string);
@@ -96,9 +88,6 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
     return conAlgo.length ? conAlgo : [fijo.cat ? "prov" : "cat"];
   });
 
-  // Fecha de hoy en hora de Lima (en el navegador, para no fijarla al compilar)
-  useEffect(() => setHoy(new Date().toLocaleDateString("en-CA", { timeZone: "America/Lima" })), []);
-  useEffect(() => setGuardadas(leerGuardadas()), []);
   // Si cambia la dirección (atrás/adelante del navegador), se actualizan los filtros
   useEffect(() => { const n = leerFiltros(params); setF(n); setTexto(n.q); }, [params]);
   // Con el panel abierto en el celular no se mueve la página de fondo
@@ -113,11 +102,6 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
   const alternar = (clave: Multi, slug: string) =>
     aplicar({ [clave]: f[clave].includes(slug) ? f[clave].filter((x) => x !== slug) : [...f[clave], slug] });
   const plegar = (id: string) => setAbiertos((a) => (a.includes(id) ? a.filter((x) => x !== id) : [...a, id]));
-  const guardar = (slug: string) => {
-    const n = guardadas.includes(slug) ? guardadas.filter((s) => s !== slug) : [...guardadas, slug];
-    setGuardadas(n);
-    escribirGuardadas(n);
-  };
 
   // Las ofertas que pasan todos los filtros, salvo el grupo indicado (para contar cuántas hay por opción)
   const filtrar = (sin?: Multi) => {
@@ -343,7 +327,7 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
               <div className="lista-ofertas">
                 {resultados.slice(0, mostrar).map((o, i) => (
                   <FragmentoConAviso key={o.slug} mostrarAviso={i === 2 && !f.q.trim()}>
-                    <TarjetaOferta o={o} hoy={hoy} guardada={guardadas.includes(o.slug)} guardar={guardar} />
+                    <OfertaCard o={o} hoy={hoy} guardada={guardadas.includes(o.slug)} guardar={guardar} />
                   </FragmentoConAviso>
                 ))}
               </div>
@@ -427,109 +411,3 @@ function FragmentoConAviso({ mostrarAviso, children }: { mostrarAviso: boolean; 
   );
 }
 
-/* ---------- Una oferta en la lista ---------- */
-const PALABRAS_VACIAS = new Set(["de", "del", "la", "las", "el", "los", "y", "e", "en", "para", "por", "a", "al", "sac", "s.a.c.", "sa", "s.a.", "eirl", "srl"]);
-const TONOS = ["#0b3d91", "#f97316", "#16a34a", "#7c3aed", "#0891b2", "#db2777"];
-
-function iniciales(empresa: string) {
-  const palabras = empresa.replace(/[()]/g, " ").split(/\s+/).filter((p) => p && !PALABRAS_VACIAS.has(p.toLowerCase()));
-  return (palabras.slice(0, 2).map((p) => p[0]).join("") || "?").toUpperCase();
-}
-function tono(texto: string) {
-  let h = 0;
-  for (const c of texto) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  return TONOS[h % TONOS.length];
-}
-
-function TarjetaOferta({ o, hoy, guardada, guardar }: { o: OfertaBusqueda; hoy: string | null; guardada: boolean; guardar: (slug: string) => void }) {
-  const prov = nombreDe(provincias, o.provincia);
-  let publicado = "";
-  let nueva = false;
-  let estado: { texto: string; clase: string } | null = null;
-  if (hoy) {
-    const p = diasEntre(hoy, o.date);
-    nueva = p <= 2;
-    publicado = p <= 0 ? "Publicado hoy" : p === 1 ? "Publicado ayer" : `Publicado hace ${p} días`;
-    const d = o.vence ? diasEntre(o.vence, hoy) : null;
-    if (d !== null) estado = d < 0 ? { texto: "Vencida", clase: "badge-rojo" }
-      : d <= 3 ? { texto: d === 0 ? "Cierra hoy" : d === 1 ? "Cierra mañana" : `Cierra en ${d} días`, clase: "badge-naranja" }
-      : { texto: `Quedan ${d} días`, clase: "badge-verde" };
-  }
-  const chips = [
-    o.vacantes && o.vacantes > 1 ? { icono: "personas" as const, texto: `${o.vacantes} vacantes` } : null,
-    o.experiencia ? { icono: "medalla" as const, texto: nombreDe(experiencias, o.experiencia) } : null,
-    o.educacion ? { icono: "birrete" as const, texto: nombreDe(educaciones, o.educacion) } : null,
-  ].filter((c) => c && c.texto) as { icono: NombreIcono; texto: string }[];
-
-  return (
-    <article className={`oferta-card ${nueva ? "nueva" : ""} ${estado?.clase === "badge-rojo" ? "vencida" : ""}`}>
-      <div className="oc-principal">
-        <div className="oc-top">
-          {nueva && <span className="badge badge-nuevo">Nuevo</span>}
-          <span className="oc-fecha">{publicado}</span>
-          {estado && <span className={`badge ${estado.clase}`}>{estado.texto}</span>}
-        </div>
-        <div className="oc-cab">
-          <span className="oc-logo" style={{ "--tono": tono(o.empresa) } as CSSProperties} aria-hidden>{iniciales(o.empresa)}</span>
-          <div className="oc-titulos">
-            <h3><Link href={`/ofertas/${o.slug}/`} className="oc-enlace">{o.title}</Link></h3>
-            <p className="oc-empresa">{o.empresa}</p>
-          </div>
-        </div>
-        {o.resumen && <p className="oc-resumen">{o.resumen}</p>}
-        {chips.length > 0 && (
-          <div className="oc-chips">
-            {chips.map((c) => <span key={c.texto} className="oc-chip"><Icono nombre={c.icono} /> {c.texto}</span>)}
-          </div>
-        )}
-      </div>
-      <ul className="oc-datos">
-        <li><Icono nombre="pin" /> {o.distrito && o.distrito !== prov ? `${o.distrito}, ${prov}` : prov}</li>
-        <li><Icono nombre="edificio" /> {nombreDe(modalidades, o.modalidad) || "Presencial"}</li>
-        {o.jornada && <li><Icono nombre="reloj" /> {nombreDe(jornadas, o.jornada)}</li>}
-        <li className="oc-sueldo"><Icono nombre="billete" /> {o.sueldo}</li>
-      </ul>
-      <button
-        type="button"
-        className="oc-guardar"
-        aria-pressed={guardada}
-        aria-label={guardada ? "Quitar de guardadas" : "Guardar oferta"}
-        title={guardada ? "Quitar de guardadas" : "Guardar oferta"}
-        onClick={() => guardar(o.slug)}
-      >
-        <Icono nombre="corazon" />
-      </button>
-    </article>
-  );
-}
-
-/* ---------- Íconos de línea (mismo trazo en todo el buscador) ---------- */
-type NombreIcono =
-  | "lupa" | "pin" | "capas" | "edificio" | "medalla" | "birrete" | "reloj" | "calendario" | "billete"
-  | "flecha" | "cerrar" | "basura" | "ajustes" | "corazon" | "personas";
-
-const TRAZOS: Record<NombreIcono, ReactNode> = {
-  lupa: <><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></>,
-  pin: <><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></>,
-  capas: <><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></>,
-  edificio: <><rect x="5" y="3" width="14" height="18" rx="1.5" /><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M10 21v-3h4v3" /></>,
-  medalla: <><circle cx="12" cy="9" r="5" /><path d="m8.5 13-1.5 8 5-3 5 3-1.5-8" /></>,
-  birrete: <><path d="m2 9 10-5 10 5-10 5L2 9Z" /><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v5" /></>,
-  reloj: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
-  calendario: <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18M8 3v4M16 3v4" /></>,
-  billete: <><rect x="2" y="6" width="20" height="12" rx="2" /><circle cx="12" cy="12" r="2.5" /><path d="M6 12h.01M18 12h.01" /></>,
-  flecha: <path d="m6 9 6 6 6-6" />,
-  cerrar: <path d="M18 6 6 18M6 6l12 12" />,
-  basura: <><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" /></>,
-  ajustes: <><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0" /><circle cx="16" cy="6" r="2" /><circle cx="10" cy="12" r="2" /><circle cx="18" cy="18" r="2" /></>,
-  corazon: <path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9Z" />,
-  personas: <><circle cx="9" cy="8" r="3.5" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.8-1.6-5-4-5.7" /></>,
-};
-
-function Icono({ nombre }: { nombre: NombreIcono }) {
-  return (
-    <svg className={`icono icono-${nombre}`} viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {TRAZOS[nombre]}
-    </svg>
-  );
-}

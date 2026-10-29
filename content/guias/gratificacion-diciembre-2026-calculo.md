@@ -4,6 +4,8 @@ description: "Fecha de pago, bonificación del 9 %, cálculo proporcional y qué
 date: 2026-10-28
 updated: 2026-10-28
 grupo: beneficios
+imagen: /img/guias/gratificacion.svg
+imagen_alt: "Caja de regalo con monedas y el 9 % de bonificación"
 ---
 
 La **gratificación de Navidad** es un pago extra que recibes en diciembre si estás en planilla. Si trabajaste todo el semestre, equivale a **un sueldo completo más un 9 %**.
@@ -25,6 +27,8 @@ La gratificación no paga aportes a EsSalud. Ese 9 % que la empresa aportaría s
 Solo cuentan los **meses calendario completos**. Si entraste el 10 de agosto, ese mes no cuenta y se empieza desde setiembre.
 
 ## Ejemplos
+
+![Ejemplo: gratificación de S/ 1,800 más bonificación de S/ 162 da S/ 1,962](/img/guias/gratificacion-calculo.svg)
 
 ### Sueldo de S/ 1,800, semestre completo
 

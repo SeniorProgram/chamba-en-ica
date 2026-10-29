@@ -4,6 +4,8 @@ description: "Dónde encontrar convocatorias del Estado, cómo leer las bases y 
 date: 2026-10-28
 updated: 2026-10-28
 grupo: postula
+imagen: /img/guias/cas.svg
+imagen_alt: "Edificio público y lista de requisitos"
 ---
 
 El **CAS (Contratación Administrativa de Servicios)** es la forma más común de entrar a trabajar al Estado: municipalidades, hospitales, el Gobierno Regional, UGEL, universidades públicas y ministerios contratan así todo el año. Esta guía te explica el proceso.
@@ -34,6 +36,8 @@ Si no cumples un requisito obligatorio, te descalifican en la primera revisión.
 Muchas entidades piden todo en **un solo archivo PDF** con peso máximo. Ordena los documentos como indiquen las bases y, si lo piden, numera las hojas (foliado).
 
 ## 4. Las etapas del proceso
+
+![Las 5 etapas de una convocatoria CAS](/img/guias/cas-etapas.svg)
 
 Varían según la entidad, pero lo usual es:
 

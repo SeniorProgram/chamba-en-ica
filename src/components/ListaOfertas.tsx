@@ -5,6 +5,7 @@ import { getGuias, getOfertas } from "@/lib/content";
 import { aGuiaBusqueda, aOfertaBusqueda } from "@/lib/busqueda";
 import BuscadorEmpleos from "./BuscadorEmpleos";
 import Anuncio from "./Anuncio";
+import Cabecera from "./Cabecera";
 
 type Props = {
   titulo: string;
@@ -25,16 +26,13 @@ export default function ListaOfertas({ titulo, descripcion, fijo, conGuias }: Pr
   const prov = provincias.find((p) => p.slug === fijo?.prov);
 
   return (
-    <div className="pagina-empleos">
+    <div className="pagina">
       <div className="contenedor contenedor-ancho">
-        <header className="empleos-cab">
-          <nav className="migas entrada" aria-label="Ruta">
-            <Link href="/">Inicio</Link> <span aria-hidden>›</span> <Link href="/empleos/">Empleos</Link>
-            {(cat || prov) && <> <span aria-hidden>›</span> <span>{cat?.nombre ?? prov?.nombre}</span></>}
-          </nav>
-          <h1 className="entrada entrada-2">{titulo}</h1>
-          <p className="muted entrada entrada-2">{descripcion}</p>
-        </header>
+        <Cabecera
+          migas={cat || prov ? [{ href: "/empleos/", texto: "Empleos" }, { texto: (cat?.nombre ?? prov?.nombre) as string }] : [{ texto: "Empleos" }]}
+          titulo={titulo}
+          descripcion={descripcion}
+        />
 
         {/* Accesos rápidos (también ayudan a Google a encontrar cada sección) */}
         <nav className="atajos entrada entrada-3" aria-label="Categorías y provincias">

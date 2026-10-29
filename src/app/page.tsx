@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { categorias, provincias } from "@/site.config";
 import { getGuias, getOfertas } from "@/lib/content";
-import { TarjetaGuia, TarjetaOferta } from "@/components/Tarjetas";
+import { TarjetaGuia } from "@/components/Tarjetas";
+import { Icono, ListaTarjetas } from "@/components/OfertaCard";
 
 export default function Inicio() {
-  const ofertas = getOfertas().slice(0, 6);
+  const todas = getOfertas();
+  const ofertas = todas.slice(0, 6).map(({ html: _html, ...resto }) => resto);
+  const cuenta = (campo: "categoria" | "provincia", v: string) => todas.filter((o) => o[campo] === v).length;
   const guias = getGuias().slice(0, 3);
 
   return (
@@ -32,51 +35,59 @@ export default function Inicio() {
         </div>
       </section>
 
-      <section className="seccion">
-        <div className="contenedor">
-          <h2 className="centro revelar">¿Qué tipo de trabajo buscas?</h2>
-          <div className="grilla">
-            {categorias.map((c, i) => (
-              <Link
-                key={c.slug}
-                href={`/empleos/${c.slug}/`}
-                className="tarjeta revelar"
-                style={{ "--retraso": `${i * 80}ms` } as React.CSSProperties}
-              >
-                <div className="icono">{c.icono}</div>
-                <h3>{c.nombre}</h3>
-                <p>{c.corta}</p>
+      <div className="pagina pagina-inicio">
+        <div className="contenedor contenedor-ancho">
+          <div className="layout layout-izq">
+            <aside className="lateral">
+              <nav className="panel" aria-label="Categorías">
+                <p className="panel-titulo">¿Qué tipo de trabajo buscas?</p>
+                <ul className="lista-enlaces">
+                  {categorias.map((cat) => (
+                    <li key={cat.slug}>
+                      <Link href={`/empleos/${cat.slug}/`}>
+                        <span aria-hidden>{cat.icono}</span> {cat.nombre} <small>{cuenta("categoria", cat.slug)}</small>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <nav className="panel" aria-label="Provincias">
+                <p className="panel-titulo">Por provincia</p>
+                <div className="chips-lateral">
+                  {provincias.map((pr) => (
+                    <Link key={pr.slug} href={`/provincia/${pr.slug}/`} className="atajo">
+                      {pr.nombre} <small>{cuenta("provincia", pr.slug)}</small>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+              <Link href="/publica/" className="panel-publica">
+                <strong>¿Tu empresa está contratando?</strong>
+                <span>Publica tu oferta gratis y llega a postulantes de toda la región.</span>
               </Link>
-            ))}
-            <Link href="/guias/" className="tarjeta revelar" style={{ "--retraso": "400ms" } as React.CSSProperties}>
-              <div className="icono">📋</div>
-              <h3>Guías para postular</h3>
-              <p>CV, entrevistas, CAS y derechos laborales.</p>
-            </Link>
+            </aside>
+
+            <section className="principal">
+              <div className="resultados-cab">
+                <h2 className="titulo-seccion">Últimas ofertas</h2>
+                <Link href="/empleos/" className="enlace-flecha">Ver todas ({todas.length}) <Icono nombre="derecha" tam={16} /></Link>
+              </div>
+              {ofertas.length ? (
+                <ListaTarjetas ofertas={ofertas} />
+              ) : (
+                <p className="vacio">Muy pronto publicaremos las primeras ofertas verificadas de la región.</p>
+              )}
+              <p className="centro" style={{ marginTop: 24 }}>
+                <Link href="/empleos/" className="btn btn-naranja">Ver todas las ofertas</Link>
+              </p>
+            </section>
           </div>
         </div>
-      </section>
-
-      <section className="seccion seccion-suave">
-        <div className="contenedor">
-          <h2 className="centro revelar">Últimas ofertas</h2>
-          {ofertas.length ? (
-            <div className="grilla">
-              {ofertas.map((o, i) => (
-                <TarjetaOferta key={o.slug} oferta={o} i={i} />
-              ))}
-            </div>
-          ) : (
-            <p className="vacio revelar" style={{ marginTop: 32 }}>
-              Muy pronto publicaremos las primeras ofertas verificadas de la región.
-            </p>
-          )}
-        </div>
-      </section>
+      </div>
 
       <section className="seccion">
         <div className="contenedor">
-          <h2 className="centro revelar">Guías recientes</h2>
+          <h2 className="centro revelar">Guías para postular con ventaja</h2>
           <div className="grilla">
             {guias.map((g, i) => (
               <TarjetaGuia key={g.slug} guia={g} i={i} />

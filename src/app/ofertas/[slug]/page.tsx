@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categorias, educaciones, experiencias, jornadas, modalidades, provincias } from "@/site.config";
 import { formatFecha, getOferta, getOfertaEjemplo, getOfertas } from "@/lib/content";
-import EstadoOferta from "@/components/EstadoOferta";
 import Anuncio from "@/components/Anuncio";
+import Cabecera from "@/components/Cabecera";
+import { EstadoBadge, GuardarOferta, Icono, ListaTarjetas, LogoEmpresa, type NombreIcono } from "@/components/OfertaCard";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -61,51 +62,95 @@ export default async function OfertaPage({ params }: Props) {
     },
   };
 
+  // Ofertas parecidas: de la misma categoría (las más recientes)
+  const parecidas = esEjemplo ? [] : getOfertas()
+    .filter((x) => x.slug !== o.slug && x.categoria === o.categoria)
+    .slice(0, 3)
+    .map(({ html: _html, ...resto }) => resto);
+
+  const datos: { icono: NombreIcono; etiqueta: string; valor?: string | number | null; clase?: string }[] = [
+    { icono: "billete", etiqueta: "Sueldo", valor: o.sueldo, clase: "dato-sueldo" },
+    { icono: "pin", etiqueta: "Lugar", valor: `${o.distrito && o.distrito !== prov?.nombre ? `${o.distrito}, ` : ""}${prov?.nombre ?? ""}` },
+    { icono: "edificio", etiqueta: "Modalidad", valor: nombre(modalidades, o.modalidad) },
+    { icono: "reloj", etiqueta: "Jornada", valor: nombre(jornadas, o.jornada) },
+    { icono: "medalla", etiqueta: "Experiencia", valor: nombre(experiencias, o.experiencia) },
+    { icono: "birrete", etiqueta: "Estudios", valor: nombre(educaciones, o.educacion) },
+    { icono: "personas", etiqueta: "Vacantes", valor: o.vacantes },
+    { icono: "calendario", etiqueta: "Postula hasta", valor: o.vence ? formatFecha(o.vence) : "Sin fecha límite" },
+  ];
+
   return (
-    <article className="contenedor angosto">
+    <div className="pagina">
       {!esEjemplo && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPosting) }} />
       )}
-      {esEjemplo && (
-        <p className="vacio" style={{ marginTop: 24 }}>
-          👀 Vista de ejemplo: así se verá una oferta. Se genera desde <code>content/_plantilla-oferta.md</code> y no
-          aparece en los listados ni en Google.
-        </p>
-      )}
-      <header className="cabecera-pagina">
-        <div className="migas entrada">
-          <Link href="/">Inicio</Link> › <Link href={`/empleos/${o.categoria}/`}>{cat?.nombre}</Link>
-        </div>
-        <h1 className="entrada entrada-2">{o.title}</h1>
-        <p className="muted entrada entrada-3">{o.empresa}</p>
-      </header>
-      <div className="ficha entrada entrada-3">
-        <div><b>Estado</b><EstadoOferta vence={o.vence} /></div>
-        <div><b>Lugar</b>📍 {prov?.nombre}{o.distrito && o.distrito !== prov?.nombre ? `, ${o.distrito}` : ""}</div>
-        <div><b>Sueldo</b>💰 {o.sueldo}</div>
-        <div><b>Publicado</b>{formatFecha(o.date)}</div>
-        <div><b>Postula hasta</b>{o.vence ? formatFecha(o.vence) : "Sin fecha límite"}</div>
-        {o.jornada && <div><b>Jornada</b>{nombre(jornadas, o.jornada)}</div>}
-        {o.modalidad && <div><b>Modalidad</b>{nombre(modalidades, o.modalidad)}</div>}
-        {o.experiencia && <div><b>Experiencia</b>{nombre(experiencias, o.experiencia)}</div>}
-        {o.educacion && <div><b>Estudios</b>{nombre(educaciones, o.educacion)}</div>}
-        {o.vacantes ? <div><b>Vacantes</b>{o.vacantes}</div> : null}
-      </div>
-      <Anuncio />
-      <div className="prosa">
-        <div dangerouslySetInnerHTML={{ __html: o.html }} />
-        {o.fuente && (
-          <p>
-            <a href={o.fuente} className="btn btn-naranja" target="_blank" rel="noopener noreferrer">
-              Ver convocatoria oficial ↗
-            </a>
+      <div className="contenedor contenedor-ancho">
+        <Cabecera migas={[{ href: "/empleos/", texto: "Empleos" }, { href: `/empleos/${o.categoria}/`, texto: cat?.nombre ?? "" }, { texto: o.title }]} />
+        {esEjemplo && (
+          <p className="vacio" style={{ marginBottom: 16 }}>
+            👀 Vista de ejemplo: así se verá una oferta. Se genera desde <code>content/_plantilla-oferta.md</code> y no
+            aparece en los listados ni en Google.
           </p>
         )}
-        <p className="aviso">
-          Chamba en Ica no participa en el proceso de selección y nunca cobra por postular. Verifica siempre los datos
-          en la fuente oficial.
-        </p>
+
+        <div className="layout layout-der">
+          <article className="principal panel panel-articulo">
+            <div className="oc-top"><EstadoBadge vence={o.vence} fecha={o.date} /></div>
+            <div className="oferta-cab">
+              <LogoEmpresa empresa={o.empresa} grande />
+              <div>
+                <h1 className="articulo-titulo">{o.title}</h1>
+                <p className="oc-empresa">{o.empresa}</p>
+              </div>
+            </div>
+            <p className="oferta-etiquetas">
+              <Link href={`/empleos/${o.categoria}/`} className="atajo">{cat?.icono} {cat?.nombre}</Link>
+              <Link href={`/provincia/${o.provincia}/`} className="atajo">📍 {prov?.nombre}</Link>
+              <span className="oc-fecha">Publicado el {formatFecha(o.date)}</span>
+            </p>
+            <Anuncio />
+            <div className="prosa" dangerouslySetInnerHTML={{ __html: o.html }} />
+            <p className="aviso">
+              Chamba en Ica no participa en el proceso de selección y nunca cobra por postular. Verifica siempre los datos
+              en la fuente oficial.
+            </p>
+          </article>
+
+          <aside className="lateral lateral-pegado">
+            <div className="panel">
+              <p className="panel-titulo">Resumen de la oferta</p>
+              <dl className="datos-oferta">
+                {datos.filter((d) => d.valor).map((d) => (
+                  <div key={d.etiqueta} className={d.clase}>
+                    <dt><Icono nombre={d.icono} /> {d.etiqueta}</dt>
+                    <dd>{d.valor}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="acciones-oferta">
+                {o.fuente && (
+                  <a href={o.fuente} className="btn btn-naranja" target="_blank" rel="noopener noreferrer">
+                    Ver convocatoria oficial <Icono nombre="enlace" tam={16} />
+                  </a>
+                )}
+                <GuardarOferta slug={o.slug} />
+              </div>
+            </div>
+            <Link href="/guias/como-detectar-ofertas-de-trabajo-falsas/" className="panel panel-alerta">
+              <Icono nombre="escudo" tam={22} />
+              <span><strong>Nunca pagues por postular.</strong> Aprende a reconocer una oferta falsa.</span>
+            </Link>
+          </aside>
+        </div>
+
+        {parecidas.length > 0 && (
+          <section className="seguir-leyendo">
+            <h2>Ofertas parecidas</h2>
+            <ListaTarjetas ofertas={parecidas} />
+            <p><Link href={`/empleos/${o.categoria}/`} className="enlace-flecha">Ver más en {cat?.nombre} <Icono nombre="derecha" tam={16} /></Link></p>
+          </section>
+        )}
       </div>
-    </article>
+    </div>
   );
 }

@@ -35,8 +35,30 @@ export type Guia = {
   date: string;
   updated: string;
   grupo: GuiaGrupo;
+  /** Portada (ilustración o foto) y su descripción para lectores de pantalla */
+  imagen: string;
+  imagenAlt: string;
   html: string;
+  /** Subtítulos de la guía, para el índice "En esta guía" */
+  secciones: { id: string; titulo: string }[];
 };
+
+const sinTildes = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+/** Agrega un id a cada subtítulo (para enlazar a la sección) y carga las imágenes sin frenar la página. */
+function prepararHtml(html: string) {
+  const secciones: { id: string; titulo: string }[] = [];
+  const conIds = html
+    .replace(/<h2>(.*?)<\/h2>/g, (_, t: string) => {
+      const titulo = t.replace(/<[^>]+>/g, "").replace(/&quot;/g, "\"").replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+      const id = sinTildes(titulo).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      // El índice ya numera las secciones: se quita el "1." del subtítulo
+      secciones.push({ id, titulo: titulo.replace(/^\d+\.\s*/, "") });
+      return `<h2 id="${id}">${t}</h2>`;
+    })
+    .replace(/<img /g, "<img loading=\"lazy\" decoding=\"async\" ");
+  return { html: conIds, secciones };
+}
 
 export function getGuias(): Guia[] {
   return readDir("guias")
@@ -47,7 +69,9 @@ export function getGuias(): Guia[] {
       date: toDate(data.date),
       updated: toDate(data.updated ?? data.date),
       grupo: (data.grupo ?? "postula") as GuiaGrupo,
-      html: marked.parse(body) as string,
+      imagen: texto(data.imagen),
+      imagenAlt: texto(data.imagen_alt),
+      ...prepararHtml(marked.parse(body) as string),
     }))
     .sort((a, b) => b.date.localeCompare(a.date));
 }

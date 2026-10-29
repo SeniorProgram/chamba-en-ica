@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import FormularioOferta from "./FormularioOferta";
+import Cabecera from "@/components/Cabecera";
+import { Icono } from "@/components/OfertaCard";
 
 export const metadata: Metadata = {
   title: "Publica tu oferta de trabajo gratis",
@@ -9,18 +10,37 @@ export const metadata: Metadata = {
 
 export default function Publica() {
   return (
-    <article className="contenedor angosto">
-      <header className="cabecera-pagina">
-        <div className="migas entrada">
-          <Link href="/">Inicio</Link> › Publica tu oferta
+    <div className="pagina">
+      <div className="contenedor contenedor-ancho">
+        <Cabecera
+          migas={[{ texto: "Publica tu oferta" }]}
+          titulo="Publica tu oferta gratis"
+          descripcion="Llega a personas que buscan trabajo en las cinco provincias de Ica."
+        />
+        <div className="layout layout-der">
+          <div className="principal">
+            <FormularioOferta />
+          </div>
+          <aside className="lateral lateral-pegado">
+            <div className="panel">
+              <p className="panel-titulo">¿Cómo funciona?</p>
+              <ol className="pasos">
+                <li><strong>Llenas el formulario</strong><span>Con los datos del puesto y cómo postular.</span></li>
+                <li><strong>Lo revisamos</strong><span>Normalmente en 1 o 2 días.</span></li>
+                <li><strong>Lo publicamos</strong><span>Aparece en el buscador y en Google.</span></li>
+              </ol>
+            </div>
+            <div className="panel">
+              <p className="panel-titulo">Siempre gratis</p>
+              <ul className="lista-check">
+                <li><Icono nombre="check" /> Sin costo para la empresa</li>
+                <li><Icono nombre="check" /> Sin costo para quien postula</li>
+                <li><Icono nombre="check" /> Solo ofertas en la región Ica</li>
+              </ul>
+            </div>
+          </aside>
         </div>
-        <h1 className="entrada entrada-2">Publica tu oferta gratis</h1>
-        <p className="muted entrada entrada-3">
-          Llega a personas que buscan trabajo en las cinco provincias de Ica. Llena el formulario y revisamos tu oferta
-          antes de publicarla, normalmente en 1 o 2 días.
-        </p>
-      </header>
-      <FormularioOferta />
-    </article>
+      </div>
+    </div>
   );
 }

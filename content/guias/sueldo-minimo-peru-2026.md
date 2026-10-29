@@ -4,11 +4,15 @@ description: "Cuánto es el sueldo mínimo, cuándo sube a S/ 1,300 y qué benef
 date: 2026-10-28
 updated: 2026-10-28
 grupo: beneficios
+imagen: /img/guias/sueldo-minimo.svg
+imagen_alt: "Billete de S/ 1,230 con una flecha hacia arriba"
 ---
 
 Desde el **1 de octubre de 2026**, la Remuneración Mínima Vital (RMV) en Perú es de **S/ 1,230** para trabajadores del sector privado con jornada completa. Antes era S/ 1,130.
 
 ## ¿Subirá más?
+
+![El sueldo mínimo pasa de S/ 1,130 a S/ 1,230 en octubre de 2026 y a S/ 1,300 en 2027](/img/guias/sueldo-minimo-subida.svg)
 
 Sí. El Decreto Supremo N.° 015-2026-TR aprobó un aumento total de S/ 170 en dos tramos. El primero, de S/ 100, ya rige desde octubre. El segundo, de S/ 70, llevará el sueldo mínimo a **S/ 1,300** durante el **primer semestre de 2027**.
 

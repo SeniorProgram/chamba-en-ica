@@ -4,6 +4,8 @@ description: "Qué te van a preguntar, qué buscan con cada pregunta y ejemplos 
 date: 2026-10-28
 updated: 2026-10-28
 grupo: postula
+imagen: /img/guias/entrevista.svg
+imagen_alt: "Dos personas conversando en una entrevista de trabajo"
 ---
 
 La entrevista es donde se decide el puesto. La buena noticia es que casi siempre se repiten las mismas preguntas, así que puedes prepararte.

@@ -4,9 +4,13 @@ description: "Las estafas con falsos empleos son comunes en grupos de Facebook y
 date: 2026-10-28
 updated: 2026-10-28
 grupo: cuidate
+imagen: /img/guias/ofertas-falsas.svg
+imagen_alt: "Celular con un aviso de trabajo sospechoso"
 ---
 
 Cuando necesitas trabajo urgente, es fácil caer en una oferta que parece buena. Las estafas con falsos empleos circulan mucho en grupos de Facebook, WhatsApp y TikTok. Estas son las señales para reconocerlas.
+
+![Las 8 señales de alerta de una oferta de trabajo falsa](/img/guias/ofertas-falsas-senales.svg)
 
 ## 1. Te piden dinero
 

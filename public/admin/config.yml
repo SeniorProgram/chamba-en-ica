@@ -142,7 +142,9 @@ collections:
           - { label: "Beneficios y derechos", value: beneficios }
           - { label: "Cómo postular", value: postula }
           - { label: "Cuídate de estafas", value: cuidate }
-      - { name: body, label: Contenido, widget: markdown }
+      - { name: imagen, label: "Imagen de portada (horizontal, 1200 × 630)", widget: image, required: false }
+      - { name: imagen_alt, label: "Qué muestra la imagen (para personas que no ven)", widget: string, required: false }
+      - { name: body, label: "Contenido (puedes insertar imágenes con el botón +)", widget: markdown }
 
   # ---------------- Páginas fijas ----------------
   - name: paginas

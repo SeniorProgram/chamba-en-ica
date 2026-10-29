@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ilustración: dos personas conversando en una entrevista de trabajo</title>
+<defs>
+  <linearGradient id="f6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d91"/><stop offset="1" stop-color="#1d5bbf"/></linearGradient>
+  <filter id="s6" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#06214f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#f6)"/>
+<circle cx="1080" cy="80" r="190" fill="#fff" opacity=".06"/>
+<circle cx="120" cy="590" r="230" fill="#f97316" opacity=".16"/>
+<circle cx="980" cy="560" r="90" fill="#fff" opacity=".05"/>
+<g fill="#fff" opacity=".18"><circle cx="210" cy="120" r="5"/><circle cx="250" cy="150" r="3"/><circle cx="1010" cy="330" r="4"/><circle cx="160" cy="300" r="3"/><circle cx="1100" cy="250" r="3"/></g>
+<g filter="url(#s6)">
+  <rect x="300" y="420" width="600" height="34" rx="12" fill="#fff"/>
+  <rect x="340" y="454" width="24" height="110" fill="#e2e8f0"/><rect x="836" y="454" width="24" height="110" fill="#e2e8f0"/>
+</g>
+<g filter="url(#s6)">
+  <circle cx="420" cy="250" r="56" fill="#fcd9b6"/><path d="M364 240 q8 -70 70 -60 q50 10 42 60 q-30 -30 -112 0Z" fill="#3f2a1d"/>
+  <path d="M330 420 q0 -100 90 -100 q90 0 90 100Z" fill="#f97316"/>
+  <circle cx="780" cy="250" r="56" fill="#e0ac84"/><path d="M724 236 q10 -64 66 -58 q50 6 46 64 q-40 -26 -112 -6Z" fill="#0f1b2d"/>
+  <path d="M690 420 q0 -100 90 -100 q90 0 90 100Z" fill="#fff"/><path d="M770 322 l10 50 l10 -50Z" fill="#1d5bbf"/>
+</g>
+<g filter="url(#s6)">
+  <path d="M450 110 h160 a22 22 0 0 1 22 22 v50 a22 22 0 0 1 -22 22 h-110 l-30 26 v-26 h-20 a22 22 0 0 1 -22 -22 v-50 a22 22 0 0 1 22 -22Z" fill="#fff"/>
+  <circle cx="490" cy="158" r="9" fill="#0b3d91"/><circle cx="530" cy="158" r="9" fill="#0b3d91"/><circle cx="570" cy="158" r="9" fill="#0b3d91"/>
+  <path d="M640 70 h130 a22 22 0 0 1 22 22 v44 a22 22 0 0 1 -22 22 h-10 v24 l-28 -24 h-92 a22 22 0 0 1 -22 -22 v-44 a22 22 0 0 1 22 -22Z" fill="#facc15"/>
+  <text x="705" y="132" text-anchor="middle" font-size="46" font-weight="800" fill="#0f1b2d">?</text>
+</g></svg>

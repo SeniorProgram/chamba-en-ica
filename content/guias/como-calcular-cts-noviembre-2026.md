@@ -4,6 +4,8 @@ description: "Fecha límite, quiénes la reciben, fórmula paso a paso y ejemplo
 date: 2026-10-28
 updated: 2026-10-28
 grupo: beneficios
+imagen: /img/guias/cts.svg
+imagen_alt: "Alcancía con monedas y calendario de noviembre"
 ---
 
 La **Compensación por Tiempo de Servicios (CTS)** es un beneficio que tu empleador deposita dos veces al año en una cuenta a tu nombre. Funciona como un ahorro para cuando dejes de trabajar. En esta guía te explicamos cuánto te toca en el depósito de noviembre 2026 y cómo comprobar que esté bien calculado.
@@ -27,6 +29,8 @@ El depósito de noviembre cubre lo trabajado entre el **1 de mayo y el 31 de oct
 - Trabajadores **CAS** del Estado: no reciben depósito en noviembre; su CTS se paga al terminar el contrato.
 
 ## La fórmula paso a paso
+
+![Fórmula de la CTS: sueldo, asignación familiar y 1/6 de la gratificación de julio, entre 12 y por los meses trabajados](/img/guias/cts-formula.svg)
 
 **1. Calcula tu remuneración computable:**
 

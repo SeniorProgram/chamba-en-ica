@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Ejemplo de gratificación: con sueldo de 1,800 soles la gratificación es 1,800, la bonificación del 9 % es 162 y el total es 1,962 soles</title>
+<rect width="1200" height="580" rx="28" fill="#eef3fb"/>
+<text x="600" y="72" text-anchor="middle" font-size="38" font-weight="800" fill="#0b3d91">Ejemplo: sueldo de S/ 1,800, semestre completo</text>
+<line x1="90" y1="470" x2="1110" y2="470" stroke="#d6e0f0" stroke-width="4"/>
+<rect x="110" y="210" width="220" height="260" rx="18" fill="#1d5bbf"/><text x="220" y="190" text-anchor="middle" font-size="34" font-weight="800" fill="#0f1b2d">S/ 1,800</text><text x="220" y="515" text-anchor="middle" font-size="27" font-weight="600" fill="#5b6b82">Gratificación</text>
+<text x="400" y="360" text-anchor="middle" font-size="64" font-weight="800" fill="#f97316">+</text>
+<rect x="470" y="430" width="220" height="40" rx="18" fill="#f97316"/><text x="580" y="410" text-anchor="middle" font-size="34" font-weight="800" fill="#0f1b2d">S/ 162</text><text x="580" y="515" text-anchor="middle" font-size="27" font-weight="600" fill="#5b6b82">Bonificación 9 %</text>
+<text x="760" y="360" text-anchor="middle" font-size="64" font-weight="800" fill="#f97316">=</text>
+<rect x="830" y="187" width="220" height="283" rx="18" fill="#16a34a"/><rect x="830" y="447" width="220" height="23" fill="#f97316" opacity=".9"/>
+<text x="940" y="167" text-anchor="middle" font-size="36" font-weight="800" fill="#16a34a">S/ 1,962</text><text x="940" y="515" text-anchor="middle" font-size="27" font-weight="800" fill="#0f1b2d">Total a recibir</text>
+<text x="600" y="560" text-anchor="middle" font-size="24" font-weight="600" fill="#5b6b82">Sin descuento de AFP ni ONP</text></svg>

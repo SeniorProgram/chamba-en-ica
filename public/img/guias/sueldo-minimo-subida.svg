@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"><title>Sueldo mínimo en Perú: 1,130 soles hasta setiembre de 2026, 1,230 desde octubre de 2026 y 1,300 en el primer semestre de 2027</title>
+<rect width="1200" height="600" rx="28" fill="#eef3fb"/>
+<text x="600" y="72" text-anchor="middle" font-size="40" font-weight="800" fill="#0b3d91">Así sube el sueldo mínimo</text>
+<line x1="90" y1="500" x2="1110" y2="500" stroke="#d6e0f0" stroke-width="4"/>
+<rect x="120" y="300" width="260" height="200" rx="20" fill="#cbd5e1"/><text x="250" y="270" text-anchor="middle" font-size="40" font-weight="800" fill="#0f1b2d">S/ 1,130</text><text x="250" y="545" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">Hasta set. 2026</text>
+<rect x="470" y="240" width="260" height="260" rx="20" fill="#1d5bbf"/><text x="600" y="210" text-anchor="middle" font-size="40" font-weight="800" fill="#0f1b2d">S/ 1,230</text><text x="600" y="545" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">Desde oct. 2026</text>
+<rect x="820" y="200" width="260" height="300" rx="20" fill="#16a34a"/><text x="950" y="170" text-anchor="middle" font-size="40" font-weight="800" fill="#0f1b2d">S/ 1,300</text><text x="950" y="545" text-anchor="middle" font-size="25" font-weight="600" fill="#5b6b82">1.er semestre 2027</text>
+<text x="430" y="270" text-anchor="middle" font-size="30" font-weight="800" fill="#f97316">+100</text><text x="780" y="210" text-anchor="middle" font-size="30" font-weight="800" fill="#f97316">+70</text></svg>

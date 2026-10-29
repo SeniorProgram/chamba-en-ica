@@ -4,11 +4,15 @@ description: "Qué poner cuando aún no has trabajado, la estructura que piden l
 date: 2026-10-28
 updated: 2026-10-28
 grupo: postula
+imagen: /img/guias/cv.svg
+imagen_alt: "Hoja de vida con foto y un lápiz"
 ---
 
 Muchas personas creen que sin experiencia laboral no hay nada que poner en el CV. No es así. Las empresas que contratan personal junior o practicantes buscan otras señales: estudios, cursos, actitud y lo que ya sabes hacer. Aquí te explicamos cómo armarlo.
 
 ## La estructura que funciona
+
+![Estructura de un CV en 6 partes](/img/guias/cv-estructura.svg)
 
 1. **Datos de contacto:** nombre completo, celular, correo profesional, ciudad (por ejemplo, Ica) y, si tienes, tu LinkedIn.
 2. **Perfil:** 3 o 4 líneas sobre quién eres, qué sabes hacer y qué buscas.
