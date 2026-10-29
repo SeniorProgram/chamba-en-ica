@@ -2482,10 +2482,19 @@ main:has(> .pagina) {
   margin: 0 0 20px;
   min-width: 0;
 }
+/* El título va dentro del cuadro (por defecto se monta sobre el borde y corta la esquina) */
 .form-oferta legend {
+  float: left;
+  width: 100%;
   font-weight: 700;
+  font-size: 17px;
   color: var(--titulo);
-  padding: 0 8px;
+  padding: 0 0 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--borde);
+}
+.form-oferta legend + * {
+  clear: both;
 }
 .campos {
   display: grid;
