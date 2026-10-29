@@ -21,40 +21,44 @@ export default function ListaOfertas({ titulo, descripcion, fijo, conGuias }: Pr
   const ofertas = getOfertas().map(aOfertaBusqueda);
   const guias = conGuias ? getGuias().map(aGuiaBusqueda) : [];
   const activo = fijo?.cat ?? fijo?.prov;
+  const cat = categorias.find((c) => c.slug === fijo?.cat);
+  const prov = provincias.find((p) => p.slug === fijo?.prov);
 
   return (
-    <div className="contenedor">
-      <header className="cabecera-pagina centro">
-        <div className="migas entrada">
-          <Link href="/">Inicio</Link> › <Link href="/empleos/">Empleos</Link>
+    <div className="pagina-empleos">
+      <div className="contenedor contenedor-ancho">
+        <header className="empleos-cab">
+          <nav className="migas entrada" aria-label="Ruta">
+            <Link href="/">Inicio</Link> <span aria-hidden>›</span> <Link href="/empleos/">Empleos</Link>
+            {(cat || prov) && <> <span aria-hidden>›</span> <span>{cat?.nombre ?? prov?.nombre}</span></>}
+          </nav>
+          <h1 className="entrada entrada-2">{titulo}</h1>
+          <p className="muted entrada entrada-2">{descripcion}</p>
+        </header>
+
+        {/* Accesos rápidos (también ayudan a Google a encontrar cada sección) */}
+        <nav className="atajos entrada entrada-3" aria-label="Categorías y provincias">
+          <Link href="/empleos/" className={!activo ? "atajo activo" : "atajo"}>Todas</Link>
+          {categorias.map((c) => (
+            <Link key={c.slug} href={`/empleos/${c.slug}/`} className={activo === c.slug ? "atajo activo" : "atajo"}>
+              <span aria-hidden>{c.icono}</span> {c.nombre}
+            </Link>
+          ))}
+          <span className="atajos-separador" aria-hidden />
+          {provincias.map((p) => (
+            <Link key={p.slug} href={`/provincia/${p.slug}/`} className={activo === p.slug ? "atajo activo" : "atajo"}>
+              {p.nombre}
+            </Link>
+          ))}
+        </nav>
+
+        <Anuncio />
+
+        <div style={{ paddingBottom: 72 }}>
+          <Suspense>
+            <BuscadorEmpleos ofertas={ofertas} guias={guias} fijo={fijo} />
+          </Suspense>
         </div>
-        <h1 className="entrada entrada-2">{titulo}</h1>
-        <p className="muted entrada entrada-3">{descripcion}</p>
-      </header>
-
-      {/* Accesos rápidos (también ayudan a Google a encontrar cada sección) */}
-      <nav className="filtros entrada entrada-3" aria-label="Categorías">
-        <Link href="/empleos/" className={!activo ? "filtro activo" : "filtro"}>Todas</Link>
-        {categorias.map((c) => (
-          <Link key={c.slug} href={`/empleos/${c.slug}/`} className={activo === c.slug ? "filtro activo" : "filtro"}>
-            {c.icono} {c.nombre}
-          </Link>
-        ))}
-      </nav>
-      <nav className="filtros entrada entrada-4" aria-label="Provincias">
-        {provincias.map((p) => (
-          <Link key={p.slug} href={`/provincia/${p.slug}/`} className={activo === p.slug ? "filtro activo" : "filtro"}>
-            📍 {p.nombre}
-          </Link>
-        ))}
-      </nav>
-
-      <Anuncio />
-
-      <div style={{ paddingBottom: 72 }}>
-        <Suspense>
-          <BuscadorEmpleos ofertas={ofertas} guias={guias} fijo={fijo} />
-        </Suspense>
       </div>
     </div>
   );
