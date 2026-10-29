@@ -11,8 +11,8 @@ backend:
     update: "Actualiza {{collection}}: {{slug}}"
     delete: "Elimina {{collection}}: {{slug}}"
 
-site_url: https://chambaenica.vercel.app
-display_url: https://chambaenica.vercel.app
+site_url: https://chamba-en-ica.vercel.app
+display_url: https://chamba-en-ica.vercel.app
 
 # Imágenes que subas desde el panel
 media_folder: public/img/subidas

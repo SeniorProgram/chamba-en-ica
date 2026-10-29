@@ -3,7 +3,7 @@ export const site = {
   name: "Chamba en Ica",
   tagline: "Convocatorias y ofertas de trabajo en Ica, verificadas y explicadas",
   // Cambia esta URL cuando compres tu dominio (por ejemplo, https://chambaenica.pe)
-  url: "https://chambaenica.vercel.app",
+  url: "https://chamba-en-ica.vercel.app",
   // ⚠️ Pon aquí el correo donde quieres recibir mensajes del formulario de contacto
   contactEmail: "contacto@ejemplo.com",
   locale: "es_PE",
