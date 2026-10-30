@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <p className="pie-copy">© {new Date().getFullYear()} {site.name} · Hecho en Ica, Perú</p>
+        <p className="pie-copy">© {new Date().getFullYear()} {site.name} · Hecho por AdresDEV, Perú</p>
       </div>
     </footer>
   );
