@@ -39,11 +39,11 @@ try {
   limpiarCopia();
   git(["worktree", "add", "--quiet", "--force", "-B", RAMA, COPIA, "origin/main"]);
 
-  // Varias fuentes: si una falla, la otra igual se importa.
-  // Empleos Perú ya no va aquí: lo importa GitHub solo cada día (.github/workflows/importar-empleosperu.yml)
+  // Varias fuentes: si una falla, las demás igual se importan
   const fuentes = [
     { nombre: "Talento Perú (SERVIR)", script: "importar-servir.mjs", resumen: "ultimo-importe.md" },
     { nombre: "Talento Perú – Prácticas", script: "importar-servir-practicas.mjs", resumen: "ultimo-importe-practicas.md" },
+    { nombre: "Empleos Perú (MTPE)", script: "importar-empleosperu.mjs", resumen: "ultimo-importe-empleosperu.md" },
   ];
   const resumenes = [];
   for (const f of fuentes) {
@@ -57,7 +57,7 @@ try {
 
   // Se agrega y se mira lo que de verdad cambió (git status puede marcar archivos solo por los saltos de línea de Windows)
   // Solo las rutas que existen (git falla si se le pasa una que no existe)
-  const rutas = ["content/ofertas", "public/img/empresas", "data/servir-vistos.json", "data/servir-practicas-vistos.json"]
+  const rutas = ["content/ofertas", "public/img/empresas", "data/servir-vistos.json", "data/servir-practicas-vistos.json", "data/empleosperu-vistos.json"]
     .filter((r) => fs.existsSync(path.join(COPIA, r)));
   git(["add", ...rutas], COPIA);
   const cambios = git(["diff", "--cached", "--name-only"], COPIA);
@@ -66,7 +66,7 @@ try {
   } else {
     const resumen = resumenes.join("\n\n") + "\n";
     paso("Subiendo las ofertas nuevas a la rama " + RAMA);
-    git(["commit", "--quiet", "-m", "Importa ofertas nuevas de Talento Perú (SERVIR, empleos y prácticas)"], COPIA);
+    git(["commit", "--quiet", "-m", "Importa ofertas nuevas de Talento Perú (SERVIR, empleos y prácticas) y Empleos Perú (MTPE)"], COPIA);
     git(["push", "--quiet", "--force", "origin", RAMA], COPIA);
 
     paso("Abriendo el Pull Request para revisar");
@@ -80,7 +80,7 @@ try {
         enlace = abierto.stdout.trim();
         console.log("Se actualizó el Pull Request que ya estaba abierto.");
       } else {
-        const nuevo = gh(["pr", "create", "--base", "main", "--head", RAMA, "--title", "Ofertas nuevas de Ica (Talento Perú: empleos y prácticas)", "--body-file", cuerpo]);
+        const nuevo = gh(["pr", "create", "--base", "main", "--head", RAMA, "--title", "Ofertas nuevas de Ica (Talento Perú y Empleos Perú)", "--body-file", cuerpo]);
         if (nuevo.status === 0) enlace = nuevo.stdout.trim().split("\n").pop();
         else console.log("No se pudo crear el Pull Request con gh (" + (nuevo.stderr || "").trim() + "); ábrelo desde el enlace de abajo.");
       }
