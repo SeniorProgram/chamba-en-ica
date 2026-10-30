@@ -3,12 +3,15 @@ import { categorias, provincias } from "@/site.config";
 import { getGuias, getOfertas } from "@/lib/content";
 import { TarjetaGuia } from "@/components/Tarjetas";
 import { Icono, ListaTarjetas } from "@/components/OfertaCard";
+import MapaIca from "@/components/MapaIca";
 
 export default function Inicio() {
   const todas = getOfertas();
   const ofertas = todas.slice(0, 6).map(({ html: _html, ...resto }) => resto);
   const cuenta = (campo: "categoria" | "provincia", v: string) => todas.filter((o) => o[campo] === v).length;
-  const guias = getGuias().slice(0, 3);
+  const todasGuias = getGuias();
+  const guias = todasGuias.slice(0, 3);
+  const totalGuias = todasGuias.length;
 
   return (
     <>
@@ -35,6 +38,8 @@ export default function Inicio() {
         </div>
       </section>
 
+      <MapaIca ofertas={todas.map((o) => ({ provincia: o.provincia, vence: o.vence, empresa: o.empresa }))} guias={totalGuias} />
+
       <div className="pagina pagina-inicio">
         <div className="contenedor contenedor-ancho">
           <div className="layout layout-izq">
@@ -50,16 +55,6 @@ export default function Inicio() {
                     </li>
                   ))}
                 </ul>
-              </nav>
-              <nav className="panel" aria-label="Provincias">
-                <p className="panel-titulo">Por provincia</p>
-                <div className="chips-lateral">
-                  {provincias.map((pr) => (
-                    <Link key={pr.slug} href={`/provincia/${pr.slug}/`} className="atajo">
-                      {pr.nombre} <small>{cuenta("provincia", pr.slug)}</small>
-                    </Link>
-                  ))}
-                </div>
               </nav>
               <Link href="/publica/" className="panel-publica">
                 <strong>¿Tu empresa está contratando?</strong>

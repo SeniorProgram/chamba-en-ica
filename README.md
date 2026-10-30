@@ -146,3 +146,9 @@ La persona pega un aviso que le llegó por WhatsApp o Facebook y la página le d
 - **Costo:** por defecto usa `claude-opus-5-5` con esfuerzo bajo. Para gastar mucho menos, agrega en Vercel
   `CLAUDE_MODEL` = `claude-haiku-5-5`. Pon además un **límite de gasto mensual** en la consola de Anthropic.
 - Cada persona puede hacer 8 consultas por hora. El texto pegado no se guarda (está explicado en la política de privacidad).
+
+## Mapa de la región (inicio)
+
+El mapa interactivo de las 5 provincias está en `src/components/MapaIca.tsx`. Los límites (`src/lib/mapa-ica.ts`) son una
+conversión del repositorio [peru-geojson](https://github.com/juaneladio/peru-geojson) (datos del INEI), con licencia
+Mozilla Public License 2.0. Los colores y números de cada provincia se calculan solos con las ofertas vigentes.
