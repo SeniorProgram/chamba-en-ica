@@ -112,9 +112,16 @@ crea una oferta por cada una, con sus requisitos, sueldo, fechas y el enlace ofi
 
 - Los avisos ya importados (o descartados) se anotan en `data/servir-vistos.json` y no vuelven a aparecer.
 - La primera vez inicia sesión en GitHub CLI: `gh auth login`.
-- **Para que corra solo cada mañana:** abre el *Programador de tareas* de Windows → *Crear tarea básica* →
-  "Importar convocatorias" → *Diariamente* a las 7:00 → *Iniciar un programa* → elige `importar-convocatorias.bat`
-  y en *Agregar argumentos* escribe `auto` (así no espera a que pulses una tecla). La PC debe estar encendida.
+- También trae las **prácticas del Estado** (`scripts/importar-servir-practicas.mjs`, vistos en `data/servir-practicas-vistos.json`).
+- **Corre solo cada día a las 8:00 a. m.:** tarea "Chamba en Ica - Importar convocatorias" del *Programador de tareas*
+  de Windows (corre `importar-convocatorias.bat auto`). La PC debe estar encendida; si estaba apagada, corre al prenderla.
+
+## Importación de Empleos Perú (empresas privadas)
+
+`scripts/importar-empleosperu.mjs` lee la bolsa del Ministerio de Trabajo. **Corre sola en GitHub todos los días a las
+8:00 a. m.** (`.github/workflows/importar-empleosperu.yml`), aunque la PC esté apagada, y abre el Pull Request
+"Ofertas nuevas de Ica (Empleos Perú)" en la rama `importar/empleosperu`. También se puede lanzar a mano en GitHub →
+*Actions* → *Importar ofertas de Empleos Perú* → **Run workflow**. Los ya importados quedan en `data/empleosperu-vistos.json`.
 
 ## Formulario "Publica tu oferta" (para empresas)
 
