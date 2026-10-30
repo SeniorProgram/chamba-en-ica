@@ -39,19 +39,30 @@ try {
   limpiarCopia();
   git(["worktree", "add", "--quiet", "--force", "-B", RAMA, COPIA, "origin/main"]);
 
-  paso("Buscando convocatorias nuevas de Ica en Talento Perú (tarda 1 o 2 minutos)");
-  const r = spawnSync(process.execPath, [path.join(COPIA, "scripts", "importar-servir.mjs")], { cwd: COPIA, stdio: "inherit" });
-  if (r.status !== 0) throw new Error("El importador falló (mira el mensaje de arriba).");
+  // Dos fuentes: si una falla, la otra igual se importa
+  const fuentes = [
+    { nombre: "Talento Perú (SERVIR)", script: "importar-servir.mjs", resumen: "ultimo-importe.md" },
+    { nombre: "Empleos Perú (MTPE)", script: "importar-empleosperu.mjs", resumen: "ultimo-importe-empleosperu.md" },
+  ];
+  const resumenes = [];
+  for (const f of fuentes) {
+    paso(`Buscando ofertas nuevas de Ica en ${f.nombre} (tarda 1 o 2 minutos)`);
+    const r = spawnSync(process.execPath, [path.join(COPIA, "scripts", f.script)], { cwd: COPIA, stdio: "inherit" });
+    if (r.status !== 0) { console.log(`⚠ ${f.nombre} falló (mira el mensaje de arriba); sigo con lo demás.`); continue; }
+    const archivo = path.join(COPIA, "data", f.resumen);
+    if (fs.existsSync(archivo)) resumenes.push(`### ${f.nombre}\n\n${fs.readFileSync(archivo, "utf8").trim()}`);
+  }
+  if (!resumenes.length) throw new Error("Ninguna fuente se pudo importar.");
 
   // Se agrega y se mira lo que de verdad cambió (git status puede marcar archivos solo por los saltos de línea de Windows)
-  git(["add", "content/ofertas", "data/servir-vistos.json"], COPIA);
+  git(["add", "content/ofertas", "data/servir-vistos.json", "data/empleosperu-vistos.json"], COPIA);
   const cambios = git(["diff", "--cached", "--name-only"], COPIA);
   if (!cambios) {
     console.log("\n✔ No hay convocatorias nuevas. Nada que revisar hoy.");
   } else {
-    const resumen = fs.readFileSync(path.join(COPIA, "data", "ultimo-importe.md"), "utf8");
+    const resumen = resumenes.join("\n\n") + "\n";
     paso("Subiendo las ofertas nuevas a la rama " + RAMA);
-    git(["commit", "--quiet", "-m", "Importa convocatorias nuevas de Talento Perú (SERVIR)"], COPIA);
+    git(["commit", "--quiet", "-m", "Importa ofertas nuevas de Talento Perú (SERVIR) y Empleos Perú (MTPE)"], COPIA);
     git(["push", "--quiet", "--force", "origin", RAMA], COPIA);
 
     paso("Abriendo el Pull Request para revisar");
@@ -65,7 +76,7 @@ try {
         enlace = abierto.stdout.trim();
         console.log("Se actualizó el Pull Request que ya estaba abierto.");
       } else {
-        const nuevo = gh(["pr", "create", "--base", "main", "--head", RAMA, "--title", "Convocatorias nuevas de Ica (Talento Perú)", "--body-file", cuerpo]);
+        const nuevo = gh(["pr", "create", "--base", "main", "--head", RAMA, "--title", "Ofertas nuevas de Ica (Talento Perú y Empleos Perú)", "--body-file", cuerpo]);
         if (nuevo.status === 0) enlace = nuevo.stdout.trim().split("\n").pop();
         else console.log("No se pudo crear el Pull Request con gh (" + (nuevo.stderr || "").trim() + "); ábrelo desde el enlace de abajo.");
       }
