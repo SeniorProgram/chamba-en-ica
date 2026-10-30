@@ -33,7 +33,7 @@ Puedes desactivar la publicidad personalizada desde la [Configuración de anunci
 
 ## 5. Servicios de terceros
 
-El sitio está alojado en un proveedor de hosting que puede procesar datos técnicos de los visitantes según su propia política de privacidad. Las ofertas de empleo enlazan a páginas oficiales de empresas y entidades; al visitarlas, se aplican sus propias políticas.
+El sitio está alojado en un proveedor de hosting que puede procesar datos técnicos de los visitantes según su propia política de privacidad. Para saber cuántas personas visitan cada página usamos Vercel Web Analytics, que cuenta las visitas de forma anónima y sin cookies. Las ofertas de empleo enlazan a páginas oficiales de empresas y entidades; al visitarlas, se aplican sus propias políticas.
 
 **Verificador de avisos.** Cuando usas el verificador de avisos de trabajo, el texto que pegas se envía a Anthropic, el proveedor de la inteligencia artificial que lo analiza, solo para generar la respuesta. Chamba en Ica no guarda ese texto. Te recomendamos borrar nombres, teléfonos u otros datos personales antes de pegarlo.
 
