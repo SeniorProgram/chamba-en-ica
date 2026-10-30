@@ -2879,7 +2879,8 @@ main:has(> .pagina) {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: var(--fondo);
+  /* Azul profundo de la marca, un poco más oscuro que el logo para que este resalte */
+  background: radial-gradient(circle at 50% 42%, #14469c 0%, #0a2f73 45%, #061c47 100%);
   cursor: pointer;
   transition: opacity 0.4s ease, visibility 0.4s;
 }
@@ -2911,7 +2912,8 @@ main:has(> .pagina) {
   display: block;
   width: 168px;
   height: 168px;
-  border-radius: 40px;
+  border-radius: 42px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.95), 0 24px 60px -12px rgba(0, 0, 0, 0.55);
   opacity: 0;
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
@@ -2920,7 +2922,7 @@ main:has(> .pagina) {
   font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--titulo);
+  color: #fff;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.35s ease 0.12s, transform 0.35s ease 0.12s;
@@ -2944,7 +2946,7 @@ main:has(> .pagina) {
   bottom: 28px;
   text-align: center;
   font-size: 13px;
-  color: var(--texto-suave);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---------- Formulario "Publica tu oferta" ---------- */
