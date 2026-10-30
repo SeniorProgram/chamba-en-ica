@@ -3409,3 +3409,95 @@ main:has(> .pagina) {
     padding: 16px 14px;
   }
 }
+
+/* ---------- Compartir por WhatsApp ---------- */
+.btn-whatsapp {
+  --wa: #25d366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--wa);
+  color: #0b3d1f;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s ease-out;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5a;
+  color: #0b3d1f;
+}
+.btn-whatsapp:active {
+  transform: scale(0.97);
+}
+.btn-whatsapp-ancho {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0.65em 1em;
+  font-size: 15px;
+}
+.btn-whatsapp-mini {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+.btn-whatsapp-mini .icono {
+  width: 16px;
+  height: 16px;
+}
+.barra-whatsapp {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border-radius: 12px;
+  background: #25d366;
+  color: #0b3d1f;
+}
+
+/* ---------- Convocatoria cerrada ---------- */
+.aviso-cerrada {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1.5px solid color-mix(in srgb, var(--rojo) 35%, var(--borde));
+  background: color-mix(in srgb, var(--rojo) 5%, var(--superficie));
+}
+.aviso-cerrada-cab {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+.aviso-cerrada-cab > .icono {
+  flex: none;
+  color: var(--rojo);
+}
+.aviso-cerrada-cab strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--titulo);
+}
+.aviso-cerrada .centro {
+  margin: 16px 0 0;
+}
+.btn-cerrada {
+  justify-content: center;
+  background: var(--borde);
+  color: var(--texto-suave);
+  border-radius: 12px;
+}
+.btn-cerrada:hover {
+  transform: none;
+  color: var(--texto);
+}
+.panel-postular .btn-cerrada {
+  display: flex;
+  width: 100%;
+  padding: 0.85em 1em;
+  font-size: 16px;
+  margin-bottom: 8px;
+}

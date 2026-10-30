@@ -8,6 +8,7 @@ import {
 } from "@/site.config";
 import type { GuiaBusqueda, OfertaBusqueda } from "@/lib/busqueda";
 import { Icono, OfertaCard, useGuardadas, useHoy, type NombreIcono } from "./OfertaCard";
+import { BotonWhatsApp } from "./WhatsApp";
 
 /* ---------- Filtros: qué se guarda en la dirección (?q=...&cat=...) ---------- */
 
@@ -35,6 +36,8 @@ const POR_PAGINA = 12;
 const normalizar = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const dinero = (n: number) => `S/ ${n.toLocaleString("es-PE")}`;
 const diasEntre = (a: string, b: string) => Math.round((Date.parse(a) - Date.parse(b)) / 86_400_000);
+// Las ofertas cerradas solo se pueden ver hasta un mes después de vencer; luego salen del buscador
+const DIAS_CERRADAS = 30;
 const nombreDe = (lista: readonly { slug: string; nombre: string }[], v: string) => lista.find((x) => x.slug === v)?.nombre ?? "";
 
 function leerFiltros(p: URLSearchParams): Filtros {
@@ -116,7 +119,7 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
       if (f.guardadas && !guardadas.includes(o.slug)) return false;
       if (f.sueldo && (o.sueldoMin == null || o.sueldoMin < f.sueldo)) return false;
       if (hoy && f.dias && diasEntre(hoy, o.date) > f.dias) return false;
-      if (hoy && !f.vencidas && o.vence && o.vence < hoy) return false;
+      if (hoy && o.vence && o.vence < hoy && (!f.vencidas || diasEntre(hoy, o.vence) > DIAS_CERRADAS)) return false;
       if (palabras.length) {
         const t = normalizar(o.texto);
         if (!palabras.every((p) => t.includes(p))) return false;
@@ -146,7 +149,7 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
 
   // ¿Hay ofertas que solo se ocultan por estar vencidas? (para ofrecer verlas)
   const hayVencidas = useMemo(
-    () => !f.vencidas && hoy !== null && ofertas.some((o) => (!fijo.cat || o.categoria === fijo.cat) && (!fijo.prov || o.provincia === fijo.prov) && o.vence && o.vence < hoy),
+    () => !f.vencidas && hoy !== null && ofertas.some((o) => (!fijo.cat || o.categoria === fijo.cat) && (!fijo.prov || o.provincia === fijo.prov) && o.vence && o.vence < hoy && diasEntre(hoy, o.vence) <= DIAS_CERRADAS),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [f.vencidas, hoy, ofertas],
   );
@@ -167,7 +170,7 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
   if (f.sueldo) activos.push({ texto: `Desde ${dinero(f.sueldo)}`, quitar: () => aplicar({ sueldo: 0 }) });
   if (f.dias) activos.push({ texto: fechasPublicacion.find((d) => d.dias === f.dias)?.nombre ?? "", quitar: () => aplicar({ dias: 0 }) });
   if (f.guardadas) activos.push({ texto: "Mis guardadas", quitar: () => aplicar({ guardadas: false }) });
-  if (f.vencidas) activos.push({ texto: "Incluye vencidas", quitar: () => aplicar({ vencidas: false }) });
+  if (f.vencidas) activos.push({ texto: "Incluye cerradas del último mes", quitar: () => aplicar({ vencidas: false }) });
   const limpiar = () => { setTexto(""); aplicar({ q: "", cat: [], prov: [], jor: [], mod: [], exp: [], edu: [], sueldo: 0, dias: 0, vencidas: false, guardadas: false }); };
   const nFiltros = activos.length - (f.q.trim() ? 1 : 0);
 
@@ -296,6 +299,12 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
         <section className="resultados" aria-live="polite">
           <div className="resultados-cab">
             <p><strong>{resultados.length}</strong> {resultados.length === 1 ? "empleo encontrado" : "empleos encontrados"} en {lugar}</p>
+            {resultados.length > 0 && (
+              // Comparte la búsqueda tal cual (con sus filtros) en grupos de WhatsApp
+              <BotonWhatsApp className="btn-whatsapp-mini" alPulsar={() => `Mira estos ${resultados.length} empleos en ${lugar} 👉 ${window.location.href}`}>
+                Compartir búsqueda
+              </BotonWhatsApp>
+            )}
             <div className="resultados-acciones">
               <button type="button" className="btn-filtros" onClick={() => setPanel(true)}>
                 <Icono nombre="ajustes" /> Filtros{nFiltros > 0 && <span className="contador">{nFiltros}</span>}

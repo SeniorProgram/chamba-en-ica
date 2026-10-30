@@ -173,6 +173,13 @@ export const getPaginas = () => readDir("paginas").map((p) => p.slug);
 
 /* ---------- Utilidades ---------- */
 
+/** Fecha de hoy en hora de Lima, al compilar (el sitio se vuelve a compilar con cada importe) */
+export const hoyLima = () => new Date().toLocaleDateString("en-CA", { timeZone: "America/Lima" });
+
+/** ¿Venció hace más de `dias` días? Esas ofertas dejan de ofrecerse a Google (su página sigue existiendo) */
+export const vencidaHace = (o: { vence: string }, dias: number) =>
+  Boolean(o.vence) && Date.parse(hoyLima()) - Date.parse(o.vence) > dias * 86_400_000;
+
 export function formatFecha(iso: string) {
   if (!iso) return "";
   const [y, m, d] = iso.split("-").map(Number);

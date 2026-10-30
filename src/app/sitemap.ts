@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { categorias, provincias, site } from "@/site.config";
-import { getGuias, getOfertas, getPaginas } from "@/lib/content";
+import { getGuias, getOfertas, getPaginas, vencidaHace } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categorias.map((c) => ({ url: u(`/empleos/${c.slug}/`), changeFrequency: "daily" as const })),
     ...provincias.map((p) => ({ url: u(`/provincia/${p.slug}/`), changeFrequency: "daily" as const })),
     ...getGuias().map((g) => ({ url: u(`/guias/${g.slug}/`), lastModified: g.updated })),
-    ...getOfertas().map((o) => ({ url: u(`/ofertas/${o.slug}/`), lastModified: o.date })),
+    // Las que vencieron hace más de 30 días ya no se ofrecen a Google
+    ...getOfertas().filter((o) => !vencidaHace(o, 30)).map((o) => ({ url: u(`/ofertas/${o.slug}/`), lastModified: o.date })),
   ];
 }

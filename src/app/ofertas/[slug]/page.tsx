@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categorias, educaciones, experiencias, jornadas, modalidades, provincias } from "@/site.config";
-import { formatFecha, getOferta, getOfertaEjemplo, getOfertas } from "@/lib/content";
+import { categorias, educaciones, experiencias, jornadas, modalidades, provincias, site } from "@/site.config";
+import { formatFecha, getOferta, getOfertaEjemplo, getOfertas, hoyLima, vencidaHace } from "@/lib/content";
 import Anuncio from "@/components/Anuncio";
 import Cabecera from "@/components/Cabecera";
 import { EstadoBadge, GuardarOferta, Icono, ListaTarjetas, LogoEmpresa, type NombreIcono } from "@/components/OfertaCard";
 import { AccionesOferta, PestanasOferta } from "@/components/AccionesOferta";
+import { AvisoCerrada, SiAbierta } from "@/components/OfertaCerrada";
+import { BotonWhatsApp, IconoWhatsApp, enlaceWhatsApp } from "@/components/WhatsApp";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${o.title} – ${o.empresa}`,
     description: o.resumen,
-    robots: slug === "ejemplo" ? { index: false, follow: false } : undefined,
+    // La plantilla y las ofertas que cerraron hace más de 30 días no salen en Google (la página sigue abriendo)
+    robots: slug === "ejemplo" ? { index: false, follow: false } : vencidaHace(o, 30) ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -63,8 +66,9 @@ export default async function OfertaPage({ params }: Props) {
     },
   };
 
-  // Empleos relacionados: primero los de la misma categoría, luego los de la misma provincia
-  const otras = esEjemplo ? [] : getOfertas().filter((x) => x.slug !== o.slug);
+  // Empleos relacionados (solo los que siguen abiertos): primero los de la misma categoría, luego los de la misma provincia
+  const hoy = hoyLima();
+  const otras = esEjemplo ? [] : getOfertas().filter((x) => x.slug !== o.slug && (!x.vence || x.vence >= hoy));
   const relacionadas = [
     ...otras.filter((x) => x.categoria === o.categoria),
     ...otras.filter((x) => x.categoria !== o.categoria && x.provincia === o.provincia),
@@ -73,6 +77,16 @@ export default async function OfertaPage({ params }: Props) {
   const lugar = `${o.distrito && o.distrito !== prov?.nombre ? `${o.distrito}, ` : ""}${prov?.nombre ?? ""}, Ica`;
   const modalidad = nombre(modalidades, o.modalidad);
   const dominio = (() => { try { return new URL(o.fuente).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+
+  // Mensaje listo para mandar por WhatsApp (grupos de trabajo, familia, amigos)
+  const mensajeWhatsApp = [
+    `💼 *${o.title}* – ${o.empresa}`,
+    `📍 ${lugar}`,
+    o.sueldo && `💰 ${o.sueldo}`,
+    o.vence && `📅 Postula hasta el ${formatFecha(o.vence)}`,
+    `👉 ${site.url}/ofertas/${o.slug}/`,
+  ].filter(Boolean).join("\n");
+  const cerradaBoton = <a href="#oferta-cerrada" className="btn btn-postular btn-cerrada">Convocatoria cerrada</a>;
 
   // Ruta de migas: cada paso lleva a la búsqueda con ese filtro
   const migas = [
@@ -154,6 +168,16 @@ export default async function OfertaPage({ params }: Props) {
           <AccionesOferta slug={o.slug} titulo={o.title} />
         </header>
 
+        {!esEjemplo && (
+          <AvisoCerrada
+            vence={o.vence}
+            venceTexto={formatFecha(o.vence)}
+            parecidas={relacionadas.slice(0, 3)}
+            masHref={`/empleos/${o.categoria}/`}
+            masTexto={`Ver todas las ofertas abiertas de ${cat?.nombre ?? "este tipo"}`}
+          />
+        )}
+
         <div className="layout layout-der">
           <div className="principal">
             <PestanasOferta detalle={detalle} relacionadas={listaRelacionadas} total={relacionadas.length} />
@@ -167,14 +191,17 @@ export default async function OfertaPage({ params }: Props) {
                 <li><Icono nombre="calendario" /> {o.vence ? <>Postula hasta el <strong>{formatFecha(o.vence)}</strong></> : "Sin fecha límite"}</li>
                 {o.vacantes ? <li><Icono nombre="personas" /> {o.vacantes} {o.vacantes === 1 ? "vacante" : "vacantes"}</li> : null}
               </ul>
-              {o.fuente ? (
-                <a href={o.fuente} className="btn btn-naranja btn-postular" target="_blank" rel="noopener noreferrer">
-                  Postular en la web oficial <Icono nombre="enlace" tam={16} />
-                </a>
-              ) : (
-                <a href="#panel-detalle" className="btn btn-naranja btn-postular">Ver cómo postular</a>
-              )}
+              <SiAbierta vence={o.vence} cerrado={cerradaBoton}>
+                {o.fuente ? (
+                  <a href={o.fuente} className="btn btn-naranja btn-postular" target="_blank" rel="noopener noreferrer">
+                    Postular en la web oficial <Icono nombre="enlace" tam={16} />
+                  </a>
+                ) : (
+                  <a href="#panel-detalle" className="btn btn-naranja btn-postular">Ver cómo postular</a>
+                )}
+              </SiAbierta>
               <GuardarOferta slug={o.slug} />
+              <BotonWhatsApp texto={mensajeWhatsApp} className="btn-whatsapp-ancho">Compartir por WhatsApp</BotonWhatsApp>
               {o.origen.startsWith("Empleos Perú") ? (
                 // El servidor de inicio de sesión del Ministerio falla a ratos (502) y la página sale en blanco; recargar lo arregla
                 <p className="postular-nota">
@@ -215,7 +242,12 @@ export default async function OfertaPage({ params }: Props) {
           <small>Sueldo</small>
           <strong>{o.sueldo}</strong>
         </div>
-        <a href="#postular" className="btn btn-naranja">Postular</a>
+        <a href={enlaceWhatsApp(mensajeWhatsApp)} className="barra-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Compartir por WhatsApp">
+          <IconoWhatsApp tam={24} />
+        </a>
+        <SiAbierta vence={o.vence} cerrado={<a href="#oferta-cerrada" className="btn btn-cerrada">Cerrada</a>}>
+          <a href="#postular" className="btn btn-naranja">Postular</a>
+        </SiAbierta>
       </div>
     </div>
   );
