@@ -1,6 +1,7 @@
 ---
 title: "Auxiliar administrativo"
 empresa: "Casevip S.R.L."
+logo: "/img/empresas/55a698beafd4426bb646c28437c0df71.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "San Juan Bautista"

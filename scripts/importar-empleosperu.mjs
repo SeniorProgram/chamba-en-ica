@@ -29,6 +29,32 @@ const ICA = "11"; // código de departamento (ubigeo)
 const PAUSA_MS = 700; // espera entre pedidos para no cargar el portal
 const UA = "ChambaEnIca/1.0 (+https://chamba-en-ica.vercel.app; difusion de ofertas publicas de Empleos Peru)";
 const SUELDO_MINIMO = 1130;
+const LOGOS = path.join(RAIZ, "public", "img", "empresas");
+
+/**
+ * Logo que la empresa subió a Empleos Perú: se descarga una sola vez y se guarda en el sitio
+ * (su servidor falla seguido y no conviene cargarlo desde allá en cada visita). Devuelve la ruta pública o "".
+ */
+async function guardarLogo(o) {
+  const url = o.companyLogo?.url;
+  if (!url || !o.companyId || !/^[0-9a-f]{32}$/.test(o.companyId)) return "";
+  fs.mkdirSync(LOGOS, { recursive: true });
+  const existente = fs.readdirSync(LOGOS).find((f) => f.startsWith(o.companyId + "."));
+  if (existente) return `/img/empresas/${existente}`;
+  try {
+    const r = await fetch(`${API.replace(/\/jobs$/, "")}/attachments${url}`, { headers: { "User-Agent": UA } });
+    const tipo = r.headers.get("content-type") ?? "";
+    const ext = /png/.test(tipo) ? "png" : /webp/.test(tipo) ? "webp" : /jpe?g/.test(tipo) ? "jpg" : "";
+    const datos = Buffer.from(await r.arrayBuffer());
+    // Solo imágenes reales y livianas
+    if (!r.ok || !ext || datos.length < 200 || datos.length > 400_000) return "";
+    const archivo = `${o.companyId}.${ext}`;
+    fs.writeFileSync(path.join(LOGOS, archivo), datos);
+    return `/img/empresas/${archivo}`;
+  } catch {
+    return "";
+  }
+}
 
 const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
 async function pedir(url) {
@@ -171,7 +197,7 @@ function categoriaDe(o) {
 // Señales de cobro en el aviso: no se publica sin revisar
 const PIDE_DINERO = /(pag(o|ar)|deposit|yape|plin|costo).{0,40}(capacitacion|inscripcion|uniforme|fotocheck|examen)/i;
 
-function aMarkdown(o, provincia, distrito) {
+function aMarkdown(o, provincia, distrito, logo = "") {
   const titulo = tipoOracion(tituloLimpio(o.positionTitle));
   const empresa = tipoNombre(o.companyName);
   const sueldo = sueldoDe(o);
@@ -208,7 +234,7 @@ function aMarkdown(o, provincia, distrito) {
   return `---
 title: ${yaml(titulo)}
 empresa: ${yaml(empresa)}
-categoria: ${categoriaDe(o)}
+${logo ? `logo: ${yaml(logo)}\n` : ""}categoria: ${categoriaDe(o)}
 provincia: ${provincia}
 distrito: ${yaml(distrito)}
 date: ${o.datePosted}
@@ -275,7 +301,8 @@ async function main() {
       continue;
     }
     const nombre = `${slugDe(`${tituloLimpio(o.positionTitle)} ${o.companyName}`)}-ep${o.id.slice(0, 6)}.md`;
-    fs.writeFileSync(path.join(SALIDA, nombre), aMarkdown(o, provincia, distrito), "utf8");
+    const logo = await guardarLogo(o);
+    fs.writeFileSync(path.join(SALIDA, nombre), aMarkdown(o, provincia, distrito, logo), "utf8");
     nuevas.push(`${tipoOracion(tituloLimpio(o.positionTitle))} — ${tipoNombre(o.companyName)} (${distrito})`);
     console.log(`    + ${nombre}`);
   }

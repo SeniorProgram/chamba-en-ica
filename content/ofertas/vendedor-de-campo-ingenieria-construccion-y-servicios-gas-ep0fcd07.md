@@ -1,6 +1,7 @@
 ---
 title: "Vendedor de campo"
 empresa: "Ingenieria, Construccion y Servicios Gas Peru S.A.C. - Incoser Gas Peru S.A.C."
+logo: "/img/empresas/1164897d53184c419e776dec4da718a9.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

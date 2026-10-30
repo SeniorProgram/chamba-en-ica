@@ -1,6 +1,7 @@
 ---
 title: "Asistente de calidad"
 empresa: "DM Avicola S.a.c"
+logo: "/img/empresas/df1c8e6323254097bc0a0fcd8cfa2b68.jpg"
 categoria: agroexportacion
 provincia: chincha
 distrito: "Grocio Prado"

@@ -1,6 +1,7 @@
 ---
 title: "Enfermera ocupacional"
 empresa: "Rvr Agro S.R.L."
+logo: "/img/empresas/eb58d2d2c7bc4e9da4aa66adfc26a5a7.jpg"
 categoria: agroexportacion
 provincia: ica
 distrito: "Ica"

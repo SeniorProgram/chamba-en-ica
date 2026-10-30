@@ -1,6 +1,7 @@
 ---
 title: "Asistente contable con experiencia"
 empresa: "Brari Compras"
+logo: "/img/empresas/bfaa291da8844fbab7a0100fbaa8cc6d.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

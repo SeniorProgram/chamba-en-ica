@@ -1,6 +1,7 @@
 ---
 title: "Gerente(a) de ventas de campo"
 empresa: "Azzorti"
+logo: "/img/empresas/92f4cfba8fff421199cfb5ac4a30ac5b.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

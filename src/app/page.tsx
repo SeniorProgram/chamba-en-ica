@@ -33,13 +33,14 @@ export default function Inicio() {
   const cuenta = (campo: "categoria" | "provincia", v: string) => vigentes.filter((o) => o[campo] === v).length;
 
   // Empresas con más ofertas vigentes (el Estado y las privadas por igual)
-  const porEmpresa = new Map<string, number>();
+  const porEmpresa = new Map<string, { ofertas: number; logo: string }>();
   for (const o of vigentes) {
     const nombre = nombreCorto(o.empresa);
-    porEmpresa.set(nombre, (porEmpresa.get(nombre) ?? 0) + 1);
+    const actual = porEmpresa.get(nombre) ?? { ofertas: 0, logo: "" };
+    porEmpresa.set(nombre, { ofertas: actual.ofertas + 1, logo: actual.logo || o.logo });
   }
   const empresas = [...porEmpresa.entries()]
-    .map(([nombre, ofertas]) => ({ nombre, ofertas }))
+    .map(([nombre, d]) => ({ nombre, ofertas: d.ofertas, logo: d.logo }))
     .sort((a, b) => b.ofertas - a.ofertas || a.nombre.localeCompare(b.nombre))
     .slice(0, 14);
   const todasGuias = getGuias();
@@ -100,7 +101,7 @@ export default function Inicio() {
               {nuevas.map((o) => (
                 <Link key={o.slug} href={`/ofertas/${o.slug}/`} className="oferta-mini">
                   <span className="oferta-mini-cab">
-                    <LogoEmpresa empresa={o.empresa} />
+                    <LogoEmpresa empresa={o.empresa} logo={o.logo} />
                     <span className="oferta-mini-titulos">
                       <strong>{o.title}</strong>
                       <span>{nombreCorto(o.empresa)}</span>

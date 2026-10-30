@@ -141,7 +141,7 @@ export default async function OfertaPage({ params }: Props) {
         )}
 
         <header className="panel oferta-encabezado entrada">
-          <LogoEmpresa empresa={o.empresa} grande />
+          <LogoEmpresa empresa={o.empresa} logo={o.logo} grande />
           <div className="oferta-encabezado-texto">
             <h1>{o.title}</h1>
             <p>

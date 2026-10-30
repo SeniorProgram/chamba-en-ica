@@ -1,6 +1,7 @@
 ---
 title: "Operador de tienda"
 empresa: "Mass Tiendas"
+logo: "/img/empresas/e8294d04b2df4b6d8021fadea7340792.jpg"
 categoria: empleos-en-empresas
 provincia: chincha
 distrito: "Pueblo Nuevo"

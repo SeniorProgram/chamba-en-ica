@@ -1,6 +1,7 @@
 ---
 title: "Asesor de ventas"
 empresa: "Urban Inmobiliaria"
+logo: "/img/empresas/a784013f42004547b2c7ae5d77a2d270.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "La Tinguiña"

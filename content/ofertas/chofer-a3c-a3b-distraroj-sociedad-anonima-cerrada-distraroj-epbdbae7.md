@@ -1,6 +1,7 @@
 ---
 title: "Chofer A3C/A3B"
 empresa: "Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C."
+logo: "/img/empresas/4f8f2f1b0de0419aa271bde2174079f7.jpg"
 categoria: empleos-en-empresas
 provincia: chincha
 distrito: "Grocio Prado"

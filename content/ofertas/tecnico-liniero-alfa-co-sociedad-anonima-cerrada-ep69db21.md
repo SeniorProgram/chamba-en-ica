@@ -1,6 +1,7 @@
 ---
 title: "Tecnico liniero"
 empresa: "Alfa Co Sociedad Anonima Cerrada"
+logo: "/img/empresas/d8e4700380f046a9aca0d7eed6f21bff.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

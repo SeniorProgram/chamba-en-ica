@@ -1,6 +1,7 @@
 ---
 title: "Asesor (a) de créditos grupales"
 empresa: "COOPAC Kori"
+logo: "/img/empresas/5d344b28ee3441ff99efc61c6498aa6b.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

@@ -1,6 +1,7 @@
 ---
 title: "Operador de tienda - part time"
 empresa: "Mass Tiendas"
+logo: "/img/empresas/e8294d04b2df4b6d8021fadea7340792.jpg"
 categoria: part-time-y-temporada
 provincia: chincha
 distrito: "Pueblo Nuevo"

@@ -1,6 +1,7 @@
 ---
 title: "Asesor de ventas wow"
 empresa: "Multiple Force S.A.C."
+logo: "/img/empresas/e065367c46cc4b83ba749c1eeaab4bc7.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

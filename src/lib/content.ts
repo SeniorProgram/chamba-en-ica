@@ -92,6 +92,8 @@ export type Oferta = {
   fuente: string;
   /** De dónde se tomó el aviso (ej. Talento Perú). Vacío si lo publicó la empresa */
   origen: string;
+  /** Logo de la empresa guardado en public/img/empresas (vacío si no tiene) */
+  logo: string;
   resumen: string;
   html: string;
   // Opcionales (para los filtros); vacíos si la oferta no los indica
@@ -132,6 +134,8 @@ function toOferta({ slug, data, body }: { slug: string; data: Record<string, unk
     sueldo: String(data.sueldo ?? "A tratar"),
     fuente: String(data.fuente ?? ""),
     origen: texto(data.origen),
+    // Solo rutas locales del sitio (nunca una imagen de otro dominio)
+    logo: /^\/img\/empresas\/[\w.-]+$/.test(texto(data.logo)) ? texto(data.logo) : "",
     resumen: String(data.resumen ?? ""),
     html: marked.parse(body) as string,
   };

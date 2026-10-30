@@ -1,6 +1,7 @@
 ---
 title: "Supervissor de contrato"
 empresa: "Sandvik del Perú"
+logo: "/img/empresas/fbfaad73abf948fea5604fc16c886a67.jpg"
 categoria: empleos-en-empresas
 provincia: nasca
 distrito: "Marcona"

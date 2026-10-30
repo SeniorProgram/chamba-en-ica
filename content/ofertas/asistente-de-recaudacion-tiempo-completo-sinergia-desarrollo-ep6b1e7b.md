@@ -1,6 +1,7 @@
 ---
 title: "Asistente de recaudación / tiempo completo"
 empresa: "Sinergia Desarrollo Profesional S.R.L."
+logo: "/img/empresas/318e5a0a1c8242beb9de8d6f2ceec08e.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

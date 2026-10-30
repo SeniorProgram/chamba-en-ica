@@ -3233,6 +3233,21 @@ main:has(> .pagina) {
   }
 }
 
+/* Logo real de la empresa: fondo blanco para que se vea bien en cualquier tema */
+.oc-logo-imagen {
+  background: #fff;
+  border-color: var(--borde);
+  overflow: hidden;
+  padding: 3px;
+}
+.oc-logo-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 /* ---------- Formulario "Publica tu oferta" ---------- */
 .form-oferta {
   padding-bottom: 72px;

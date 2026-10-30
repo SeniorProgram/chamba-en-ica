@@ -1,6 +1,7 @@
 ---
 title: "Asesor(a) de negocios con/sin exp ag. Parcona"
 empresa: "Caja Huancayo"
+logo: "/img/empresas/5c103f8db21b4d2588e112493445e267.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Parcona"

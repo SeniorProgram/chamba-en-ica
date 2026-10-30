@@ -1,6 +1,7 @@
 ---
 title: "Auxiliar general / vajillero"
 empresa: "Huayra Multiservicios S.A.C."
+logo: "/img/empresas/b30c95ee65a94e49882a8e28faf414dd.jpg"
 categoria: empleos-en-empresas
 provincia: pisco
 distrito: "San Clemente"

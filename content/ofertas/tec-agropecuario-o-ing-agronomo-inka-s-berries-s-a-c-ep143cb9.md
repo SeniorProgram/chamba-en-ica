@@ -1,6 +1,7 @@
 ---
 title: "Tec. agropecuario o ing. agrónomo"
 empresa: "Inka´s Berries S.A.C."
+logo: "/img/empresas/b2af670c204e44028ef11c841180d36e.jpg"
 categoria: agroexportacion
 provincia: ica
 distrito: "Ica"

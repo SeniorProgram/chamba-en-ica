@@ -1,6 +1,7 @@
 ---
 title: "Jefe / supervisor de ventas de fibra óptica - region centro"
 empresa: "Service del Peru S.A.C."
+logo: "/img/empresas/d652cddc521d419289228b161dfa4594.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

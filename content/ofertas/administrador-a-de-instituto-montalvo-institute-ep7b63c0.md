@@ -1,6 +1,7 @@
 ---
 title: "Administrador(a) de instituto"
 empresa: "Montalvo Institute"
+logo: "/img/empresas/f9a3a39d198c4c3d979458a1699d1159.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Ica"

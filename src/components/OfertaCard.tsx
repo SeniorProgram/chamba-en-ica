@@ -54,7 +54,16 @@ function tono(texto: string) {
   return TONOS[h % TONOS.length];
 }
 
-export function LogoEmpresa({ empresa, grande }: { empresa: string; grande?: boolean }) {
+export function LogoEmpresa({ empresa, grande, logo }: { empresa: string; grande?: boolean; logo?: string }) {
+  // Logo real de la empresa (si lo subió a la fuente); si no, sus iniciales en un color propio
+  if (logo) {
+    return (
+      <span className={`oc-logo oc-logo-imagen ${grande ? "oc-logo-grande" : ""}`} aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logo} alt="" loading="lazy" decoding="async" />
+      </span>
+    );
+  }
   return (
     <span className={`oc-logo ${grande ? "oc-logo-grande" : ""}`} style={{ "--tono": tono(empresa) } as CSSProperties} aria-hidden>
       {iniciales(empresa)}
@@ -97,7 +106,7 @@ export function OfertaCard({ o, hoy, guardada, guardar }: { o: OfertaResumen; ho
           {estado && <span className={`badge ${estado.clase}`}>{estado.texto}</span>}
         </div>
         <div className="oc-cab">
-          <LogoEmpresa empresa={o.empresa} />
+          <LogoEmpresa empresa={o.empresa} logo={o.logo} />
           <div className="oc-titulos">
             <h3><Link href={`/ofertas/${o.slug}/`} className="oc-enlace">{o.title}</Link></h3>
             <p className="oc-empresa">{o.empresa}</p>

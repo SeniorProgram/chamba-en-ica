@@ -1,6 +1,7 @@
 ---
 title: "Coordinador de sostenibilidad y comunicación externa"
 empresa: "Virtus"
+logo: "/img/empresas/1581065d744a4e5797e913fac5d0a26e.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Subtanjalla"

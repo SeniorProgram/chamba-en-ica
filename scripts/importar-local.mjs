@@ -55,7 +55,7 @@ try {
   if (!resumenes.length) throw new Error("Ninguna fuente se pudo importar.");
 
   // Se agrega y se mira lo que de verdad cambió (git status puede marcar archivos solo por los saltos de línea de Windows)
-  git(["add", "content/ofertas", "data/servir-vistos.json", "data/empleosperu-vistos.json"], COPIA);
+  git(["add", "content/ofertas", "public/img/empresas", "data/servir-vistos.json", "data/empleosperu-vistos.json"], COPIA);
   const cambios = git(["diff", "--cached", "--name-only"], COPIA);
   if (!cambios) {
     console.log("\n✔ No hay convocatorias nuevas. Nada que revisar hoy.");

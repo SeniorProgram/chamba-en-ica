@@ -1,6 +1,7 @@
 ---
 title: "Asesor de créditos"
 empresa: "Crecer Siempre S.R.L."
+logo: "/img/empresas/336fe9adece940539997fa0786596c00.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Parcona"

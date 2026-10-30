@@ -1,6 +1,7 @@
 ---
 title: "Diseñador grafico"
 empresa: "Fiberpro Ica"
+logo: "/img/empresas/b106ac1f97f84462ba990e276e30ab1b.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Los Aquijes"

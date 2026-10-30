@@ -1,6 +1,7 @@
 ---
 title: "Trabajador social"
 empresa: "Agricola Safco Peru S.A."
+logo: "/img/empresas/eff5b0d5643546b999c073254e01f030.jpg"
 categoria: agroexportacion
 provincia: ica
 distrito: "Ica"

@@ -1,6 +1,7 @@
 ---
 title: "Despachador"
 empresa: "Apc Corporacion S.A."
+logo: "/img/empresas/84c93bbe084c4e909781d3fdb4f34c0a.jpg"
 categoria: empleos-en-empresas
 provincia: ica
 distrito: "Salas"

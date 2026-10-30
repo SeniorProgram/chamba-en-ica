@@ -1,6 +1,7 @@
 ---
 title: "Operario de frio"
 empresa: "Agro Industria San Antonio S R Ltda"
+logo: "/img/empresas/e19c38f594864da8a8ee62ec98927752.jpg"
 categoria: agroexportacion
 provincia: ica
 distrito: "Ica"

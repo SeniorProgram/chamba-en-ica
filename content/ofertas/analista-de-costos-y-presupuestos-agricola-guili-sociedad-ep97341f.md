@@ -1,6 +1,7 @@
 ---
 title: "Analista de costos y presupuestos"
 empresa: "Agricola Guili Sociedad Anonima Cerrada - Agricola Guili S.A.C."
+logo: "/img/empresas/078ede9e29ed468583bb7357d0c8471e.jpg"
 categoria: agroexportacion
 provincia: ica
 distrito: "Ica"

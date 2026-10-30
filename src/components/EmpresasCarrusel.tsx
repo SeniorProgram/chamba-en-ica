@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Icono, LogoEmpresa } from "./OfertaCard";
 
-export type EmpresaDestacada = { nombre: string; ofertas: number };
+export type EmpresaDestacada = { nombre: string; ofertas: number; logo?: string };
 
 /** "Estas empresas necesitan tu talento": las que tienen más ofertas vigentes, en un carrusel con flechas. */
 export default function EmpresasCarrusel({ empresas, total }: { empresas: EmpresaDestacada[]; total: number }) {
@@ -27,7 +27,7 @@ export default function EmpresasCarrusel({ empresas, total }: { empresas: Empres
             {empresas.map((e) => (
               <li key={e.nombre}>
                 <Link href={`/buscar/?q=${encodeURIComponent(e.nombre)}`} className="empresa-tarjeta">
-                  <LogoEmpresa empresa={e.nombre} grande />
+                  <LogoEmpresa empresa={e.nombre} logo={e.logo} grande />
                   <strong>{e.nombre}</strong>
                   <span>{e.ofertas} {e.ofertas === 1 ? "oferta" : "ofertas"}</span>
                 </Link>

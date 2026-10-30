@@ -45,6 +45,7 @@ collections:
     fields:
       - { name: title, label: "Puesto", widget: string, hint: "Ej.: Cajero de tienda, Asistente administrativo CAS" }
       - { name: empresa, label: "Empresa o entidad", widget: string }
+      - { name: logo, label: "Logo de la empresa (cuadrado, con su permiso)", widget: image, required: false, media_folder: /public/img/empresas, public_folder: /img/empresas }
       - name: categoria
         label: Categoría
         widget: select
