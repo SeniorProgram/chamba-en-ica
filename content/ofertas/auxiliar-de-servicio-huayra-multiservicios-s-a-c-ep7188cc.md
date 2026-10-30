@@ -69,4 +69,4 @@ Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/sea
 
 - **Postula hasta:** 06/12/2026
 
-**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Huayra Multiservicios S.A.C.**.
+**Si la página de la oferta sale en blanco:** es una falla momentánea del portal del Ministerio. Recarga la página (F5, o desliza hacia abajo en el celular) una o dos veces y la oferta aparece. Si sigue en blanco, prueba en unos minutos.

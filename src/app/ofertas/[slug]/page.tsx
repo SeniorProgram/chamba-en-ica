@@ -111,7 +111,8 @@ export default async function OfertaPage({ params }: Props) {
 
       <Anuncio />
       <h2 className="detalle-titulo"><Icono nombre="documento" tam={22} /> Descripción del puesto</h2>
-      <div className="prosa" dangerouslySetInnerHTML={{ __html: o.html }} />
+      {/* Las ofertas importadas ya empiezan con "## Descripción del puesto": se quita para no repetir el título */}
+      <div className="prosa" dangerouslySetInnerHTML={{ __html: o.html.replace(/^\s*<h2[^>]*>\s*Descripción del puesto\s*<\/h2>/i, "") }} />
     </article>
   );
 
@@ -175,11 +176,11 @@ export default async function OfertaPage({ params }: Props) {
               )}
               <GuardarOferta slug={o.slug} />
               {o.origen.startsWith("Empleos Perú") ? (
-                // El portal del Ministerio a veces sale en blanco cuando falla su servidor de inicio de sesión
+                // El servidor de inicio de sesión del Ministerio falla a ratos (502) y la página sale en blanco; recargar lo arregla
                 <p className="postular-nota">
                   Te llevamos a <strong>Empleos Perú</strong>: para aplicar necesitas una cuenta gratuita. Si la página sale en
-                  blanco, entra a <a href="https://www.empleosperu.gob.pe" target="_blank" rel="noopener noreferrer">empleosperu.gob.pe</a>,
-                  pulsa <strong>Ver vacantes</strong> y busca <strong>{o.empresa}</strong>.
+                  blanco, es una falla momentánea del portal: <strong>recárgala</strong> (F5, o desliza hacia abajo en el celular)
+                  una o dos veces y la oferta aparece.
                 </p>
               ) : (
                 <p className="postular-nota">

@@ -121,7 +121,7 @@ const ddmmaaaa = (iso) => (iso ? iso.split("-").reverse().join("/") : "");
 // El texto lo escribió la empresa: se escapa el HTML (nunca se publica código ajeno) y se ordena:
 // "REQUISITOS:" pasa a subtítulo en negrita y las líneas que siguen, a lista
 const escapar = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const VINETA = /^(?:[•·▪●◦\-–*✔✅☑🔹🔸👉➤►✓]|\d+[.)])\s*/u;
+const VINETA = /^(?:[•·▪●◦\-–*✔✅☑🔹🔸👉➤►✓-]|\d+[.)])\s*/u; // -: viñetas de Word
 function aTexto(s) {
   const lineas = escapar(s).replace(/\r/g, "").split("\n").map((l) => l.trim());
   const salida = [];
@@ -228,8 +228,8 @@ function aMarkdown(o, provincia, distrito, logo = "") {
     ? `Postula en el [enlace de la empresa](${o.application.url}). La oferta está publicada en [Empleos Perú](${OFERTA(o.id, o.companyName)}), la bolsa de trabajo del Ministerio de Trabajo.\n`
     : `Postula gratis en [Empleos Perú](${OFERTA(o.id, o.companyName)}), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.\n`;
   if (vence) cuerpo += `\n- **Postula hasta:** ${ddmmaaaa(vence)}\n`;
-  // A veces el servidor de inicio de sesión de Empleos Perú falla y la página de la oferta sale en blanco
-  cuerpo += `\n**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](${PORTAL}), pulsa **Ver vacantes** y busca **${empresa}**.\n`;
+  // A veces el servidor de inicio de sesión de Empleos Perú falla (502 intermitente) y la página sale en blanco: recargar lo arregla
+  cuerpo += `\n**Si la página de la oferta sale en blanco:** es una falla momentánea del portal del Ministerio. Recarga la página (F5, o desliza hacia abajo en el celular) una o dos veces y la oferta aparece. Si sigue en blanco, prueba en unos minutos.\n`;
 
   return `---
 title: ${yaml(titulo)}

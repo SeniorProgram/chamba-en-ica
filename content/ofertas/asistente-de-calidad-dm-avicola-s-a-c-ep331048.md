@@ -30,53 +30,53 @@ Estudiante de últimos ciclos o egresado de carreras técnicas o universitarias 
 
 Conocimientos requeridos:
 
-	Office a nivel básico y Excel intermedio.
+- Office a nivel básico y Excel intermedio.
 
-	Buenas Prácticas de Manufactura (BPM).
+- Buenas Prácticas de Manufactura (BPM).
 
-	Principios de inocuidad alimentaria.
+- Principios de inocuidad alimentaria.
 
-	Manejo básico de registros y formatos de calidad.
+- Manejo básico de registros y formatos de calidad.
 
-	Muestreo e inspección de materia prima y producto.
+- Muestreo e inspección de materia prima y producto.
 
-	Deseable conocimiento en: POES, HACCP (básico), Normativa sanitaria para productos avícolas.
+- Deseable conocimiento en: POES, HACCP (básico), Normativa sanitaria para productos avícolas.
 
 Funciones y Responsabilidades
 
-	Realizar muestreos de materia prima (huevo) y productos en proceso y terminados.
+- Realizar muestreos de materia prima (huevo) y productos en proceso y terminados.
 
-	Ejecutar inspecciones de calidad en recepción, clasificación, empaque y despacho.
+- Ejecutar inspecciones de calidad en recepción, clasificación, empaque y despacho.
 
-	Verificar el cumplimiento de BPM, POES y procedimientos operativos en planta.
+- Verificar el cumplimiento de BPM, POES y procedimientos operativos en planta.
 
-	Mantener formatos de seguimiento, registros e informes de inspección de calidad.
+- Mantener formatos de seguimiento, registros e informes de inspección de calidad.
 
-	Registrar y reportar no conformidades, desviaciones y acciones correctivas.
+- Registrar y reportar no conformidades, desviaciones y acciones correctivas.
 
-	Apoyar en auditorías internas y externas.
+- Apoyar en auditorías internas y externas.
 
-	Inspeccionar condiciones de higiene, limpieza, desinfección y orden en planta.
+- Inspeccionar condiciones de higiene, limpieza, desinfección y orden en planta.
 
-	Apoyar en capacitaciones básicas al personal operativo en temas de calidad e inocuidad.
+- Apoyar en capacitaciones básicas al personal operativo en temas de calidad e inocuidad.
 
 Habilidades y competencias:
 
-	Proactividad y disposición para aprender.
+- Proactividad y disposición para aprender.
 
-	Alto compromiso con la seguridad, orden y limpieza.
+- Alto compromiso con la seguridad, orden y limpieza.
 
-	Buena comunicación, responsabilidad y trabajo en equipo.
+- Buena comunicación, responsabilidad y trabajo en equipo.
 
-	Atención al detalle y cumplimiento de procedimientos.
+- Atención al detalle y cumplimiento de procedimientos.
 
-	Deseo de desarrollarse en el área de SST y calidad.
+- Deseo de desarrollarse en el área de SST y calidad.
 
 Experiencia (deseable):
 
-	Prácticas, voluntariado o experiencia en industrias del rubro alimentario, producción.
+- Prácticas, voluntariado o experiencia en industrias del rubro alimentario, producción.
 
-	No indispensable; buscamos alguien con bases y ganas de aprender.
+- No indispensable; buscamos alguien con bases y ganas de aprender.
 
 ## Requisitos y condiciones
 
@@ -91,4 +91,4 @@ Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/sea
 
 - **Postula hasta:** 25/11/2026
 
-**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **DM Avicola S.a.c**.
+**Si la página de la oferta sale en blanco:** es una falla momentánea del portal del Ministerio. Recarga la página (F5, o desliza hacia abajo en el celular) una o dos veces y la oferta aparece. Si sigue en blanco, prueba en unos minutos.
