@@ -39,9 +39,10 @@ try {
   limpiarCopia();
   git(["worktree", "add", "--quiet", "--force", "-B", RAMA, COPIA, "origin/main"]);
 
-  // Dos fuentes: si una falla, la otra igual se importa
+  // Varias fuentes: si una falla, las demás igual se importan
   const fuentes = [
     { nombre: "Talento Perú (SERVIR)", script: "importar-servir.mjs", resumen: "ultimo-importe.md" },
+    { nombre: "Talento Perú – Prácticas", script: "importar-servir-practicas.mjs", resumen: "ultimo-importe-practicas.md" },
     { nombre: "Empleos Perú (MTPE)", script: "importar-empleosperu.mjs", resumen: "ultimo-importe-empleosperu.md" },
   ];
   const resumenes = [];
@@ -55,14 +56,17 @@ try {
   if (!resumenes.length) throw new Error("Ninguna fuente se pudo importar.");
 
   // Se agrega y se mira lo que de verdad cambió (git status puede marcar archivos solo por los saltos de línea de Windows)
-  git(["add", "content/ofertas", "public/img/empresas", "data/servir-vistos.json", "data/empleosperu-vistos.json"], COPIA);
+  // Solo las rutas que existen (git falla si se le pasa una que no existe)
+  const rutas = ["content/ofertas", "public/img/empresas", "data/servir-vistos.json", "data/servir-practicas-vistos.json", "data/empleosperu-vistos.json"]
+    .filter((r) => fs.existsSync(path.join(COPIA, r)));
+  git(["add", ...rutas], COPIA);
   const cambios = git(["diff", "--cached", "--name-only"], COPIA);
   if (!cambios) {
     console.log("\n✔ No hay convocatorias nuevas. Nada que revisar hoy.");
   } else {
     const resumen = resumenes.join("\n\n") + "\n";
     paso("Subiendo las ofertas nuevas a la rama " + RAMA);
-    git(["commit", "--quiet", "-m", "Importa ofertas nuevas de Talento Perú (SERVIR) y Empleos Perú (MTPE)"], COPIA);
+    git(["commit", "--quiet", "-m", "Importa ofertas nuevas de Talento Perú (SERVIR, empleos y prácticas) y Empleos Perú (MTPE)"], COPIA);
     git(["push", "--quiet", "--force", "origin", RAMA], COPIA);
 
     paso("Abriendo el Pull Request para revisar");

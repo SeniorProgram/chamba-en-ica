@@ -8,6 +8,7 @@
     "start": "next start",
     "importar": "node scripts/importar-servir.mjs",
     "importar:empleosperu": "node scripts/importar-empleosperu.mjs",
+    "importar:practicas": "node scripts/importar-servir-practicas.mjs",
     "importar:proponer": "node scripts/importar-local.mjs"
   },
   "dependencies": {
