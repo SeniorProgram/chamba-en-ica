@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { categorias, site } from "@/site.config";
+import { alertasActivas } from "@/lib/alertas";
 
 // Lo que más se busca en Google (llevan a las páginas de tipo de trabajo + provincia)
 const FRECUENTES = [
@@ -48,6 +49,7 @@ export default function Footer() {
             <h3>Información</h3>
             <ul>
               <li><Link href="/guias/">Guías para postular</Link></li>
+              {alertasActivas() && <li><Link href="/alertas/">Alertas por correo</Link></li>}
               <li><Link href="/sobre-nosotros/">Sobre nosotros</Link></li>
               <li><Link href="/contacto/">Contacto</Link></li>
               <li><Link href="/politica-de-privacidad/">Política de privacidad</Link></li>

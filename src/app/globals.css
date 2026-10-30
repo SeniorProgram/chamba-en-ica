@@ -3519,3 +3519,89 @@ main:has(> .pagina) {
 .seo-empleo p:last-child {
   margin-bottom: 0;
 }
+
+/* ---------- Alertas de empleo por correo ---------- */
+.opciones-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.opciones-chips label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  background: var(--superficie);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.opciones-chips label:hover {
+  border-color: var(--titulo);
+}
+.opciones-chips label.activo {
+  border-color: var(--titulo);
+  background: color-mix(in srgb, var(--titulo) 10%, var(--superficie));
+  color: var(--titulo);
+  font-weight: 600;
+}
+.opciones-chips input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.opciones-chips label:has(input:focus-visible) {
+  outline: 2px solid var(--titulo);
+  outline-offset: 2px;
+}
+.alerta-lista {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 32px 24px;
+  margin-bottom: 72px;
+  text-align: center;
+}
+.alerta-lista > .icono {
+  color: var(--titulo);
+}
+.alerta-lista h2 {
+  margin: 0;
+  color: var(--titulo);
+}
+.alerta-lista p {
+  max-width: 46ch;
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+.cta-alertas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--texto);
+  border: 1.5px solid color-mix(in srgb, var(--titulo) 30%, var(--borde));
+  background: color-mix(in srgb, var(--titulo) 6%, var(--superficie));
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cta-alertas:hover {
+  border-color: var(--titulo);
+  transform: translateY(-2px);
+}
+.cta-alertas > .icono {
+  flex: none;
+  color: var(--titulo);
+}
+.cta-alertas span {
+  flex: 1;
+  line-height: 1.5;
+}
+.cta-alertas strong {
+  display: block;
+  color: var(--titulo);
+}

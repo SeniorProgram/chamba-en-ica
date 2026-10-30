@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { categorias, provincias, site } from "@/site.config";
 import { getGuias, getOfertas, getPaginas, vencidaHace } from "@/lib/content";
 import { combinaciones, paginaEmpleo } from "@/lib/paginas-empleo";
+import { alertasActivas } from "@/lib/alertas";
 
 export const dynamic = "force-static";
 
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: u("/"), changeFrequency: "daily", priority: 1 },
     { url: u("/empleos/"), changeFrequency: "daily" },
     { url: u("/guias/"), changeFrequency: "weekly" },
+    ...(alertasActivas() ? [{ url: u("/alertas/") }] : []),
     { url: u("/contacto/") },
     ...getPaginas().filter((s) => s !== "contacto").map((s) => ({ url: u(`/${s}/`) })),
     ...categorias.map((c) => ({ url: u(`/empleos/${c.slug}/`), changeFrequency: "daily" as const })),

@@ -149,6 +149,24 @@ La persona pega un aviso que le llegó por WhatsApp o Facebook y la página le d
   `CLAUDE_MODEL` = `claude-haiku-5-5`. Pon además un **límite de gasto mensual** en la consola de Anthropic.
 - Cada persona puede hacer 8 consultas por hora. El texto pegado no se guarda (está explicado en la política de privacidad).
 
+## Alertas de empleo por correo (`/alertas/`)
+
+La persona elige tipos de trabajo y provincias, confirma su correo y recibe las ofertas nuevas que coinciden (máximo
+un correo al día). Hasta que no se configuran las claves, la página dice "muy pronto" y no aparece en el menú.
+
+1. **Base de datos:** en Vercel → **Storage** → **Create** → **Upstash for Redis** (plan gratis) y conéctala al proyecto.
+   Crea sola `KV_REST_API_URL` y `KV_REST_API_TOKEN`.
+2. **Correos:** crea una cuenta gratis en [brevo.com](https://www.brevo.com) (300 correos al día). En **Senders** verifica
+   el correo remitente y en **SMTP & API → API Keys** crea una clave. En Vercel agrega `BREVO_API_KEY` y
+   `ALERTAS_REMITENTE` (ese correo). Con un dominio propio, autentícalo en Brevo para que los correos no caigan en spam.
+3. **Envío diario:** agrega en Vercel `CRON_SECRET` con una clave larga inventada. `vercel.json` lanza
+   `/api/alertas/enviar/` todos los días a las 12:00 m. (hora de Perú). El primer envío solo marca las ofertas que ya
+   existían; desde el siguiente se avisan las nuevas.
+4. Vuelve a desplegar (**Deployments → Redeploy**) para que la página de alertas se active.
+
+Código: `src/lib/alertas.ts` y `src/app/api/alertas/`. Las ofertas que se avisan salen de `/api/alertas/ofertas/`, que se
+genera al compilar con cada publicación.
+
 ## Mapa de la región (inicio)
 
 El mapa interactivo de las 5 provincias está en `src/components/MapaIca.tsx`. Los límites (`src/lib/mapa-ica.ts`) son una

@@ -6,6 +6,8 @@ import { aGuiaBusqueda, aOfertaBusqueda } from "@/lib/busqueda";
 import BuscadorEmpleos from "./BuscadorEmpleos";
 import Anuncio from "./Anuncio";
 import Cabecera from "./Cabecera";
+import { Icono } from "./OfertaCard";
+import { alertasActivas } from "@/lib/alertas";
 
 type Props = {
   titulo: string;
@@ -64,6 +66,17 @@ export default function ListaOfertas({ titulo, descripcion, fijo, conGuias, pie 
           <Suspense>
             <BuscadorEmpleos ofertas={ofertas} guias={guias} fijo={fijo} />
           </Suspense>
+          {alertasActivas() && (
+            // Invita a recibir por correo lo mismo que está viendo (llega con el tipo y la provincia ya marcados)
+            <Link href={`/alertas/${fijo?.cat || fijo?.prov ? `?${new URLSearchParams({ ...(fijo.cat && { cat: fijo.cat }), ...(fijo.prov && { prov: fijo.prov }) })}` : ""}`} className="panel cta-alertas">
+              <Icono nombre="correo" tam={26} />
+              <span>
+                <strong>Recibe estas ofertas en tu correo</strong>
+                Te avisamos cuando haya ofertas nuevas{cat ? ` de ${cat.nombre.toLowerCase()}` : ""}{prov ? ` en ${prov.nombre}` : ""}. Gratis.
+              </span>
+              <Icono nombre="derecha" tam={20} />
+            </Link>
+          )}
           {pie}
         </div>
       </div>

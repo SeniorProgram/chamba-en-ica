@@ -37,6 +37,8 @@ El sitio está alojado en un proveedor de hosting que puede procesar datos técn
 
 **Verificador de avisos.** Cuando usas el verificador de avisos de trabajo, el texto que pegas se envía a Anthropic, el proveedor de la inteligencia artificial que lo analiza, solo para generar la respuesta. Chamba en Ica no guarda ese texto. Te recomendamos borrar nombres, teléfonos u otros datos personales antes de pegarlo.
 
+**Alertas de empleo por correo.** Si creas una alerta, guardamos tu correo electrónico y los tipos de trabajo y provincias que elegiste, solo para enviarte las ofertas nuevas que coincidan. La alerta no se activa hasta que confirmas tu correo con el enlace que te enviamos. Las suscripciones se guardan en Upstash (base de datos) y los correos se envían con Brevo, que procesan esos datos por encargo nuestro. Puedes darte de baja en cualquier momento con el enlace de cada correo; al hacerlo borramos tu correo de las alertas.
+
 ## 6. Tus derechos
 
 Puedes solicitar el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos personales (derechos ARCO) escribiéndonos desde la página de [Contacto](/contacto/).
