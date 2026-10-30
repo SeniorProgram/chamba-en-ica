@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-09-08
 vence: 2026-11-07
 sueldo: "S/ 1,600 a 1,799"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=85840771111c4035a4f7939ac2a6d2e8"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=85840771111c4035a4f7939ac2a6d2e8&what=Fiberpro%20Ica"
 resumen: "Fiberpro Ica busca técnico telecomunicaciones en Ica: 20 vacantes, sueldo de S/ 1,600 a 1,799. Postula hasta el 07/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -39,6 +39,8 @@ Requisitos:
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=85840771111c4035a4f7939ac2a6d2e8), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=85840771111c4035a4f7939ac2a6d2e8&what=Fiberpro%20Ica), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 07/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Fiberpro Ica**.

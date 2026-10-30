@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-29
 vence: 2026-11-28
 sueldo: "S/ 2,500 a 2,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7b63c0279cf749e7b8b5841c8970001f"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7b63c0279cf749e7b8b5841c8970001f&what=Montalvo%20Institute"
 resumen: "Montalvo Institute busca administrador(a) de instituto en Ica: 1 vacante, sueldo de S/ 2,500 a 2,999. Postula hasta el 28/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -65,6 +65,8 @@ En Montalvo Institute, somos una institución líder en el rubro de la belleza. 
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7b63c0279cf749e7b8b5841c8970001f), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7b63c0279cf749e7b8b5841c8970001f&what=Montalvo%20Institute), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 28/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Montalvo Institute**.

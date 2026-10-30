@@ -21,7 +21,10 @@ const VISTOS = path.join(RAIZ, "data", "empleosperu-vistos.json");
 const RESUMEN = path.join(RAIZ, "data", "ultimo-importe-empleosperu.md");
 
 const API = "https://mtpe-candidatos.empleosperu.gob.pe/api/jobs";
-const OFERTA = (id) => `https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=${id}`;
+// Con la empresa como texto de búsqueda ("what"), igual que los enlaces que genera el propio portal
+const OFERTA = (id, empresa = "") =>
+  `https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=${id}${empresa ? `&what=${encodeURIComponent(empresa)}` : ""}`;
+const PORTAL = "https://www.empleosperu.gob.pe";
 const ICA = "11"; // código de departamento (ubigeo)
 const PAUSA_MS = 700; // espera entre pedidos para no cargar el portal
 const UA = "ChambaEnIca/1.0 (+https://chamba-en-ica.vercel.app; difusion de ofertas publicas de Empleos Peru)";
@@ -196,9 +199,11 @@ function aMarkdown(o, provincia, distrito) {
   if (datos) cuerpo += `## Requisitos y condiciones\n\n${datos}\n\n`;
   cuerpo += `## Cómo postular\n\n`;
   cuerpo += o.application?.type === "EXTERNAL" && o.application?.url
-    ? `Postula en el [enlace de la empresa](${o.application.url}). La oferta está publicada en [Empleos Perú](${OFERTA(o.id)}), la bolsa de trabajo del Ministerio de Trabajo.\n`
-    : `Postula gratis en [Empleos Perú](${OFERTA(o.id)}), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.\n`;
+    ? `Postula en el [enlace de la empresa](${o.application.url}). La oferta está publicada en [Empleos Perú](${OFERTA(o.id, o.companyName)}), la bolsa de trabajo del Ministerio de Trabajo.\n`
+    : `Postula gratis en [Empleos Perú](${OFERTA(o.id, o.companyName)}), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.\n`;
   if (vence) cuerpo += `\n- **Postula hasta:** ${ddmmaaaa(vence)}\n`;
+  // A veces el servidor de inicio de sesión de Empleos Perú falla y la página de la oferta sale en blanco
+  cuerpo += `\n**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](${PORTAL}), pulsa **Ver vacantes** y busca **${empresa}**.\n`;
 
   return `---
 title: ${yaml(titulo)}
@@ -209,7 +214,7 @@ distrito: ${yaml(distrito)}
 date: ${o.datePosted}
 vence: ${vence}
 sueldo: ${yaml(sueldo)}
-fuente: ${yaml(OFERTA(o.id))}
+fuente: ${yaml(OFERTA(o.id, o.companyName))}
 resumen: ${yaml(resumen)}
 modalidad: ${modalidad}
 ${opcionales}vacantes: ${vacantes}

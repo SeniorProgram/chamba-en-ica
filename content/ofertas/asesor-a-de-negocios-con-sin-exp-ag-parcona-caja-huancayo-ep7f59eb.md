@@ -7,7 +7,7 @@ distrito: "Parcona"
 date: 2026-10-29
 vence: 2026-11-02
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f59eba550ec4e60a03567f08f72c5a8"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f59eba550ec4e60a03567f08f72c5a8&what=Caja%20Huancayo"
 resumen: "Caja Huancayo busca asesor(a) de negocios con/sin exp ag. Parcona en Parcona: 1 vacante, sueldo a tratar. Postula hasta el 02/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -87,6 +87,8 @@ EN CAJA HUANCAYO CREEMOS EN LA IGUALDAD DE OPORTUNIDADES SIN DISCRIMINACIÓN POR
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f59eba550ec4e60a03567f08f72c5a8), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f59eba550ec4e60a03567f08f72c5a8&what=Caja%20Huancayo), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 02/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Caja Huancayo**.

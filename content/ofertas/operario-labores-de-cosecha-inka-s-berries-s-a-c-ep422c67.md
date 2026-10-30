@@ -7,7 +7,7 @@ distrito: "Santiago"
 date: 2026-10-22
 vence: 2026-11-21
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=422c6753abef49e1817959806cf683bf"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=422c6753abef49e1817959806cf683bf&what=Inka%C2%B4s%20Berries%20S.A.C."
 resumen: "Inka´s Berries S.A.C. busca operario labores de cosecha en Santiago: 100 vacantes, sueldo a tratar. Postula hasta el 21/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -54,6 +54,8 @@ empleosperu_id: "422c6753abef49e1817959806cf683bf"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=422c6753abef49e1817959806cf683bf), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=422c6753abef49e1817959806cf683bf&what=Inka%C2%B4s%20Berries%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 21/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Inka´s Berries S.A.C.**.

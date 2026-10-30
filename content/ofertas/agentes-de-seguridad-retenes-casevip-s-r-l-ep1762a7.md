@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-19
 vence: 2026-11-18
 sueldo: "S/ 2,000 a 2,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=1762a7ee0868419192bccb6e0d4bc387"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=1762a7ee0868419192bccb6e0d4bc387&what=Casevip%20S.R.L."
 resumen: "Casevip S.R.L. busca agentes de seguridad retenes en Ica: 50 vacantes, sueldo de S/ 2,000 a 2,499. Postula hasta el 18/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -48,6 +48,8 @@ En CASEVIP estamos en la búsqueda de los mejores AGENTES DE SEGURIDAD RETENES p
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=1762a7ee0868419192bccb6e0d4bc387), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=1762a7ee0868419192bccb6e0d4bc387&what=Casevip%20S.R.L.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 18/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Casevip S.R.L.**.

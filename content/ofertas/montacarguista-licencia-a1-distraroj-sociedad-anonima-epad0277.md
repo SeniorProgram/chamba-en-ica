@@ -7,7 +7,7 @@ distrito: "Pisco"
 date: 2026-09-29
 vence: 2026-10-29
 sueldo: "S/ 1,600 a 1,799"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2&what=Distraroj%20Sociedad%20Anonima%20Cerrada%20-%20Distraroj%20S.A.C."
 resumen: "Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C. busca montacarguista (licencia A1) en Pisco: 2 vacantes, sueldo de S/ 1,600 a 1,799. Postula hasta el 29/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -39,6 +39,8 @@ empleosperu_id: "ad0277e12a9945679481bfcd0f8dacd2"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2&what=Distraroj%20Sociedad%20Anonima%20Cerrada%20-%20Distraroj%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 29/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C.**.

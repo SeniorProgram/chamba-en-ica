@@ -7,7 +7,7 @@ distrito: "Paracas"
 date: 2026-10-19
 vence: 2026-11-18
 sueldo: "S/ 2,000 a 2,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ac1e2ff29b2240fc9bc18995df1f8de7"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ac1e2ff29b2240fc9bc18995df1f8de7&what=Code%20Systems%20SAC"
 resumen: "Code Systems SAC busca agente de seguridad en Paracas: 2 vacantes, sueldo de S/ 2,000 a 2,499. Postula hasta el 18/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -53,6 +53,8 @@ Envíanos tu CV y empieza una línea de carrera con nosotros !!!
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ac1e2ff29b2240fc9bc18995df1f8de7), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ac1e2ff29b2240fc9bc18995df1f8de7&what=Code%20Systems%20SAC), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 18/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Code Systems SAC**.

@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-29
 vence: 2026-11-10
 sueldo: "S/ 6,000 a 7,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f1010b591f744d8a6f187fc5d8cdf32"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f1010b591f744d8a6f187fc5d8cdf32&what=Ministerio%20Publico-Gerencia%20General"
 resumen: "Ministerio Publico-Gerencia General busca perito ingeniero civil en Ica: 1 vacante, sueldo de S/ 6,000 a 7,999. Postula hasta el 10/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -77,6 +77,8 @@ EMITIR OPINIÓN TÉCNICA-CIENTÍFICA FUNDAMENTADA EN EL ANÁLISIS DE LA DOCUMENT
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f1010b591f744d8a6f187fc5d8cdf32), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7f1010b591f744d8a6f187fc5d8cdf32&what=Ministerio%20Publico-Gerencia%20General), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 10/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Ministerio Publico-Gerencia General**.

@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-19
 vence: 2026-11-18
 sueldo: "Hasta S/ 1,230"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b5424d41542340ffb5d06108176e1f9c"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b5424d41542340ffb5d06108176e1f9c&what=Brari%20Compras"
 resumen: "Brari Compras busca vendedor - reponedor en Ica: 3 vacantes, sueldo hasta S/ 1,230. Postula hasta el 18/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -66,6 +66,8 @@ empleosperu_id: "b5424d41542340ffb5d06108176e1f9c"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b5424d41542340ffb5d06108176e1f9c), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b5424d41542340ffb5d06108176e1f9c&what=Brari%20Compras), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 18/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Brari Compras**.

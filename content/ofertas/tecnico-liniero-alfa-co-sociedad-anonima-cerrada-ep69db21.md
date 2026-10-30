@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-09-29
 vence: 2026-10-29
 sueldo: "S/ 2,000 a 2,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=69db213b8bf846fab8a7c8acc289e711"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=69db213b8bf846fab8a7c8acc289e711&what=Alfa%20Co%20Sociedad%20Anonima%20Cerrada"
 resumen: "Alfa Co Sociedad Anonima Cerrada busca tecnico liniero en Ica: 9 vacantes, sueldo de S/ 2,000 a 2,499. Postula hasta el 29/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -54,6 +54,8 @@ empleosperu_id: "69db213b8bf846fab8a7c8acc289e711"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=69db213b8bf846fab8a7c8acc289e711), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=69db213b8bf846fab8a7c8acc289e711&what=Alfa%20Co%20Sociedad%20Anonima%20Cerrada), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 29/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Alfa Co Sociedad Anonima Cerrada**.

@@ -7,7 +7,7 @@ distrito: "Pisco"
 date: 2026-10-22
 vence: 2026-11-21
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d6b9d7d353ec4d429d43b4d94f937e48"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d6b9d7d353ec4d429d43b4d94f937e48&what=Sociedad%20Agricola%20Drokasa%20S.A."
 resumen: "Sociedad Agricola Drokasa S.A. busca supervisor de evaluaciones fitosanitarias en Pisco: 1 vacante, sueldo a tratar. Postula hasta el 21/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -47,6 +47,8 @@ Interesadas(os) enviar CV a **rraymundo@agrokasa.com.pe con el asunto 𝗦𝗨�
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d6b9d7d353ec4d429d43b4d94f937e48), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d6b9d7d353ec4d429d43b4d94f937e48&what=Sociedad%20Agricola%20Drokasa%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 21/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Sociedad Agricola Drokasa S.A.**.

@@ -7,7 +7,7 @@ distrito: "San Juan Bautista"
 date: 2026-10-29
 vence: 2026-11-28
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b214b78fe3a24c51aa2f3a44f425c1b8"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b214b78fe3a24c51aa2f3a44f425c1b8&what=San%20Martin%20Contratistas%20Generales%20S.A."
 resumen: "San Martin Contratistas Generales S.A. busca ingeniero de medio ambiente en San Juan Bautista: 1 vacante, sueldo a tratar. Postula hasta el 28/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -51,6 +51,8 @@ Beneficios:
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b214b78fe3a24c51aa2f3a44f425c1b8), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=b214b78fe3a24c51aa2f3a44f425c1b8&what=San%20Martin%20Contratistas%20Generales%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 28/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **San Martin Contratistas Generales S.A.**.

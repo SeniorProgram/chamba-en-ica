@@ -7,7 +7,7 @@ distrito: "Subtanjalla"
 date: 2026-10-01
 vence: 2026-11-30
 sueldo: "S/ 1,800 a 1,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7&what=Gutierrez%20Mantari%20William%20Arquimedes"
 resumen: "Gutierrez Mantari William Arquimedes busca lavador de autos en Subtanjalla: 6 vacantes, sueldo de S/ 1,800 a 1,999. Postula hasta el 30/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -39,6 +39,8 @@ empleosperu_id: "fff3cd3d462a44989e6ce171bd8231b7"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7&what=Gutierrez%20Mantari%20William%20Arquimedes), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 30/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Gutierrez Mantari William Arquimedes**.

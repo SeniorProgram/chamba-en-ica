@@ -7,7 +7,7 @@ distrito: "Salas"
 date: 2026-09-29
 vence: 2026-10-29
 sueldo: "S/ 1,400 a 1,599"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c17ddcfe2d354d999b2de37224371760"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c17ddcfe2d354d999b2de37224371760&what=Apc%20Corporacion%20S.A."
 resumen: "Apc Corporacion S.A. busca despachador en Salas: 10 vacantes, sueldo de S/ 1,400 a 1,599. Postula hasta el 29/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -90,6 +90,8 @@ Línea de carrera y oportunidades de crecimiento.
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c17ddcfe2d354d999b2de37224371760), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c17ddcfe2d354d999b2de37224371760&what=Apc%20Corporacion%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 29/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Apc Corporacion S.A.**.

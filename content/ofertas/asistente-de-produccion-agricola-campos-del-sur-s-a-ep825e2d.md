@@ -7,7 +7,7 @@ distrito: "Santiago"
 date: 2026-10-19
 vence: 2026-10-29
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=825e2d5bd056449395029232026a05bc"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=825e2d5bd056449395029232026a05bc&what=Campos%20del%20Sur%20S.A."
 resumen: "Campos del Sur S.A. busca asistente de producción agricola en Santiago: 1 vacante, sueldo a tratar. Postula hasta el 29/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -49,6 +49,8 @@ Beneficios:
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=825e2d5bd056449395029232026a05bc), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=825e2d5bd056449395029232026a05bc&what=Campos%20del%20Sur%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 29/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Campos del Sur S.A.**.

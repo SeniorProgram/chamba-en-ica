@@ -7,7 +7,7 @@ distrito: "Nasca"
 date: 2026-10-06
 vence: 2026-11-05
 sueldo: "S/ 3,000 a 3,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=518489dd4fe242c1920a32dd2d7a6698"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=518489dd4fe242c1920a32dd2d7a6698&what=Agrotalent%20S.A.C."
 resumen: "Agrotalent S.A.C. busca coordinador de logística en Nasca: 1 vacante, sueldo de S/ 3,000 a 3,499. Postula hasta el 05/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -40,6 +40,8 @@ Importante empresa agroexportadora busca persona que pueda cumplir la siguiente 
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=518489dd4fe242c1920a32dd2d7a6698), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=518489dd4fe242c1920a32dd2d7a6698&what=Agrotalent%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 05/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Agrotalent S.A.C.**.

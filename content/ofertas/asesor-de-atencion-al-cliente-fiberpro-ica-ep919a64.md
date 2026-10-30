@@ -7,7 +7,7 @@ distrito: "Los Aquijes"
 date: 2026-09-29
 vence: 2026-11-28
 sueldo: "S/ 1,400 a 1,599"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=919a648fa7b1454d8ed9788b41b50033"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=919a648fa7b1454d8ed9788b41b50033&what=Fiberpro%20Ica"
 resumen: "Fiberpro Ica busca asesor de atención al cliente en Los Aquijes: 20 vacantes, sueldo de S/ 1,400 a 1,599. Postula hasta el 28/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -38,6 +38,8 @@ En Fiberpro Ica, estamos en búsqueda del mejor talento para el puesto de ASESOR
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=919a648fa7b1454d8ed9788b41b50033), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=919a648fa7b1454d8ed9788b41b50033&what=Fiberpro%20Ica), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 28/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Fiberpro Ica**.

@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-09-23
 vence: 2026-11-22
 sueldo: "S/ 4,000 a 4,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=68da0708a81b48ddabd877cb93729ef5"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=68da0708a81b48ddabd877cb93729ef5&what=Azzorti"
 resumen: "Azzorti busca gerente(a) de ventas de campo en Ica: 1 vacante, sueldo de S/ 4,000 a 4,999. Postula hasta el 22/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -62,6 +62,8 @@ Azzorti y Livva fomenta y respeta la equidad de género, inclusión y diversidad
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=68da0708a81b48ddabd877cb93729ef5), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=68da0708a81b48ddabd877cb93729ef5&what=Azzorti), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 22/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Azzorti**.

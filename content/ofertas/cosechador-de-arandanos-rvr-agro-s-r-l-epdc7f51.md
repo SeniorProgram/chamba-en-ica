@@ -7,7 +7,7 @@ distrito: "Salas"
 date: 2026-10-15
 vence: 2026-11-04
 sueldo: "Hasta S/ 1,230"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=dc7f51f6ed774b00a64e4b7195c08da1"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=dc7f51f6ed774b00a64e4b7195c08da1&what=Rvr%20Agro%20S.R.L."
 resumen: "Rvr Agro S.R.L. busca cosechador de arandanos en Salas: 100 vacantes, sueldo hasta S/ 1,230. Postula hasta el 04/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -32,6 +32,8 @@ Responsable de realizar la cosecha manual de arándanos, seleccionando y recolec
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=dc7f51f6ed774b00a64e4b7195c08da1), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=dc7f51f6ed774b00a64e4b7195c08da1&what=Rvr%20Agro%20S.R.L.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 04/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Rvr Agro S.R.L.**.

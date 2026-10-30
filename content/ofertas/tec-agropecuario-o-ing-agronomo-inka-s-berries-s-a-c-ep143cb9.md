@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-21
 vence: 2026-11-20
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=143cb9fdfeb148c0b15890596858c934"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=143cb9fdfeb148c0b15890596858c934&what=Inka%C2%B4s%20Berries%20S.A.C."
 resumen: "Inka´s Berries S.A.C. busca tec. agropecuario o ing. agrónomo en Ica: 10 vacantes, sueldo a tratar. Postula hasta el 20/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -60,6 +60,8 @@ Objetivo del puesto: Asegurar que la materia prima, el proceso productivo y el p
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=143cb9fdfeb148c0b15890596858c934), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=143cb9fdfeb148c0b15890596858c934&what=Inka%C2%B4s%20Berries%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 20/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Inka´s Berries S.A.C.**.

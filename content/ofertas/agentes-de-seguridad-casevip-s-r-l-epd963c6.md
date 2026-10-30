@@ -7,7 +7,7 @@ distrito: "Salas"
 date: 2026-10-09
 vence: 2026-11-08
 sueldo: "S/ 1,800 a 1,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d963c6c7df7b4a7e93697a82777b1416"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d963c6c7df7b4a7e93697a82777b1416&what=Casevip%20S.R.L."
 resumen: "Casevip S.R.L. busca agentes de seguridad en Salas: 50 vacantes, sueldo de S/ 1,800 a 1,999. Postula hasta el 08/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -59,6 +59,8 @@ Si buscas estabilidad económica y un trabajo seguro, ¡esta es tu oportunidad! 
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d963c6c7df7b4a7e93697a82777b1416), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d963c6c7df7b4a7e93697a82777b1416&what=Casevip%20S.R.L.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 08/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Casevip S.R.L.**.

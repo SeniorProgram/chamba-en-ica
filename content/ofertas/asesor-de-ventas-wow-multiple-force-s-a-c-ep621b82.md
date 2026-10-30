@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-09-23
 vence: 2026-11-22
 sueldo: "S/ 3,000 a 3,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=621b826d9f41448a852d4768c78a7cb6"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=621b826d9f41448a852d4768c78a7cb6&what=Multiple%20Force%20S.A.C."
 resumen: "Multiple Force S.A.C. busca asesor de ventas wow en Ica: 35 vacantes, sueldo de S/ 3,000 a 3,499. Postula hasta el 22/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -82,6 +82,8 @@ Postula ahora y forma parte del equipo de ventas de WOW, a través de Impúlsate
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=621b826d9f41448a852d4768c78a7cb6), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=621b826d9f41448a852d4768c78a7cb6&what=Multiple%20Force%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 22/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Multiple Force S.A.C.**.

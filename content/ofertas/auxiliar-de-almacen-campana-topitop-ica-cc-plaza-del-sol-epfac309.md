@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-12
 vence: 2026-11-01
 sueldo: "S/ 1,231 a 1,300"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fac3098e84324c0292652445de9eb9d2"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fac3098e84324c0292652445de9eb9d2&what=Trading%20Fashion%20Line%20S.A."
 resumen: "Trading Fashion Line S.A. busca auxiliar de almacén campaña topitop - Ica - cc plaza del sol en Ica: 1 vacante, sueldo de S/ 1,231 a 1,300. Postula hasta el 01/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -46,6 +46,8 @@ Funciones:
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fac3098e84324c0292652445de9eb9d2), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fac3098e84324c0292652445de9eb9d2&what=Trading%20Fashion%20Line%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 01/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Trading Fashion Line S.A.**.

@@ -7,7 +7,7 @@ distrito: "Salas"
 date: 2026-10-19
 vence: 2026-11-03
 sueldo: "Hasta S/ 1,230"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=5bce1e447c994523a733dbbfefa3629a"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=5bce1e447c994523a733dbbfefa3629a&what=Agricola%20la%20Guerrero%20S.A.C."
 resumen: "Agricola la Guerrero S.A.C. busca jaberos cosecha - uva en Salas: 15 vacantes, sueldo hasta S/ 1,230. Postula hasta el 03/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -37,6 +37,8 @@ El jabero es el encargado de abastecer, mover, organizar y transportar las javas
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=5bce1e447c994523a733dbbfefa3629a), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=5bce1e447c994523a733dbbfefa3629a&what=Agricola%20la%20Guerrero%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 03/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Agricola la Guerrero S.A.C.**.

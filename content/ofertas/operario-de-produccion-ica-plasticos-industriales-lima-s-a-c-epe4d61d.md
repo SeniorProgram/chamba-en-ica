@@ -7,7 +7,7 @@ distrito: "Salas"
 date: 2026-10-26
 vence: 2026-11-25
 sueldo: "S/ 2,000 a 2,499"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e4d61d33c70b4ad6bb0bd5f2cb53ec4e"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e4d61d33c70b4ad6bb0bd5f2cb53ec4e&what=Plasticos%20Industriales%20Lima%20S.A.C."
 resumen: "Plasticos Industriales Lima S.A.C. busca operario de producción Ica en Salas: 3 vacantes, sueldo de S/ 2,000 a 2,499. Postula hasta el 25/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -70,6 +70,8 @@ Grato ambiente laboral
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e4d61d33c70b4ad6bb0bd5f2cb53ec4e), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e4d61d33c70b4ad6bb0bd5f2cb53ec4e&what=Plasticos%20Industriales%20Lima%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 25/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Plasticos Industriales Lima S.A.C.**.

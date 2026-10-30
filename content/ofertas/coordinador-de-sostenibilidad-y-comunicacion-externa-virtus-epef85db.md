@@ -7,7 +7,7 @@ distrito: "Subtanjalla"
 date: 2026-10-20
 vence: 2026-10-30
 sueldo: "S/ 8,000 a 9,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ef85db7d20de4ecfbbad9c62a096cba0"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ef85db7d20de4ecfbbad9c62a096cba0&what=Virtus"
 resumen: "Virtus busca coordinador de sostenibilidad y comunicación externa en Subtanjalla: 1 vacante, sueldo de S/ 8,000 a 9,999. Postula hasta el 30/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -69,6 +69,8 @@ Condiciones de trabajo:
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ef85db7d20de4ecfbbad9c62a096cba0), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ef85db7d20de4ecfbbad9c62a096cba0&what=Virtus), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 30/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Virtus**.

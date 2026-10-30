@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-09-29
 vence: 2026-10-29
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=302ba5b0713241e1ad6b3a106a755754"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=302ba5b0713241e1ad6b3a106a755754&what=Agricola%20Safco%20Peru%20S.A."
 resumen: "Agricola Safco Peru S.A. busca supervisor de mantenimiento en Ica: 5 vacantes, sueldo a tratar. Postula hasta el 29/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -49,6 +49,8 @@ empleosperu_id: "302ba5b0713241e1ad6b3a106a755754"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=302ba5b0713241e1ad6b3a106a755754), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=302ba5b0713241e1ad6b3a106a755754&what=Agricola%20Safco%20Peru%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 29/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Agricola Safco Peru S.A.**.

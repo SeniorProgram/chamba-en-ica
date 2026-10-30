@@ -7,7 +7,7 @@ distrito: "Pueblo Nuevo"
 date: 2026-10-07
 vence: 2026-11-06
 sueldo: "Hasta S/ 1,230"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=caf3141aa40e4b21a8bea0d0180ea98e"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=caf3141aa40e4b21a8bea0d0180ea98e&what=Mass%20Tiendas"
 resumen: "Mass Tiendas busca operador de tienda - part time en Pueblo Nuevo: 100 vacantes, sueldo hasta S/ 1,230. Postula hasta el 06/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -30,6 +30,8 @@ Tiendas Mass, empresa que fomenta y respeta en sus procesos de reclutamiento y s
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=caf3141aa40e4b21a8bea0d0180ea98e), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=caf3141aa40e4b21a8bea0d0180ea98e&what=Mass%20Tiendas), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 06/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Mass Tiendas**.

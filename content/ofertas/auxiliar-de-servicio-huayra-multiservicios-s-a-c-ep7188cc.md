@@ -7,7 +7,7 @@ distrito: "Pisco"
 date: 2026-10-07
 vence: 2026-12-06
 sueldo: "S/ 1,231 a 1,300"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7188ccf55f784370b6c049b762d16d52"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7188ccf55f784370b6c049b762d16d52&what=Huayra%20Multiservicios%20S.A.C."
 resumen: "Huayra Multiservicios S.A.C. busca auxiliar de servicio en Pisco: 20 vacantes, sueldo de S/ 1,231 a 1,300. Postula hasta el 06/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -64,6 +64,8 @@ Requisitos
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7188ccf55f784370b6c049b762d16d52), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=7188ccf55f784370b6c049b762d16d52&what=Huayra%20Multiservicios%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 06/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Huayra Multiservicios S.A.C.**.

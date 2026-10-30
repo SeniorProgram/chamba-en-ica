@@ -7,7 +7,7 @@ distrito: "Marcona"
 date: 2026-09-30
 vence: 2026-10-30
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3fb432d162804503aa20d78cca7e040a"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3fb432d162804503aa20d78cca7e040a&what=Webmarker%20S.A.C."
 resumen: "Webmarker S.A.C. busca técnico mecánico en Marcona: 2 vacantes, sueldo a tratar. Postula hasta el 30/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -32,6 +32,8 @@ Ejecutar labores de mantenimiento preventivo y correctivo de máquinas y equipos
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3fb432d162804503aa20d78cca7e040a), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3fb432d162804503aa20d78cca7e040a&what=Webmarker%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 30/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Webmarker S.A.C.**.

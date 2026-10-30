@@ -7,7 +7,7 @@ distrito: "Los Aquijes"
 date: 2026-10-29
 vence: 2026-12-28
 sueldo: "S/ 1,400 a 1,599"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d03cad4ce24243868d90abbca433d5ef"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d03cad4ce24243868d90abbca433d5ef&what=Fiberpro%20Ica"
 resumen: "Fiberpro Ica busca diseñador grafico en Los Aquijes: 20 vacantes, sueldo de S/ 1,400 a 1,599. Postula hasta el 28/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -39,6 +39,8 @@ En Fiberpro Ica, nos encontramos en búsqueda del mejor talento para ocupar el p
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d03cad4ce24243868d90abbca433d5ef), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d03cad4ce24243868d90abbca433d5ef&what=Fiberpro%20Ica), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 28/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Fiberpro Ica**.

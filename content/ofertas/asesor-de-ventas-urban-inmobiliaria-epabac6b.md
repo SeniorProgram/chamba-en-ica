@@ -7,7 +7,7 @@ distrito: "La Tinguiña"
 date: 2026-09-01
 vence: 2026-10-31
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=abac6bb752104ab0bf6268b4f7423ea5"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=abac6bb752104ab0bf6268b4f7423ea5&what=Urban%20Inmobiliaria"
 resumen: "Urban Inmobiliaria busca asesor de ventas en La Tinguiña: 10 vacantes, sueldo a tratar. Postula hasta el 31/10/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -33,6 +33,8 @@ empleosperu_id: "abac6bb752104ab0bf6268b4f7423ea5"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=abac6bb752104ab0bf6268b4f7423ea5), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=abac6bb752104ab0bf6268b4f7423ea5&what=Urban%20Inmobiliaria), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 31/10/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Urban Inmobiliaria**.

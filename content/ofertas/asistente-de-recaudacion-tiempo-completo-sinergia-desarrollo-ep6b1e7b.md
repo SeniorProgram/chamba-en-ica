@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-21
 vence: 2026-11-20
 sueldo: "S/ 1,400 a 1,599"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=6b1e7b7c6d934b8c8e9d8645045db56d"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=6b1e7b7c6d934b8c8e9d8645045db56d&what=Sinergia%20Desarrollo%20Profesional%20S.R.L."
 resumen: "Sinergia Desarrollo Profesional S.R.L. busca asistente de recaudación / tiempo completo en Ica: 3 vacantes, sueldo de S/ 1,400 a 1,599. Postula hasta el 20/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -54,6 +54,8 @@ Somos una empresa líder en el sector educativo y comercial y estamos en la bús
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=6b1e7b7c6d934b8c8e9d8645045db56d), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=6b1e7b7c6d934b8c8e9d8645045db56d&what=Sinergia%20Desarrollo%20Profesional%20S.R.L.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 20/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Sinergia Desarrollo Profesional S.R.L.**.

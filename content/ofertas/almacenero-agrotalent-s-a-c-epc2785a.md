@@ -7,7 +7,7 @@ distrito: "Nasca"
 date: 2026-10-06
 vence: 2026-11-05
 sueldo: "S/ 1,800 a 1,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c2785a6257c74d3795b0a65f0ffc5f29"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c2785a6257c74d3795b0a65f0ffc5f29&what=Agrotalent%20S.A.C."
 resumen: "Agrotalent S.A.C. busca almacenero en Nasca: 5 vacantes, sueldo de S/ 1,800 a 1,999. Postula hasta el 05/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -39,6 +39,8 @@ Importante empresa agroexportadora busca almacenero que cumpla con estas funcion
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c2785a6257c74d3795b0a65f0ffc5f29), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c2785a6257c74d3795b0a65f0ffc5f29&what=Agrotalent%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 05/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Agrotalent S.A.C.**.

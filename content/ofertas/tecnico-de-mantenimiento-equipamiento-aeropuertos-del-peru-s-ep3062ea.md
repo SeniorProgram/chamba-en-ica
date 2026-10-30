@@ -7,7 +7,7 @@ distrito: "San Andrés"
 date: 2026-10-20
 vence: 2026-12-19
 sueldo: "S/ 1,800 a 1,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3062ea3d35c14a94ba88eebfe7fdd504"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3062ea3d35c14a94ba88eebfe7fdd504&what=Aeropuertos%20del%20Peru%20S.A."
 resumen: "Aeropuertos del Peru S.A. busca técnico de mantenimiento equipamiento en San Andrés: 1 vacante, sueldo de S/ 1,800 a 1,999. Postula hasta el 19/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -68,6 +68,8 @@ Los datos personales que proporcione en su calidad de postulante a ADP a través
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3062ea3d35c14a94ba88eebfe7fdd504), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=3062ea3d35c14a94ba88eebfe7fdd504&what=Aeropuertos%20del%20Peru%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 19/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Aeropuertos del Peru S.A.**.

@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-05
 vence: 2026-12-04
 sueldo: "S/ 1,400 a 1,599"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=78adae9029204eabbf990698c76859bd"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=78adae9029204eabbf990698c76859bd&what=Repuestos%20y%20Lubricantes%20el%20Rosario%20E.i.r.l"
 resumen: "Repuestos y Lubricantes el Rosario E.i.r.l busca ayudante para cambio de aceite de vehiculos menores Ica en Ica: 2 vacantes, sueldo de S/ 1,400 a 1,599. Postula hasta el 04/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -31,6 +31,8 @@ Los mecánicos de vehículos inspeccionan, prueban y mantienen vehículos, motoc
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=78adae9029204eabbf990698c76859bd), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=78adae9029204eabbf990698c76859bd&what=Repuestos%20y%20Lubricantes%20el%20Rosario%20E.i.r.l), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 04/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Repuestos y Lubricantes el Rosario E.i.r.l**.

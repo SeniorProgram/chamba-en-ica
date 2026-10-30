@@ -174,9 +174,18 @@ export default async function OfertaPage({ params }: Props) {
                 <a href="#panel-detalle" className="btn btn-naranja btn-postular">Ver cómo postular</a>
               )}
               <GuardarOferta slug={o.slug} />
-              <p className="postular-nota">
-                Te llevamos a {dominio ? <strong>{dominio}</strong> : "la fuente oficial"}. Revisa ahí las bases y el cronograma completos.
-              </p>
+              {o.origen.startsWith("Empleos Perú") ? (
+                // El portal del Ministerio a veces sale en blanco cuando falla su servidor de inicio de sesión
+                <p className="postular-nota">
+                  Te llevamos a <strong>Empleos Perú</strong>: para aplicar necesitas una cuenta gratuita. Si la página sale en
+                  blanco, entra a <a href="https://www.empleosperu.gob.pe" target="_blank" rel="noopener noreferrer">empleosperu.gob.pe</a>,
+                  pulsa <strong>Ver vacantes</strong> y busca <strong>{o.empresa}</strong>.
+                </p>
+              ) : (
+                <p className="postular-nota">
+                  Te llevamos a {dominio ? <strong>{dominio}</strong> : "la fuente oficial"}. Revisa ahí las bases y el cronograma completos.
+                </p>
+              )}
             </div>
 
             <p className="nota-seguridad">

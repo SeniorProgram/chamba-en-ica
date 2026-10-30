@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-06
 vence: 2026-11-05
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d1a8bea20c624af88e2260189387d4c6"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d1a8bea20c624af88e2260189387d4c6&what=Inversiones%2C%20Soluciones%20y%20Suministros%20Sociedad%20Anonima%20Cerrada"
 resumen: "Inversiones, Soluciones y Suministros Sociedad Anonima Cerrada busca cocinero en Ica: 6 vacantes, sueldo a tratar. Postula hasta el 05/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -45,6 +45,8 @@ empleosperu_id: "d1a8bea20c624af88e2260189387d4c6"
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d1a8bea20c624af88e2260189387d4c6), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d1a8bea20c624af88e2260189387d4c6&what=Inversiones%2C%20Soluciones%20y%20Suministros%20Sociedad%20Anonima%20Cerrada), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 05/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Inversiones, Soluciones y Suministros Sociedad Anonima Cerrada**.

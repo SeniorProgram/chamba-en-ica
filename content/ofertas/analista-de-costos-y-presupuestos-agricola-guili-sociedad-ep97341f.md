@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-19
 vence: 2026-11-18
 sueldo: "S/ 3,500 a 3,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=97341ff90d9c4c83bb358898128e6c0f"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=97341ff90d9c4c83bb358898128e6c0f&what=Agricola%20Guili%20Sociedad%20Anonima%20Cerrada%20-%20Agricola%20Guili%20S.A.C."
 resumen: "Agricola Guili Sociedad Anonima Cerrada - Agricola Guili S.A.C. busca analista de costos y presupuestos en Ica: 1 vacante, sueldo de S/ 3,500 a 3,999. Postula hasta el 18/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -33,6 +33,8 @@ Los analistas contables evalúan los estados financieros de los clientes —gene
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=97341ff90d9c4c83bb358898128e6c0f), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=97341ff90d9c4c83bb358898128e6c0f&what=Agricola%20Guili%20Sociedad%20Anonima%20Cerrada%20-%20Agricola%20Guili%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 18/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Agricola Guili Sociedad Anonima Cerrada - Agricola Guili S.A.C.**.

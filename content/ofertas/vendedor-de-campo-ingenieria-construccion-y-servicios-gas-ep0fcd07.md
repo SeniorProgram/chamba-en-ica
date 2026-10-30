@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-06
 vence: 2026-12-05
 sueldo: "Hasta S/ 1,230"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=0fcd07ff43454af0a385332415cbd771"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=0fcd07ff43454af0a385332415cbd771&what=Ingenieria%2C%20Construccion%20y%20Servicios%20Gas%20Peru%20S.A.C.%20-%20Incoser%20Gas%20Peru%20S.A.C."
 resumen: "Ingenieria, Construccion y Servicios Gas Peru S.A.C. - Incoser Gas Peru S.A.C. busca vendedor de campo en Ica: 10 vacantes, sueldo hasta S/ 1,230. Postula hasta el 05/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -67,6 +67,8 @@ Contacto: Rocio Ignacio Arizapana
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=0fcd07ff43454af0a385332415cbd771), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=0fcd07ff43454af0a385332415cbd771&what=Ingenieria%2C%20Construccion%20y%20Servicios%20Gas%20Peru%20S.A.C.%20-%20Incoser%20Gas%20Peru%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 05/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Ingenieria, Construccion y Servicios Gas Peru S.A.C. - Incoser Gas Peru S.A.C.**.

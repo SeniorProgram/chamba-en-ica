@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-26
 vence: 2026-11-25
 sueldo: "S/ 1,301 a 1,399"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c76cb6f2afaf4073ac2ba38eba372839"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c76cb6f2afaf4073ac2ba38eba372839&what=COOPAC%20Kori"
 resumen: "COOPAC Kori busca asesor (a) de créditos grupales en Ica: 5 vacantes, sueldo de S/ 1,301 a 1,399. Postula hasta el 25/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -75,6 +75,8 @@ Tipo de contrato :Plazo Fijo
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c76cb6f2afaf4073ac2ba38eba372839), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=c76cb6f2afaf4073ac2ba38eba372839&what=COOPAC%20Kori), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 25/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **COOPAC Kori**.

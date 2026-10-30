@@ -7,7 +7,7 @@ distrito: "Marcona"
 date: 2026-10-29
 vence: 2026-11-05
 sueldo: "S/ 8,000 a 9,999"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d5454ff1433146c6ac63a005d8943fc5"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d5454ff1433146c6ac63a005d8943fc5&what=Sandvik%20del%20Per%C3%BA"
 resumen: "Sandvik del Perú busca supervissor de contrato en Marcona: 1 vacante, sueldo de S/ 8,000 a 9,999. Postula hasta el 05/11/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -72,6 +72,8 @@ Te ofrecemos un ambiente de trabajo agradable, benefici
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d5454ff1433146c6ac63a005d8943fc5), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=d5454ff1433146c6ac63a005d8943fc5&what=Sandvik%20del%20Per%C3%BA), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 05/11/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Sandvik del Perú**.

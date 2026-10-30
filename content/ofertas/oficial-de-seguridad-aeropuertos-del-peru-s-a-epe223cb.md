@@ -7,7 +7,7 @@ distrito: "San Andrés"
 date: 2026-10-16
 vence: 2026-12-15
 sueldo: "S/ 1,231 a 1,300"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e223cb8b328d4b77b0b693bfbf330193"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e223cb8b328d4b77b0b693bfbf330193&what=Aeropuertos%20del%20Peru%20S.A."
 resumen: "Aeropuertos del Peru S.A. busca oficial de seguridad en San Andrés: 15 vacantes, sueldo de S/ 1,231 a 1,300. Postula hasta el 15/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -50,6 +50,8 @@ Los datos personales que proporcione en su calidad de postulante a ADP a través
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e223cb8b328d4b77b0b693bfbf330193), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=e223cb8b328d4b77b0b693bfbf330193&what=Aeropuertos%20del%20Peru%20S.A.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 15/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Aeropuertos del Peru S.A.**.

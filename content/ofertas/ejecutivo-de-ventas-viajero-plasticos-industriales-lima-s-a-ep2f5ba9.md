@@ -7,7 +7,7 @@ distrito: "Ica"
 date: 2026-10-28
 vence: 2026-12-07
 sueldo: "A tratar"
-fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=2f5ba97d027f46c39cb9849d81ea6d05"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=2f5ba97d027f46c39cb9849d81ea6d05&what=Plasticos%20Industriales%20Lima%20S.A.C."
 resumen: "Plasticos Industriales Lima S.A.C. busca ejecutivo de ventas viajero en Ica: 1 vacante, sueldo a tratar. Postula hasta el 07/12/2026."
 modalidad: presencial
 jornada: tiempo-completo
@@ -73,6 +73,8 @@ de campo que lleve nuestros productos a productores, empresas e industrias de la
 
 ## Cómo postular
 
-Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=2f5ba97d027f46c39cb9849d81ea6d05), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=2f5ba97d027f46c39cb9849d81ea6d05&what=Plasticos%20Industriales%20Lima%20S.A.C.), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
 
 - **Postula hasta:** 07/12/2026
+
+**Si la página de la oferta sale en blanco:** el portal puede estar con fallas. Prueba de nuevo en unos minutos o entra a [empleosperu.gob.pe](https://www.empleosperu.gob.pe), pulsa **Ver vacantes** y busca **Plasticos Industriales Lima S.A.C.**.
