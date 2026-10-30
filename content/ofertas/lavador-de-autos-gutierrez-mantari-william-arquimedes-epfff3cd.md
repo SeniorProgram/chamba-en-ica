@@ -1,0 +1,44 @@
+---
+title: "Lavador de autos"
+empresa: "Gutierrez Mantari William Arquimedes"
+categoria: empleos-en-empresas
+provincia: ica
+distrito: "Subtanjalla"
+date: 2026-10-01
+vence: 2026-11-30
+sueldo: "S/ 1,800 a 1,999"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7"
+resumen: "Gutierrez Mantari William Arquimedes busca lavador de autos en Subtanjalla: 6 vacantes, sueldo de S/ 1,800 a 1,999. Postula hasta el 30/11/2026."
+modalidad: presencial
+jornada: tiempo-completo
+educacion: secundaria
+vacantes: 6
+# Importada automáticamente de Empleos Perú (MTPE). Revísala antes de aprobar.
+origen: "Empleos Perú (MTPE)"
+empleosperu_id: "fff3cd3d462a44989e6ce171bd8231b7"
+---
+
+## Descripción del puesto
+
+**Funciones**
+
+- Lavado, engrase, limpieza del area de trabajo.
+
+**Requisitos**
+
+- Secundaria completa.
+- Licencia de conducir A1
+- Beneficios
+- Pago con todos los beneficios de ley desde el primer día
+
+## Requisitos y condiciones
+
+- **Contrato:** Plazo indeterminado
+- **Jornada:** Tiempo completo
+- **Estudios mínimos:** Secundaria completa
+
+## Cómo postular
+
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=fff3cd3d462a44989e6ce171bd8231b7), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+
+- **Postula hasta:** 30/11/2026

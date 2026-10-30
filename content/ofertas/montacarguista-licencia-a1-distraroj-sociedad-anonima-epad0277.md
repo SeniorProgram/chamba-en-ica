@@ -1,0 +1,44 @@
+---
+title: "Montacarguista (licencia A1)"
+empresa: "Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C."
+categoria: empleos-en-empresas
+provincia: pisco
+distrito: "Pisco"
+date: 2026-09-29
+vence: 2026-10-29
+sueldo: "S/ 1,600 a 1,799"
+fuente: "https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2"
+resumen: "Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C. busca montacarguista (licencia A1) en Pisco: 2 vacantes, sueldo de S/ 1,600 a 1,799. Postula hasta el 29/10/2026."
+modalidad: presencial
+jornada: tiempo-completo
+experiencia: menos-1
+educacion: secundaria
+vacantes: 2
+# Importada automáticamente de Empleos Perú (MTPE). Revísala antes de aprobar.
+origen: "Empleos Perú (MTPE)"
+empleosperu_id: "ad0277e12a9945679481bfcd0f8dacd2"
+---
+
+## Descripción del puesto
+
+**Funciones**
+
+- Sexo Indistinto: Varón o Mujer
+- Conducción del montacarga, mantenimiento de las debidas normas de seguridad y cuidado en el mismo; Chek list diario, Ejecuta operativamente el proceso de descarga, ubicación y disposición ordenada de la mercadería. Realiza conteo y la entrega de la productos a las unidades.
+
+**Requisitos**
+
+- Contar con experiencia mínima 06 meses operando montacarga con Licencia A1 y contar con cursos de manejo de montacarga Certificados
+
+## Requisitos y condiciones
+
+- **Contrato:** Plazo fijo
+- **Jornada:** Tiempo completo
+- **Estudios mínimos:** Secundaria completa
+- **Experiencia:** 6 mes(es)
+
+## Cómo postular
+
+Postula gratis en [Empleos Perú](https://mtpe-candidatos.empleosperu.gob.pe/search-jobs/description?jobId=ad0277e12a9945679481bfcd0f8dacd2), la bolsa de trabajo del Ministerio de Trabajo: crea tu cuenta, completa tu perfil y pulsa **Aplicar** en la oferta.
+
+- **Postula hasta:** 29/10/2026
