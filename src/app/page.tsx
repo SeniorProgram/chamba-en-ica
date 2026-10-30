@@ -2,13 +2,46 @@ import Link from "next/link";
 import { categorias, provincias } from "@/site.config";
 import { getGuias, getOfertas } from "@/lib/content";
 import { TarjetaGuia } from "@/components/Tarjetas";
-import { Icono, ListaTarjetas } from "@/components/OfertaCard";
+import { Icono, LogoEmpresa, type NombreIcono } from "@/components/OfertaCard";
 import MapaIca from "@/components/MapaIca";
+import EmpresasCarrusel from "@/components/EmpresasCarrusel";
+
+const ICONOS: Record<string, NombreIcono> = {
+  "convocatorias-del-estado": "edificio",
+  "empleos-en-empresas": "maletin",
+  agroexportacion: "hoja",
+  practicas: "birrete",
+  "part-time-y-temporada": "reloj",
+};
+
+// "Distraroj Sociedad Anonima Cerrada - Distraroj S.A.C." → "Distraroj" (para mostrar; la búsqueda lo encuentra igual)
+function nombreCorto(empresa: string) {
+  const base = empresa.split(/\s+-\s+/)[0];
+  const corto = base
+    .replace(/\b(sociedad an[oó]nima cerrada|sociedad an[oó]nima|sociedad comercial de responsabilidad limitada|s\.?\s?a\.?\s?c\.?|s\.?\s?r\.?\s?l(tda)?\.?|e\.?\s?i\.?\s?r\.?\s?l\.?|s\.?\s?a\.?)(?=\s|$|,)/gi, "")
+    .replace(/[\s,.-]+$/, "")
+    .trim();
+  return corto.length >= 3 ? corto : base;
+}
 
 export default function Inicio() {
   const todas = getOfertas();
-  const ofertas = todas.slice(0, 6).map(({ html: _html, ...resto }) => resto);
-  const cuenta = (campo: "categoria" | "provincia", v: string) => todas.filter((o) => o[campo] === v).length;
+  // Ofertas vigentes al compilar (el sitio se vuelve a generar con cada importación)
+  const hoy = new Date().toLocaleDateString("en-CA", { timeZone: "America/Lima" });
+  const vigentes = todas.filter((o) => !o.vence || o.vence >= hoy);
+  const nuevas = vigentes.slice(0, 3).map(({ html: _html, ...resto }) => resto);
+  const cuenta = (campo: "categoria" | "provincia", v: string) => vigentes.filter((o) => o[campo] === v).length;
+
+  // Empresas con más ofertas vigentes (el Estado y las privadas por igual)
+  const porEmpresa = new Map<string, number>();
+  for (const o of vigentes) {
+    const nombre = nombreCorto(o.empresa);
+    porEmpresa.set(nombre, (porEmpresa.get(nombre) ?? 0) + 1);
+  }
+  const empresas = [...porEmpresa.entries()]
+    .map(([nombre, ofertas]) => ({ nombre, ofertas }))
+    .sort((a, b) => b.ofertas - a.ofertas || a.nombre.localeCompare(b.nombre))
+    .slice(0, 14);
   const todasGuias = getGuias();
   const guias = todasGuias.slice(0, 3);
   const totalGuias = todasGuias.length;
@@ -38,47 +71,53 @@ export default function Inicio() {
         </div>
       </section>
 
+      {/* Tipos de trabajo, justo debajo del buscador */}
+      <nav className="contenedor contenedor-ancho categorias-rapidas" aria-label="Tipos de trabajo">
+        {categorias.map((cat) => (
+          <Link key={cat.slug} href={`/empleos/${cat.slug}/`} className="categoria-rapida">
+            <span className="categoria-icono" aria-hidden><Icono nombre={ICONOS[cat.slug] ?? "maletin"} tam={20} /></span>
+            <span className="categoria-texto">
+              <strong>{cat.nombre}</strong>
+              <span>{cuenta("categoria", cat.slug)} ofertas</span>
+            </span>
+            <Icono nombre="derecha" tam={16} />
+          </Link>
+        ))}
+      </nav>
+
+      <EmpresasCarrusel empresas={empresas} total={vigentes.length} />
+
       <MapaIca ofertas={todas.map((o) => ({ provincia: o.provincia, vence: o.vence, empresa: o.empresa }))} guias={totalGuias} />
 
-      <div className="pagina pagina-inicio">
+      <section className="nuevas-seccion" aria-labelledby="nuevas-titulo">
         <div className="contenedor contenedor-ancho">
-          <div className="layout layout-izq">
-            <aside className="lateral">
-              <nav className="panel" aria-label="Categorías">
-                <p className="panel-titulo">¿Qué tipo de trabajo buscas?</p>
-                <ul className="lista-enlaces">
-                  {categorias.map((cat) => (
-                    <li key={cat.slug}>
-                      <Link href={`/empleos/${cat.slug}/`}>
-                        <span aria-hidden>{cat.icono}</span> {cat.nombre} <small>{cuenta("categoria", cat.slug)}</small>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-              <Link href="/publica/" className="panel-publica">
-                <strong>¿Tu empresa está contratando?</strong>
-                <span>Publica tu oferta gratis y llega a postulantes de toda la región.</span>
-              </Link>
-            </aside>
-
-            <section className="principal">
-              <div className="resultados-cab">
-                <h2 className="titulo-seccion">Últimas ofertas</h2>
-                <Link href="/empleos/" className="enlace-flecha">Ver todas ({todas.length}) <Icono nombre="derecha" tam={16} /></Link>
-              </div>
-              {ofertas.length ? (
-                <ListaTarjetas ofertas={ofertas} />
-              ) : (
-                <p className="vacio">Muy pronto publicaremos las primeras ofertas verificadas de la región.</p>
-              )}
-              <p className="centro" style={{ marginTop: 24 }}>
-                <Link href="/empleos/" className="btn btn-naranja">Ver todas las ofertas</Link>
-              </p>
-            </section>
+          <div className="resultados-cab">
+            <h2 id="nuevas-titulo" className="titulo-seccion">Nuevas ofertas</h2>
+            <Link href="/empleos/" className="enlace-flecha">Ver todas ({vigentes.length}) <Icono nombre="derecha" tam={16} /></Link>
           </div>
+          {nuevas.length ? (
+            <div className="ofertas-mini">
+              {nuevas.map((o) => (
+                <Link key={o.slug} href={`/ofertas/${o.slug}/`} className="oferta-mini">
+                  <span className="oferta-mini-cab">
+                    <LogoEmpresa empresa={o.empresa} />
+                    <span className="oferta-mini-titulos">
+                      <strong>{o.title}</strong>
+                      <span>{nombreCorto(o.empresa)}</span>
+                    </span>
+                  </span>
+                  <span className="oferta-mini-datos">
+                    <span><Icono nombre="pin" tam={15} /> {o.distrito || provincias.find((p) => p.slug === o.provincia)?.nombre}</span>
+                    <span className="oc-sueldo"><Icono nombre="billete" tam={15} /> {o.sueldo}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="vacio">Muy pronto publicaremos las primeras ofertas verificadas de la región.</p>
+          )}
         </div>
-      </div>
+      </section>
 
       <section className="seccion">
         <div className="contenedor">

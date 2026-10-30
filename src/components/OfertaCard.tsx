@@ -167,7 +167,7 @@ export function EstadoBadge({ vence, fecha }: { vence: string; fecha: string }) 
 export type NombreIcono =
   | "lupa" | "pin" | "capas" | "edificio" | "medalla" | "birrete" | "reloj" | "calendario" | "billete"
   | "flecha" | "cerrar" | "basura" | "ajustes" | "corazon" | "personas" | "escudo" | "libro" | "enlace" | "check" | "correo" | "derecha"
-  | "alerta" | "compartir" | "documento";
+  | "alerta" | "compartir" | "documento" | "hoja" | "maletin";
 
 const TRAZOS: Record<NombreIcono, ReactNode> = {
   lupa: <><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></>,
@@ -193,6 +193,8 @@ const TRAZOS: Record<NombreIcono, ReactNode> = {
   correo: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>,
   alerta: <><path d="M10.3 4.1 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.1a2 2 0 0 0-3.4 0Z" /><path d="M12 9.5v4M12 17h.01" /></>,
   compartir: <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.6M8.2 13.2l7.6 4.6" /></>,
+  hoja: <><path d="M5 19c0-8 5-14 15-14 0 9-6 15-14 15" /><path d="M5 19c3-4 6-7 10-9" /></>,
+  maletin: <><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18" /></>,
   documento: <><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></>,
 };
 

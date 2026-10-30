@@ -2949,6 +2949,290 @@ main:has(> .pagina) {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* ---------- Inicio: tipos de trabajo, empresas y nuevas ofertas ---------- */
+/* Tipos de trabajo: tarjetas que suben sobre el borde de la portada */
+.categorias-rapidas {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: -34px;
+}
+.categoria-rapida {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px -18px rgba(11, 61, 145, 0.45);
+  color: var(--texto);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+}
+.categoria-rapida > .icono {
+  color: var(--texto-suave);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s;
+}
+@media (hover: hover) {
+  .categoria-rapida:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--titulo) 35%, var(--borde));
+    box-shadow: var(--sombra);
+    color: var(--texto);
+  }
+  .categoria-rapida:hover > .icono {
+    transform: translateX(3px);
+    color: var(--naranja);
+  }
+}
+.categoria-icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--fondo-suave);
+  color: var(--titulo);
+}
+.categoria-texto {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  line-height: 1.3;
+}
+.categoria-texto strong {
+  font-size: 14px;
+  color: var(--titulo);
+}
+.categoria-texto span {
+  font-size: 12.5px;
+  color: var(--texto-suave);
+}
+
+/* Estas empresas necesitan tu talento */
+.empresas-seccion {
+  padding: 56px 0 24px;
+}
+.empresas-titulo {
+  text-align: center;
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  margin: 0 0 24px;
+}
+.carrusel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.carrusel-pista {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 8px 4px 16px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.carrusel-pista::-webkit-scrollbar {
+  display: none;
+}
+.carrusel-pista li {
+  flex: 0 0 156px;
+  scroll-snap-align: start;
+}
+.empresa-tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 18px 12px 14px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px -16px rgba(11, 61, 145, 0.4);
+  text-align: center;
+  text-decoration: none;
+  color: var(--texto);
+  transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+}
+.empresa-tarjeta strong {
+  font-size: 13.5px;
+  line-height: 1.3;
+  color: var(--titulo);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.empresa-tarjeta > span:last-child {
+  margin-top: auto;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--naranja-hover);
+}
+@media (hover: hover) {
+  .empresa-tarjeta:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--titulo) 35%, var(--borde));
+    box-shadow: var(--sombra);
+    color: var(--texto);
+  }
+}
+.carrusel-flecha {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  background: var(--superficie);
+  color: var(--titulo);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s ease-out;
+}
+.carrusel-flecha:first-child .icono {
+  transform: rotate(180deg);
+}
+.carrusel-flecha:hover {
+  background: var(--fondo-suave);
+}
+.carrusel-flecha:active {
+  transform: scale(0.92);
+}
+.empresas-boton {
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+/* Nuevas ofertas: tres tarjetas compactas */
+.nuevas-seccion {
+  padding: 40px 0 8px;
+  background: var(--fondo-suave);
+}
+.ofertas-mini {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.oferta-mini {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  color: var(--texto);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+}
+@media (hover: hover) {
+  .oferta-mini:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--titulo) 35%, var(--borde));
+    box-shadow: var(--sombra);
+    color: var(--texto);
+  }
+}
+.oferta-mini-cab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.oferta-mini-titulos {
+  display: grid;
+  min-width: 0;
+  line-height: 1.3;
+}
+.oferta-mini-titulos strong {
+  font-size: 15px;
+  color: var(--titulo);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.oferta-mini-titulos span {
+  font-size: 13px;
+  color: var(--texto-suave);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.oferta-mini-datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  font-size: 13.5px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--borde);
+}
+.oferta-mini-datos > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nuevas-seccion + .seccion {
+  background: var(--fondo-suave);
+}
+
+@media (max-width: 1100px) {
+  .categorias-rapidas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  /* En el celular las categorías y las ofertas nuevas se deslizan de lado */
+  .categorias-rapidas,
+  .ofertas-mini {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 10px;
+  }
+  .categorias-rapidas::-webkit-scrollbar,
+  .ofertas-mini::-webkit-scrollbar {
+    display: none;
+  }
+  /* La fila de categorías es su propio contenedor: va de borde a borde sin márgenes negativos */
+  .categorias-rapidas {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    scroll-padding-left: 16px;
+  }
+  .categoria-rapida {
+    flex: 0 0 210px;
+    scroll-snap-align: start;
+  }
+  .oferta-mini {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+  .carrusel-flecha {
+    display: none;
+  }
+  .carrusel-pista li {
+    flex-basis: 140px;
+  }
+  .empresas-seccion {
+    padding-top: 40px;
+  }
+}
+
 /* ---------- Formulario "Publica tu oferta" ---------- */
 .form-oferta {
   padding-bottom: 72px;
