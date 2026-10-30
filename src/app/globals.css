@@ -602,7 +602,7 @@ body > main {
 }
 .pie-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
   gap: 40px;
 }
 /* Tablet y celular: la descripción arriba y las dos listas de enlaces lado a lado (antes era una columna muy larga) */
@@ -3500,4 +3500,22 @@ main:has(> .pagina) {
   padding: 0.85em 1em;
   font-size: 16px;
   margin-bottom: 8px;
+}
+
+/* ---------- Texto propio de las páginas tipo de trabajo + provincia ---------- */
+.seo-empleo {
+  margin-top: 40px;
+  padding: 24px;
+  line-height: 1.65;
+}
+.seo-empleo h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: var(--titulo);
+}
+.seo-empleo p {
+  margin: 0 0 12px;
+}
+.seo-empleo p:last-child {
+  margin-bottom: 0;
 }

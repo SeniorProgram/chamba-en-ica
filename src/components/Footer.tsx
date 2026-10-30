@@ -1,6 +1,15 @@
 import Link from "next/link";
 import { categorias, site } from "@/site.config";
 
+// Lo que más se busca en Google (llevan a las páginas de tipo de trabajo + provincia)
+const FRECUENTES = [
+  ["/empleos/convocatorias-del-estado/ica/", "Convocatorias CAS en Ica"],
+  ["/empleos/practicas/ica/", "Prácticas en Ica"],
+  ["/empleos/agroexportacion/chincha/", "Agroexportación en Chincha"],
+  ["/empleos/empleos-en-empresas/pisco/", "Trabajo en Pisco"],
+  ["/empleos/convocatorias-del-estado/nasca/", "Convocatorias CAS en Nasca"],
+] as const;
+
 export default function Footer() {
   return (
     <footer className="pie">
@@ -24,6 +33,14 @@ export default function Footer() {
                 <li key={c.slug}>
                   <Link href={`/empleos/${c.slug}/`}>{c.nombre}</Link>
                 </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Búsquedas frecuentes</h3>
+            <ul>
+              {FRECUENTES.map(([href, texto]) => (
+                <li key={href}><Link href={href}>{texto}</Link></li>
               ))}
             </ul>
           </div>

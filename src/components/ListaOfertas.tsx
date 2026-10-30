@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 import { categorias, provincias } from "@/site.config";
 import { getGuias, getOfertas } from "@/lib/content";
 import { aGuiaBusqueda, aOfertaBusqueda } from "@/lib/busqueda";
@@ -14,37 +14,45 @@ type Props = {
   fijo?: { cat?: string; prov?: string };
   /** En /buscar/ también se muestran las guías que coinciden con la palabra */
   conGuias?: boolean;
+  /** Texto propio de la página, debajo de los resultados */
+  pie?: ReactNode;
 };
 
 /** Listado de ofertas con buscador y filtros (categoría, provincia, jornada, sueldo, fecha...). */
-export default function ListaOfertas({ titulo, descripcion, fijo, conGuias }: Props) {
+export default function ListaOfertas({ titulo, descripcion, fijo, conGuias, pie }: Props) {
   // Índice de búsqueda generado al compilar: no necesita servidor ni base de datos
   const ofertas = getOfertas().map(aOfertaBusqueda);
   const guias = conGuias ? getGuias().map(aGuiaBusqueda) : [];
-  const activo = fijo?.cat ?? fijo?.prov;
   const cat = categorias.find((c) => c.slug === fijo?.cat);
   const prov = provincias.find((p) => p.slug === fijo?.prov);
+  // Los atajos mantienen el otro filtro fijo: en "Prácticas", Chincha lleva a /empleos/practicas/chincha/
+  const hrefCat = (c?: string) => (c ? (prov ? `/empleos/${c}/${prov.slug}/` : `/empleos/${c}/`) : prov ? `/provincia/${prov.slug}/` : "/empleos/");
+  const hrefProv = (p?: string) => (p ? (cat ? `/empleos/${cat.slug}/${p}/` : `/provincia/${p}/`) : cat ? `/empleos/${cat.slug}/` : "/empleos/");
+  const migas = cat && prov
+    ? [{ href: "/empleos/", texto: "Empleos" }, { href: `/empleos/${cat.slug}/`, texto: cat.nombre }, { texto: prov.nombre }]
+    : cat || prov ? [{ href: "/empleos/", texto: "Empleos" }, { texto: (cat?.nombre ?? prov?.nombre) as string }] : [{ texto: "Empleos" }];
 
   return (
     <div className="pagina">
       <div className="contenedor contenedor-ancho">
         <Cabecera
-          migas={cat || prov ? [{ href: "/empleos/", texto: "Empleos" }, { texto: (cat?.nombre ?? prov?.nombre) as string }] : [{ texto: "Empleos" }]}
+          migas={migas}
           titulo={titulo}
           descripcion={descripcion}
         />
 
         {/* Accesos rápidos (también ayudan a Google a encontrar cada sección) */}
         <nav className="atajos entrada entrada-3" aria-label="Categorías y provincias">
-          <Link href="/empleos/" className={!activo ? "atajo activo" : "atajo"}>Todas</Link>
+          <Link href={hrefCat()} className={!cat ? "atajo activo" : "atajo"}>Todas</Link>
           {categorias.map((c) => (
-            <Link key={c.slug} href={`/empleos/${c.slug}/`} className={activo === c.slug ? "atajo activo" : "atajo"}>
+            <Link key={c.slug} href={hrefCat(c.slug)} className={cat?.slug === c.slug ? "atajo activo" : "atajo"}>
               <span aria-hidden>{c.icono}</span> {c.nombre}
             </Link>
           ))}
           <span className="atajos-separador" aria-hidden />
+          {(cat || prov) && <Link href={hrefProv()} className={!prov ? "atajo activo" : "atajo"}>Toda la región</Link>}
           {provincias.map((p) => (
-            <Link key={p.slug} href={`/provincia/${p.slug}/`} className={activo === p.slug ? "atajo activo" : "atajo"}>
+            <Link key={p.slug} href={hrefProv(p.slug)} className={prov?.slug === p.slug ? "atajo activo" : "atajo"}>
               {p.nombre}
             </Link>
           ))}
@@ -56,6 +64,7 @@ export default function ListaOfertas({ titulo, descripcion, fijo, conGuias }: Pr
           <Suspense>
             <BuscadorEmpleos ofertas={ofertas} guias={guias} fijo={fijo} />
           </Suspense>
+          {pie}
         </div>
       </div>
     </div>
