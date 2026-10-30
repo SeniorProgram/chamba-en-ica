@@ -353,6 +353,8 @@ export default function BuscadorEmpleos({ ofertas, guias = [], fijo = {} }: Prop
             </div>
           )}
 
+          <OtrosPortales q={f.q} />
+
           {guiasHalladas.length > 0 && (
             <div className="guias-halladas">
               <h2>Guías relacionadas con “{f.q.trim()}”</h2>
@@ -411,3 +413,35 @@ function FragmentoConAviso({ mostrarAviso, children }: { mostrarAviso: boolean; 
   );
 }
 
+
+/* ---------- "Busca también en…": enlaces a la misma búsqueda en otros portales (no copiamos sus ofertas) ---------- */
+function OtrosPortales({ q }: { q: string }) {
+  const texto = q.trim();
+  // "Asistente administrativo" → "asistente-administrativo" (el formato de sus direcciones)
+  const slug = normalizar(texto).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const portales = [
+    {
+      nombre: "Computrabajo",
+      url: slug ? `https://pe.computrabajo.com/trabajo-de-${slug}-en-ica` : "https://pe.computrabajo.com/empleos-en-ica",
+    },
+    {
+      nombre: "Bumeran",
+      url: slug ? `https://www.bumeran.com.pe/en-ica/empleos-busqueda-${slug}.html` : "https://www.bumeran.com.pe/en-ica/empleos.html",
+    },
+  ];
+  return (
+    <aside className="otros-portales" aria-label="Buscar en otros portales">
+      <div className="otros-portales-texto">
+        <strong>¿Quieres ver más ofertas{texto ? <> de “{texto}”</> : ""} en Ica?</strong>
+        <span>Busca también en otros portales de empleo. Se abren en una pestaña nueva.</span>
+      </div>
+      <div className="otros-portales-botones">
+        {portales.map((p) => (
+          <a key={p.nombre} href={p.url} target="_blank" rel="noopener noreferrer nofollow" className="btn-portal">
+            Ver en {p.nombre} <Icono nombre="enlace" tam={15} />
+          </a>
+        ))}
+      </div>
+    </aside>
+  );
+}

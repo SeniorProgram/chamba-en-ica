@@ -3248,6 +3248,55 @@ main:has(> .pagina) {
   border-radius: 8px;
 }
 
+/* "Busca también en…" (enlaces a otros portales) */
+.otros-portales {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px dashed color-mix(in srgb, var(--titulo) 35%, var(--borde));
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+.otros-portales-texto {
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+}
+.otros-portales-texto strong {
+  font-size: 15.5px;
+  color: var(--titulo);
+}
+.otros-portales-texto span {
+  color: var(--texto-suave);
+}
+.otros-portales-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btn-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--borde);
+  border-radius: 10px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-portal:hover {
+  border-color: var(--titulo);
+  color: var(--titulo);
+}
+
 /* ---------- Formulario "Publica tu oferta" ---------- */
 .form-oferta {
   padding-bottom: 72px;
