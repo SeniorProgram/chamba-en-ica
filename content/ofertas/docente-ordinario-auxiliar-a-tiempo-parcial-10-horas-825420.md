@@ -1,0 +1,50 @@
+---
+title: "Docente ordinario auxiliar a tiempo parcial 10 horas"
+empresa: "Universidad Nacional San Luis Gonzaga"
+categoria: convocatorias-del-estado
+provincia: ica
+distrito: "Ica"
+date: 2026-11-16
+vence: 2026-11-27
+sueldo: "S/ 1,483.25"
+fuente: "https://www.unica.edu.pe/"
+resumen: "Convocatoria de Universidad Nacional San Luis Gonzaga en Ica: 1 vacante, sueldo de S/ 1,483.25. Postula hasta el 27/11/2026."
+modalidad: presencial
+jornada: tiempo-completo
+experiencia: 3-mas
+educacion: universitario
+vacantes: 1
+# Importada automáticamente de Talento Perú (SERVIR). Revísala antes de aprobar.
+origen: "Talento Perú (SERVIR)"
+servir_aviso: "825420"
+---
+
+## Requisitos
+
+**Experiencia**
+
+- Experiencia laboral minima de 05 años en el ejericio profesional.
+
+**Formación académica**
+
+- Titulo de licenciado en ciencias de la comunicacion o titulo de licenciado en turismo y/o licenciado en turismo, hoteleria y gastronomia, titulo profesional de licenciado en arqueologia
+
+**Especialización**
+
+- Grado de maestro
+
+**Conocimientos**
+
+- Diplomado especializado en administracion y gestion publica o especializacion en direccion de personas
+
+**Competencias**
+
+- 
+
+## Cómo postular
+
+Revisa las bases completas y postula según las indicaciones de Universidad Nacional San Luis Gonzaga en su [página de convocatorias](https://www.unica.edu.pe/).
+
+- **Número de convocatoria:** D.LEG 1057 - DETERMINADO (SUPLENCIA)-219
+- **Aviso en Talento Perú (SERVIR):** N° 825420 — búscalo en el [portal de Talento Perú](https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml) eligiendo Ica.
+- **Publicado del** 16/11/2026 **al** 27/11/2026
